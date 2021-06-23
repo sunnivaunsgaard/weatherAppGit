@@ -21,6 +21,7 @@ function dateToday(date) {
 
   return `${day} ${hour}:${minutes}`;
 }
+
 function searchCityWeather(city) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -37,6 +38,7 @@ function handleCityOne(event) {
   event.preventDefault();
   searchCityWeather("Tokyo");
 }
+
 function handleCityTwo(event) {
   event.preventDefault();
   searchCityWeather("Berlin");
@@ -48,17 +50,14 @@ function handleCityThree(event) {
 }
 
 function reportCityWeather(response) {
-  let figurine = document.getElementById("#description-icon");
   document.querySelector("#current-city").innerHTML = response.data.name.toUpperCase();
   document.querySelector("#degrees-city").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#percieved").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  if (response.data.main.humidity = 100) {
-  figurine.classList.remove("wi wi-day-cloudy");
-  figurine.classList.add("wi wi-umbrella");
-  }
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  let divElementC = document.querySelector("#celcius");
+  divElementC.classList.add("f-c-change");
   let divElementF = document.querySelector("#fahrenheit");
   divElementF.classList.remove("f-c-change");
 }

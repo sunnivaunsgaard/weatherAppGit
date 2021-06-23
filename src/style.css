@@ -160,14 +160,17 @@ color: rgb(65, 63, 62);
     font-size: 13px;
 }
 .f-c-change {
-    color: blue;
+    color: rgb(89, 89, 233);
+    font-weight: bold;
 }
 .main-icon{
     color:rgb(250, 173, 29);
     font-size: 30px;
     padding-left:20px;
     line-height: 45px;
-
+}
+.extra-icon-spacing {
+    padding-right: 8px;
 }
 
 .extra-description {
