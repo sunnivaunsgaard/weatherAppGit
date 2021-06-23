@@ -4,9 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>Weather Application</title>
+    <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-    
+        <h1>Weather Forecast</h1>
+    <div class="card back-card">
+        <div class="card-body back-card-body">
+            <form id="input-form">
+              <div class="first-line">
+                <div class="search-spacing">
+                <input type="search" placeholder=" Type in city" class="form-control shadow-sm search" id="type-city">
+                </div>
+                <div class="search-button-spacing">
+                    <input type="submit"
+                     value="Search"
+                     class="form-control btn search-button">
+                </div>
+                <div class="button-spacing">
+                    <button id ="current-location">Your Location</button>
+                </div>
+                <div class="button-spacing">
+                    <button id="first-city">Tokyo</button>
+                </div>
+                <div class="button-spacing">
+                    <button id="second-city">Berlin</button>
+                </div>
+                <div class="button-spacing">
+                    <button id="third-city">Quito</button>
+                </div>
+                <div class="aurora-spacing">
+                    <button class="button-aurora">Aurora Forecast</button>
+                </div>
+              </div>
+                <div class="card-container-today">
+                 <div class="card inside-card">
+                    <div class="card-body inside-card-body">
+                    <div class="row">
+                        <div class="col-6 first-collumn" >
+                           <span id="date-today">Today:</span>
+                            <div class="col default-chosen-city"> 
+                                <span id="current-city"></span>
+                            </div>
+                            <div class="col">
+                                <span id="degrees-city"></span>
+                                  <span class="f-c">
+                                    <a href="#" id="celcius"> °C </a>|
+                                    <a href="#"id="fahrenheit">°f</a>
+                                  </span>      
+                           <i class="wi wi-day-sunny main-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-3 extra-description">
+                             <span class="general-weather" id="weather-description">Partly cloudy</span> 
+                            <div class="apparent-description">
+                             <div class="col" >Percieved:</div>
+                             <div class="col">Humidity:</div> 
+                             <div class="col">Wind:</div>
+                            </div>
+                        </div>
+                        <div class="col-2 extra-values" >
+                           <i class="wi wi-day-cloudy" id="description-icon"> 
+                           </i> 
+                            <div class="apparent-description">
+                             <span class="col" id="percieved"> </span> <span>°C</span>
+                             <div class="space"></div>
+                             <span class="col" id="humidity"></span> <span>%</span>
+                             <div class="space"></div>
+                             <span class="col" id="wind"></span> <span>km/h</span>
+                            </div>
+                        </div>
+                    
+                </div>
+                </div>
+                 </div>
+                   <div class="forecast-boxes">
+                    <div class="box1"> Tomorrow
+                        <div class="child-box">24°C <i class="wi wi-day-cloudy second-icon"></i></div>
+                    </div>
+                    <div class="box2">13.07
+                        <div class="child-box">25°C <i class="wi wi-day-sunny third-icon"></i></div>
+                    </div>
+                    <div class="box3">14.07
+                        <div class="child-box">30°C <i class="wi wi-day-sunny fourth-icon"></i></div>
+                    </div>
+                    <div class="box4">15.07
+                        <div class="child-box">20°C <i class="wi wi-thunderstorm fifth-icon"></i></div>
+                    </div>
+                    <div class="box5">18.07
+                        <div class="child-box">19°C <i class="wi wi-day-cloudy sixth-icon"></i></div>
+                    </div>
+                    <div class="box6">19.07
+                        <div class="child-box">15°C <i class="wi wi-showers seventh-icon"></i></div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <p class="coded-by">Coded by Sunniva Unsgård</p>
+      <script src="src/index.js"></script>
 </body>
 </html>
