@@ -159,6 +159,9 @@ color: rgb(65, 63, 62);
     bottom:10px;
     font-size: 13px;
 }
+.f-c-change {
+    color: blue;
+}
 .main-icon{
     color:rgb(250, 173, 29);
     font-size: 30px;

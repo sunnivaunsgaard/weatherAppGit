@@ -31,7 +31,6 @@ function handleCityWeather(event) {
   event.preventDefault();
   let updateCity = document.querySelector("#type-city").value;
   searchCityWeather(updateCity);
- 
 }
 
 function handleCityOne(event) {
@@ -55,6 +54,8 @@ function reportCityWeather(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  let divElementF = document.querySelector("#fahrenheit");
+  divElementF.classList.remove("f-c-change");
 }
 
 
@@ -80,7 +81,13 @@ function convertFahrenheit(event){
     temperature = Number(temperature);
     let fahrenheit = Math.round(temperature * 1.8 + 32);
     updateFahrenheit.innerHTML = `${fahrenheit}`;
+    let divElementF = document.querySelector("#fahrenheit");
+    divElementF.classList.add("f-c-change");
+    let divElementC = document.querySelector("#celcius");
+    divElementC.classList.remove("f-c-change");
     changeDegreeFahrenheit.removeEventListener("click", convertFahrenheit);
+    let changeDegreeCelcius = document.querySelector("#celcius");
+    changeDegreeCelcius.addEventListener("click", convertCelcius);
 }
 
 function convertCelcius(event) {
@@ -90,7 +97,12 @@ function convertCelcius(event) {
   temperature = Number(temperature);
   let celcius = Math.round((temperature - 32) * 5/9);
   updateCelcius.innerHTML = `${celcius}`;
-  changeDegreeCelcius.removeEventListener("click", convertCelcius);
+  let divElementC = document.querySelector("#celcius");
+  divElementC.classList.add("f-c-change");
+  let divElementF = document.querySelector("#fahrenheit");
+  divElementF.classList.remove("f-c-change");
+  let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
+  changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
 }
 
 
@@ -103,7 +115,6 @@ updateTime.innerHTML = dateToday(time);
 let findCityWeather = document.querySelector("#input-form");
 findCityWeather.addEventListener("submit", handleCityWeather);
 
-
 let currentLocationCity = document.querySelector("#current-location");
 currentLocationCity.addEventListener("click",findCurrentPosition);
 
@@ -113,8 +124,6 @@ searchCityWeather("Trondheim");
  let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
  changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
  
- let changeDegreeCelcius = document.querySelector("#celcius");
- changeDegreeCelcius.addEventListener("click", convertCelcius);
 
  let suggestedCityOne = document.querySelector("#first-city");
  suggestedCityOne.addEventListener("click", handleCityOne);
