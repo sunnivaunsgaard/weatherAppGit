@@ -48,10 +48,15 @@ function handleCityThree(event) {
 }
 
 function reportCityWeather(response) {
+  let figurine = document.getElementById("#description-icon");
   document.querySelector("#current-city").innerHTML = response.data.name.toUpperCase();
   document.querySelector("#degrees-city").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#percieved").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  if (response.data.main.humidity = 100) {
+  figurine.classList.remove("wi wi-day-cloudy");
+  figurine.classList.add("wi wi-umbrella");
+  }
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   let divElementF = document.querySelector("#fahrenheit");
