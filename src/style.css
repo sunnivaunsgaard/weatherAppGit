@@ -131,7 +131,6 @@ border-radius:30px;
     padding: 40px 0px 30px 40px;
 }
 
-
 #date-today {
     color: rgb(65, 63, 62);
     line-height: 20px;
@@ -160,7 +159,7 @@ color: rgb(65, 63, 62);
     font-size: 13px;
 }
 .f-c-change {
-    color: rgb(89, 89, 233);
+    color: rgb(54, 89, 185);
     font-weight: bold;
 }
 .main-icon{
