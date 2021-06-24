@@ -18,7 +18,6 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: black;
  
 }
 .first-line{
@@ -217,9 +216,9 @@ color: rgb(65, 63, 62);
     font-size: 14px;
 
 }
-p {
+.coded-by {
     text-align: center;
     font-size: small;
     font-weight:lighter;
-    padding: 300px 100px 80px;
+    padding: 300px 100px 25px;
 }
