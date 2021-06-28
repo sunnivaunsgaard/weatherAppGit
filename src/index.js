@@ -49,6 +49,7 @@ function handleCityThree(event) {
   searchCityWeather("Quito");
 }
 
+
 function reportCityWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name.toUpperCase();
   document.querySelector("#degrees-city").innerHTML = Math.round(response.data.main.temp);
@@ -61,6 +62,21 @@ function reportCityWeather(response) {
   let divElementF = document.querySelector("#fahrenheit");
   divElementF.classList.remove("f-c-change");
 }
+function reportCityWeatherMultiple(response) {
+  document.querySelector("#tomorrow-temperature").innerHTML = Math.round(
+    response.data.daily[1].temp.day);
+console.log(Math.round(response.data.daily[2].temp.day));
+  document.querySelector("#second-day-temperature").innerHTML = Math.round(
+    response.data.daily[2].temp.day);
+  document.querySelector("#third-day-temperature").innerHTML = Math.round(
+    response.data.daily[3].temp.day);
+  document.querySelector("#fourth-day-temperature").innerHTML = Math.round(
+    response.data.daily[4].temp.day);
+  document.querySelector("#fifth-day-temperature").innerHTML = Math.round(
+    response.data.daily[5].temp.day);
+  document.querySelector("#sixth-day-temperature").innerHTML = Math.round(
+    response.data.daily[6].temp.day);
+}
 
 
 function findCurrentPosition(event){
@@ -68,13 +84,27 @@ event.preventDefault();
 navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 
-function showCurrentPosition(position) {
+function findCurrentPositionMultiple(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showCurrentPositionMultiple);
+}
+
+function showCurrentPositionMultiple(position) {
     let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
     let currentLat = `lat=${position.coords.latitude}`;
     let currentLon = `&lon=${position.coords.longitude}`; 
-    let apiHolder = `https://api.openweathermap.org/data/2.5/weather?`;
-    let apiUrl = `${apiHolder}${currentLat}${currentLon}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(reportCityWeather);
+    let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
+    let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts,hourly&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(reportCityWeatherMultiple);
+}
+
+function showCurrentPosition(position) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let currentLat = `lat=${position.coords.latitude}`;
+  let currentLon = `&lon=${position.coords.longitude}`;
+  let apiHolder = `https://api.openweathermap.org/data/2.5/weather?`;
+  let apiUrl = `${apiHolder}${currentLat}${currentLon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(reportCityWeather);
 }
 
 
@@ -121,6 +151,9 @@ findCityWeather.addEventListener("submit", handleCityWeather);
 
 let currentLocationCity = document.querySelector("#current-location");
 currentLocationCity.addEventListener("click",findCurrentPosition);
+
+let currentLocationCityMultiple = document.querySelector("#current-location");
+currentLocationCity.addEventListener("click", findCurrentPositionMultiple);
 
 
 searchCityWeather("Trondheim");
