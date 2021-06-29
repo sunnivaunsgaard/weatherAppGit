@@ -162,12 +162,7 @@ color: rgb(65, 63, 62);
     color: rgb(54, 89, 185);
     font-weight: bold;
 }
-.main-icon{
-    color:rgb(250, 173, 29);
-    font-size: 30px;
-    padding-left:20px;
-    line-height: 45px;
-}
+
 .extra-icon-spacing {
     padding-right: 8px;
 }
