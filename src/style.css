@@ -20,6 +20,9 @@ a {
     text-decoration: none;
  
 }
+.wrapper {
+    min-width: 900px;
+}
 .first-line{
   display: flex;
   margin:none;
@@ -95,16 +98,16 @@ border-radius:30px;
 .aurora-spacing {
     position: relative;
     bottom: 35px;
-    left: 25px;
+    left: 15px;
 }
 .back-card {
     background-color:rgba(175, 180, 189, 0.2);
     padding: 10px;
     padding-top: 20px;
-    min-width: 700px;
-    max-width: 700px;
-    max-height: 500px;
-    min-height: 500px;
+    min-width: 680px;
+    max-width: 680px;
+    max-height: 450px;
+    min-height: 450px;
     display: block;
     margin: 0 auto;
 }
@@ -118,24 +121,23 @@ border-radius:30px;
 }
 .inside-card {
     background-color: rgba(247, 213, 119, 0.3);
-
     box-shadow: 5px 5px 5px rgba(65, 63, 62, 0.4) ;
-    max-width: 550px;
-    max-height: 200px;
+    max-width: 500px;
+    max-height: 150px;
     display:block;
     margin: 0 auto;
 
 }
 .inside-card-body {
     color:rgb(77, 76, 76);
-    padding: 40px 0px 30px 40px;
+    padding: 15px 0px 15px 30px;
 }
 
 #date-today {
     color: rgb(65, 63, 62);
-    line-height: 20px;
+    line-height: 15px;
     font-weight: lighter;
-    font-size: 14px;
+    font-size: 12px;
 }
 .default-chosen-city {
     padding: 5px 0px 10px;
@@ -170,21 +172,25 @@ color: rgb(65, 63, 62);
 }
 .extra-icon-spacing {
     padding-right: 8px;
+    padding-top: 5px;
 }
 
 .extra-description {
     font-weight: lighter;
     text-align: right;
-    font-size: 14px;
+    font-size: 13px;
+    padding-top: 3px;
 }
 .apparent-description {
-    padding-top: 12px;
+    padding-top: 15px;
     font-size: 11px;
     line-height: 20px;
 }
 .extra-values {
     font-weight: lighter;
     font-size: 14px;
+    padding-top: 3px;
+    line-height: 15px;
 }
 .second-icon, .third-icon, 
 .fourth-icon, .fifth-icon, 

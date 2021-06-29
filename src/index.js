@@ -120,7 +120,7 @@ function convertFahrenheit(event){
     divElementC.classList.remove("f-c-change");
     changeDegreeFahrenheit.removeEventListener("click", convertFahrenheit);
     let changeDegreeCelcius = document.querySelector("#celcius");
-    changeDegreeCelcius.addEventListener("click", convertCelcius);
+    changeDegreeCelcius.addEventListener("click", convertCelcius,{once: true});
 }
 
 function convertCelcius(event) {
