@@ -64,8 +64,7 @@ function reportCityWeather(response) {
 }
 function reportCityWeatherMultiple(response) {
   document.querySelector("#tomorrow-temperature").innerHTML = Math.round(
-    response.data.daily[1].temp.day);
-console.log(Math.round(response.data.daily[2].temp.day));
+    response.data.daily[1].temp.day); 
   document.querySelector("#second-day-temperature").innerHTML = Math.round(
     response.data.daily[2].temp.day);
   document.querySelector("#third-day-temperature").innerHTML = Math.round(
@@ -140,10 +139,34 @@ function convertCelcius(event) {
 }
 
 
-let time = new Date();
+let time = new Date(); 
+function findDate (days) {
+let newDate = new Date(time);
+newDate.setDate(newDate.getDate()+ days);
+setDayDate = newDate.getDate();
+setDayMonth = newDate.getMonth();
+if (days == 2){ 
+return document.querySelector("#day2").innerHTML = `${setDayDate}/${setDayMonth}`;
+} if (days == 3) {
+return (document.querySelector("#day3").innerHTML = `${setDayDate}/${setDayMonth}`);
+} if (days == 4) {
+return (document.querySelector("#day4").innerHTML = `${setDayDate}/${setDayMonth}`);
+} if (days == 5) {
+return (document.querySelector("#day5").innerHTML = `${setDayDate}/${setDayMonth}`);
+} if (days == 6) {
+return (document.querySelector("#day6").innerHTML = `${setDayDate}/${setDayMonth}`);
+}
+}
+
+findDate(2);
+findDate(3);
+findDate(4);
+findDate(5);
+findDate(6);
 
 let updateTime = document.querySelector("#date-today");
 updateTime.innerHTML = dateToday(time);
+
 
 
 let findCityWeather = document.querySelector("#input-form");
@@ -157,6 +180,13 @@ currentLocationCity.addEventListener("click", findCurrentPositionMultiple);
 
 
 searchCityWeather("Trondheim");
+
+let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+let currentLat = `lat=63.4305`;
+    let currentLon = `&lon=10.3951`;
+    let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
+    let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts,hourly&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(reportCityWeatherMultiple);
   
  let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
  changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
