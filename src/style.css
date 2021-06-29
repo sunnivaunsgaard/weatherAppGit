@@ -170,7 +170,6 @@ color: rgb(65, 63, 62);
 }
 .extra-icon-spacing {
     padding-right: 8px;
-    padding-top: 5px;
 }
 
 .extra-description {
@@ -186,9 +185,8 @@ color: rgb(65, 63, 62);
 }
 .extra-values {
     font-weight: lighter;
-    font-size: 14px;
+    font-size: 13px;
     padding-top: 3px;
-    line-height: 15px;
 }
 .second-icon, .third-icon, 
 .fourth-icon, .fifth-icon, 

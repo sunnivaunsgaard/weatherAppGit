@@ -18,9 +18,14 @@ function dateToday(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   return `${day} ${hour}:${minutes}`;
 }
+function searchCityWeatherMultiple(city) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(extractPositionMultiple);
+}
+
 
 function searchCityWeather(city) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
@@ -28,6 +33,11 @@ function searchCityWeather(city) {
   axios.get(apiUrl).then(reportCityWeather);
 }
 
+function handleCityWeatherMultiple(event){
+   event.preventDefault();
+    let updateCity = document.querySelector("#type-city").value;
+    searchCityWeatherMultiple(updateCity); 
+}
 function handleCityWeather(event) {
   event.preventDefault();
   let updateCity = document.querySelector("#type-city").value;
@@ -37,18 +47,30 @@ function handleCityWeather(event) {
 function handleCityOne(event) {
   event.preventDefault();
   searchCityWeather("Tokyo");
+  searchCityWeatherMultiple("Tokyo");
 }
 
 function handleCityTwo(event) {
   event.preventDefault();
   searchCityWeather("Berlin");
+   searchCityWeatherMultiple("Berlin");
 }
 
 function handleCityThree(event) {
   event.preventDefault();
   searchCityWeather("Quito");
+   searchCityWeatherMultiple("Quito");
 }
 
+
+function extractPositionMultiple(response) {
+let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+let latitude = `lat=${response.data.coord.lat}`;
+let longitude = `&lon=${response.data.coord.lon}`; 
+let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
+let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts,hourly&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(reportCityWeatherMultiple);
+}
 
 function reportCityWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name.toUpperCase();
@@ -138,8 +160,8 @@ function convertCelcius(event) {
   changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
 }
 
-
 let time = new Date(); 
+
 function findDate (days) {
 let newDate = new Date(time);
 newDate.setDate(newDate.getDate()+ days);
@@ -171,6 +193,9 @@ updateTime.innerHTML = dateToday(time);
 
 let findCityWeather = document.querySelector("#input-form");
 findCityWeather.addEventListener("submit", handleCityWeather);
+
+let findCityWeatherMultiple = document.querySelector("#input-form");
+findCityWeatherMultiple.addEventListener("submit", handleCityWeatherMultiple);
 
 let currentLocationCity = document.querySelector("#current-location");
 currentLocationCity.addEventListener("click",findCurrentPosition);
