@@ -326,7 +326,7 @@ function findCurrentPositionMultiple(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPositionMultiple);
   let newText = document.querySelector("#current-city");
-  newText.innerHTML ="Press 'allow' or search for another city"; 
+  newText.innerHTML ="Wait while we find 📍 If asked: press 'allow'. If not: change settings"; 
 }
 
 function showCurrentPositionMultiple(position) {
