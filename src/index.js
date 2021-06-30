@@ -140,26 +140,19 @@ function reportCityWeatherMultiple(response) {
   document.querySelector("#sixth-day-temperature").innerHTML = Math.round(
     response.data.daily[6].temp.day
   );
-console.log(response.data.daily[0].dt*1000);
 
   let icon1 = response.data.daily[1].weather[0].icon;
   findIcon1(icon1);
-  console.log(icon1);
   let icon2 = response.data.daily[2].weather[0].icon;
   findIcon2(icon2);
-  console.log(icon2);
   let icon3 = response.data.daily[3].weather[0].icon;
   findIcon3(icon3);
-  console.log(icon3);
   let icon4 = response.data.daily[4].weather[0].icon;
   findIcon4(icon4);
-  console.log(icon4);
   let icon5 = response.data.daily[5].weather[0].icon;
   findIcon5(icon5);
-  console.log(icon5);
   let icon6 = response.data.daily[6].weather[0].icon;
   findIcon6(icon6);
-  console.log(icon6);
 }
 
 let classes1 = "wi-cloud";
@@ -327,11 +320,13 @@ function findIcon6(icon6) {
 function findCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
-}
 
+}
 function findCurrentPositionMultiple(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPositionMultiple);
+  let newText = document.querySelector("#current-city");
+  newText.innerHTML ="Press 'allow' or search for another city"; 
 }
 
 function showCurrentPositionMultiple(position) {
@@ -351,7 +346,7 @@ function showCurrentPosition(position) {
   let apiUrl = `${apiHolder}${currentLat}${currentLon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeather);
 }
-let isCelcius = true;
+
 function convertFahrenheit(event) {
   event.preventDefault();
   if (!isCelcius) return;
@@ -379,6 +374,9 @@ function convertCelcius(event) {
   changeDegreeCelcius.classList.add("f-c-change");
   changeDegreeFahrenheit.classList.remove("f-c-change"); 
 }
+
+searchCityWeather("Trondheim");
+
 
 let time = new Date();
 
@@ -420,6 +418,9 @@ findDate(4);
 findDate(5);
 findDate(6);
 
+
+let isCelcius = true;
+
 let updateTime = document.querySelector("#date-today");
 updateTime.innerHTML = dateToday(time);
 
@@ -435,7 +436,6 @@ currentLocationCity.addEventListener("click", findCurrentPosition);
 let currentLocationCityMultiple = document.querySelector("#current-location");
 currentLocationCity.addEventListener("click", findCurrentPositionMultiple);
 
-searchCityWeather("Trondheim");
 
 let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
 let currentLat = `lat=63.4305`;

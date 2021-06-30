@@ -138,10 +138,14 @@ border-radius:30px;
     font-size: 12px;
 }
 .default-chosen-city {
-    padding: 5px 0px 10px;
+    padding: 5px 0px 5px;
 }
-#current-city{
-font-size: 16px;
+.current-city{
+font-size: 14px;
+color: rgb(65, 63, 62); 
+}
+.current-city-waiting{
+font-size: 10px;
 color: rgb(65, 63, 62); 
 }
 
