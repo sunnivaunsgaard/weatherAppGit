@@ -110,11 +110,16 @@ function findIcon(icon) {
     "10n": "wi-day-rain",
     "11d": "wi-thunderstorm",
     "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
   };
   document.getElementById("main-icon").classList.remove("wi", currentClass);
   currentClass = icons[icon] || "wi-cloud";
   document.getElementById("main-icon").classList.add("wi", currentClass);
 }
+
 
 function reportCityWeatherMultiple(response) {
   document.querySelector("#tomorrow-temperature").innerHTML = Math.round(
@@ -135,6 +140,186 @@ function reportCityWeatherMultiple(response) {
   document.querySelector("#sixth-day-temperature").innerHTML = Math.round(
     response.data.daily[6].temp.day
   );
+  let icon1 = response.data.daily[1].weather[0].icon;
+  findIcon1(icon1);
+  console.log(icon1);
+  let icon2 = response.data.daily[2].weather[0].icon;
+  findIcon2(icon2);
+  console.log(icon2);
+  let icon3 = response.data.daily[3].weather[0].icon;
+  findIcon3(icon3);
+  console.log(icon3);
+  let icon4 = response.data.daily[4].weather[0].icon;
+  findIcon4(icon4);
+  console.log(icon4);
+  let icon5 = response.data.daily[5].weather[0].icon;
+  findIcon5(icon5);
+  console.log(icon5);
+  let icon6 = response.data.daily[6].weather[0].icon;
+  findIcon6(icon6);
+  console.log(icon6);
+}
+
+let classes1 = "wi-cloud";
+function findIcon1(icon1){
+   const icons = {
+     "01d": "wi-day-sunny",
+     "01n": "wi-day-sunny",
+     "02d": "wi-day-cloudy",
+     "02n": "wi-day-cloudy",
+     "03d": "wi-cloud",
+     "03n": "wi-cloud",
+     "04d": "wi-cloudy",
+     "04n": "wi-cloudy",
+     "09d": "wi-showers",
+     "09n": "wi-showers",
+     "10d": "wi-day-rain",
+     "10n": "wi-day-rain",
+     "11d": "wi-thunderstorm",
+     "11n": "wi-thunderstorm",
+     "13d": "wi-snowflake-cold",
+     "13n": "wi-snowflake-cold",
+     "50d": "wi-fog",
+     "50n": "wi-fog",
+   };
+  document.getElementById("first-icon").classList.remove("wi", classes1);
+  classes1 = icons[icon1] || "wi-cloud";
+  document.getElementById("first-icon").classList.add("wi", classes1);
+}
+
+let classes2 = "wi-cloud";
+function findIcon2(icon2) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
+  document.getElementById("second-icon").classList.remove("wi", classes2);
+  classes2 = icons[icon2] || "wi-cloud";
+  document.getElementById("second-icon").classList.add("wi", classes2);
+}
+
+let classes3 = "wi-cloud";
+function findIcon3(icon3) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
+  document.getElementById("third-icon").classList.remove("wi", classes3);
+  classes3 = icons[icon3] || "wi-cloud";
+  document.getElementById("third-icon").classList.add("wi", classes3);
+}
+
+let classes4 = "wi-cloud";
+function findIcon4(icon4) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
+  document.getElementById("fourth-icon").classList.remove("wi", classes4);
+  classes4 = icons[icon4] || "wi-cloud";
+  document.getElementById("fourth-icon").classList.add("wi", classes4);
+}
+
+let classes5 = "wi-cloud";
+function findIcon5(icon5) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
+  document.getElementById("fifth-icon").classList.remove("wi", classes5);
+  classes5 = icons[icon5] || "wi-cloud";
+  document.getElementById("fifth-icon").classList.add("wi", classes5);
+}
+
+let classes6 = "wi-cloud";
+function findIcon6(icon6) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
+  document.getElementById("sixth-icon").classList.remove("wi", classes6);
+  classes6 = icons[icon6] || "wi-cloud";
+  document.getElementById("sixth-icon").classList.add("wi", classes6);
 }
 
 function findCurrentPosition(event) {

@@ -183,9 +183,9 @@ color: rgb(65, 63, 62);
     font-size: 13px;
     padding-top: 3px;
 }
-.second-icon, .third-icon, 
-.fourth-icon, .fifth-icon, 
-.sixth-icon, .seventh-icon  {
+#first-icon, #second-icon, #third-icon, 
+#fourth-icon, #fifth-icon, 
+#sixth-icon  {
     padding:5px;
     color: rgb(65, 63, 62);
 }
