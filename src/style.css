@@ -1,7 +1,7 @@
 
 body {
     background-image: 
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/387/original/summerSky.jpg?1623163958);
+    url("../images/summerSky.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -178,6 +178,9 @@ color: rgb(65, 63, 62);
     text-align: right;
     font-size: 13px;
     padding-top: 3px;
+}
+.extra-description::first-letter{
+    text-transform: capitalize;
 }
 .apparent-description {
     padding-top: 15px;

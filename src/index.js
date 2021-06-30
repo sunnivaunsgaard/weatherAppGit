@@ -140,6 +140,8 @@ function reportCityWeatherMultiple(response) {
   document.querySelector("#sixth-day-temperature").innerHTML = Math.round(
     response.data.daily[6].temp.day
   );
+console.log(response.data.daily[0].dt*1000);
+
   let icon1 = response.data.daily[1].weather[0].icon;
   findIcon1(icon1);
   console.log(icon1);

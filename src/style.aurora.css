@@ -1,6 +1,6 @@
 body {
     background-image: 
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/011/885/original/northern-lights.jpg?1624972424);
+    url("../images/northern-lights.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
