@@ -362,10 +362,8 @@ function convertFahrenheit(event) {
   temperature = Number(temperature);
   let fahrenheit = Math.round(temperature * 1.8 + 32);
   updateFahrenheit.innerHTML = `${fahrenheit}`;
-  let divElementF = document.querySelector("#fahrenheit");
-  divElementF.classList.add("f-c-change");
-  let divElementC = document.querySelector("#celcius");
-  divElementC.classList.remove("f-c-change");
+  changeDegreeFahrenheit.classList.add("f-c-change");
+  changeDegreeCelcius.classList.remove("f-c-change");
 }
 
 function convertCelcius(event) {
@@ -378,10 +376,8 @@ function convertCelcius(event) {
   temperature = Number(temperature);
   let celcius = Math.round(((temperature - 32) * 5) / 9);
   updateCelcius.innerHTML = `${celcius}`;
-  let divElementC = document.querySelector("#celcius");
-  divElementC.classList.add("f-c-change");
-  let divElementF = document.querySelector("#fahrenheit");
-  divElementF.classList.remove("f-c-change"); 
+  changeDegreeCelcius.classList.add("f-c-change");
+  changeDegreeFahrenheit.classList.remove("f-c-change"); 
 }
 
 let time = new Date();
