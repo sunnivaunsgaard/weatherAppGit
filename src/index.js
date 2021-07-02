@@ -381,34 +381,48 @@ searchCityWeather("Trondheim");
 let time = new Date();
 
 function findDate(days) {
+  let months = [
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "June",
+    "July",
+    "August",
+    "September",
+    "November",
+  ];
   let newDate = new Date(time);
   newDate.setDate(newDate.getDate() + days);
   setDayDate = newDate.getDate();
-  setDayMonth = newDate.getMonth();
+  setDayMonth = months[newDate.getMonth()];
+  
+
   if (days == 2) {
     return (document.querySelector(
       "#day2"
-    ).innerHTML = `${setDayDate}/${setDayMonth}`);
+    ).innerHTML = `${setDayDate} ${setDayMonth}`);
   }
   if (days == 3) {
     return (document.querySelector(
       "#day3"
-    ).innerHTML = `${setDayDate}/${setDayMonth}`);
+    ).innerHTML = `${setDayDate} ${setDayMonth}`);
   }
   if (days == 4) {
     return (document.querySelector(
       "#day4"
-    ).innerHTML = `${setDayDate}/${setDayMonth}`);
+    ).innerHTML = `${setDayDate} ${setDayMonth}`);
   }
   if (days == 5) {
     return (document.querySelector(
       "#day5"
-    ).innerHTML = `${setDayDate}/${setDayMonth}`);
+    ).innerHTML = `${setDayDate} ${setDayMonth}`);
   }
   if (days == 6) {
     return (document.querySelector(
       "#day6"
-    ).innerHTML = `${setDayDate}/${setDayMonth}`);
+    ).innerHTML = `${setDayDate} ${setDayMonth}`);
   }
 }
 
