@@ -19,10 +19,28 @@ function dateToday(date) {
   }
   return `${day} ${hour}:${minutes}`;
 }
+
+function findTimeStamp(response) {
+  let nowTime = new Date(response.data.hourly[0].dt * 1000);
+  let hour1 = nowTime.getHours();
+    if (hour1 < 10) {
+      hour1 = `0${hour1}`;
+    }
+    document.querySelector("#hour1").innerHTML = `${hour1}:00`;
+
+      let nowTime1 = new Date(response.data.hourly[1].dt * 1000);
+      let hour2 = nowTime1.getHours();
+      if (hour2 < 10) {
+        hour2= `0${hour2}`;
+      }
+      document.querySelector("#hour2").innerHTML = `${hour2}:00`;
+  
+}
+
 function searchCityWeatherMultiple(city) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(extractPositionMultiple);
+  axios.get(apiUrl).then(extractPosition);
 }
 
 function searchCityWeather(city) {
@@ -60,13 +78,14 @@ function handleCityThree(event) {
   searchCityWeatherMultiple("Quito");
 }
 
-function extractPositionMultiple(response) {
+function extractPosition(response) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let latitude = `lat=${response.data.coord.lat}`;
   let longitude = `&lon=${response.data.coord.lon}`;
   let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
-  let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts,hourly&appid=${apiKey}&units=metric`;
+  let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
+  axios.get(apiUrl).then(findTimeStamp);
 }
 
 function reportCityWeather(response) {
@@ -91,35 +110,6 @@ function reportCityWeather(response) {
   let icon = response.data.weather[0].icon;
   findIcon(icon);
 }
-
-let currentClass = "wi-cloud";
-
-function findIcon(icon) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
-  document.getElementById("main-icon").classList.remove("wi", currentClass);
-  currentClass = icons[icon] || "wi-cloud";
-  document.getElementById("main-icon").classList.add("wi", currentClass);
-}
-
 
 function reportCityWeatherMultiple(response) {
   document.querySelector("#tomorrow-temperature").innerHTML = Math.round(
@@ -153,6 +143,34 @@ function reportCityWeatherMultiple(response) {
   findIcon5(icon5);
   let icon6 = response.data.daily[6].weather[0].icon;
   findIcon6(icon6);
+
+
+}
+
+function findIcon(icon) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
+  document.getElementById("main-icon").classList.remove("wi", currentClass);
+  currentClass = icons[icon] || "wi-cloud";
+  document.getElementById("main-icon").classList.add("wi", currentClass);
 }
 
 let classes1 = "wi-cloud";
@@ -317,6 +335,10 @@ function findIcon6(icon6) {
   document.getElementById("sixth-icon").classList.add("wi", classes6);
 }
 
+let currentClass = "wi-cloud";
+
+
+
 function findCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
@@ -334,8 +356,10 @@ function showCurrentPositionMultiple(position) {
   let currentLat = `lat=${position.coords.latitude}`;
   let currentLon = `&lon=${position.coords.longitude}`;
   let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
-  let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts,hourly&appid=${apiKey}&units=metric`;
+  let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
+  axios.get(apiUrl).then(findTimeStamp);
+  
 }
 
 function showCurrentPosition(position) {
@@ -374,8 +398,6 @@ function convertCelcius(event) {
   changeDegreeCelcius.classList.add("f-c-change");
   changeDegreeFahrenheit.classList.remove("f-c-change"); 
 }
-
-searchCityWeather("Trondheim");
 
 
 let time = new Date();
@@ -450,13 +472,15 @@ currentLocationCity.addEventListener("click", findCurrentPosition);
 let currentLocationCityMultiple = document.querySelector("#current-location");
 currentLocationCity.addEventListener("click", findCurrentPositionMultiple);
 
+searchCityWeather("Trondheim");
 
 let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
 let currentLat = `lat=63.4305`;
 let currentLon = `&lon=10.3951`;
 let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
-let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts,hourly&appid=${apiKey}&units=metric`;
+let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(reportCityWeatherMultiple);
+axios.get(apiUrl).then(findTimeStamp);
 
 let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
 changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);

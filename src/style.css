@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover; 
+    
 }
 h1 {
     padding: 200px 0px 60px 250px;
@@ -104,8 +105,8 @@ border-radius:30px;
     padding-top: 20px;
     min-width: 700px;
     max-width: 700px;
-    max-height: 450px;
-    min-height: 450px;
+    max-height: 500px;
+    min-height: 500px;
     display: block;
     margin: 0 auto;
 }
@@ -115,13 +116,12 @@ border-radius:30px;
 }
 .card-container-today {
     padding-top: 20px;
-
 }
 .inside-card {
     background-color: rgba(247, 213, 119, 0.3);
     box-shadow: 5px 5px 5px rgba(65, 63, 62, 0.4) ;
     max-width: 500px;
-    max-height: 200px;
+    max-height: 350px;
     display:block;
     margin: 0 auto;
 
@@ -193,6 +193,46 @@ color: rgb(65, 63, 62);
     font-size: 13px;
     padding-top: 3px;
 }
+
+.scrolling-wrapper {
+margin: 4px, 4px;
+padding: 10px;
+width: 435px;
+height: 60px;
+overflow-x: scroll;
+overflow-y: hidden;
+white-space: nowrap;
+ }
+
+ .hourly {
+ border: 1px solid rgba(123, 231, 250, 0.534);
+  background-color: rgba(170, 213, 241, 0.466);
+  width: 80px;
+  padding:3px;
+  border-radius: 4px;
+  font-size: 9px;
+  margin:2px;
+  float: none;
+  display: inline-block;
+  
+  }
+#hour1,#hour2, #hour3, #hour4, #hour5, #hour6, #hour7, #hour8, #hour9,#hour10, 
+#hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17,#hour18,#hour19,
+#hour20,#hour21, #hour22,#hour23,#hour24  {
+    font-size: 8px;
+    padding: 1px;
+}
+.hourly {
+ border: 1px solid rgba(123, 231, 250, 0.534);
+  background-color: rgba(170, 213, 241, 0.466);
+  width: 80px;
+  padding:10px;
+  border-radius: 4px;
+  margin:2px;
+  float: none;
+  display: inline-block;
+  
+  }
 
 #tomorrow, #day2, #day3, #day4, #day5, #day6 {
     font-size: 13px;
