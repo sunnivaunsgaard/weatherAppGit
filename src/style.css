@@ -105,8 +105,8 @@ border-radius:30px;
     padding-top: 20px;
     min-width: 700px;
     max-width: 700px;
-    max-height: 500px;
-    min-height: 500px;
+    max-height: 520px;
+    min-height: 520px;
     display: block;
     margin: 0 auto;
 }
@@ -121,14 +121,14 @@ border-radius:30px;
     background-color: rgba(247, 213, 119, 0.3);
     box-shadow: 5px 5px 5px rgba(65, 63, 62, 0.4) ;
     max-width: 500px;
-    max-height: 350px;
+    max-height: 400px;
     display:block;
     margin: 0 auto;
 
 }
 .inside-card-body {
     color:rgb(77, 76, 76);
-    padding: 15px 0px 15px 30px;
+    padding: 25px 0px 10px 30px;
 }
 
 #date-today {
@@ -194,11 +194,17 @@ color: rgb(65, 63, 62);
     padding-top: 3px;
 }
 
+.hourly-forecast {
+    padding-top: 5px;
+    font-size: 11px;
+    padding-bottom: none;
+    margin: 5px;
+}
+
 .scrolling-wrapper {
 margin: 4px, 4px;
-padding: 10px;
 width: 435px;
-height: 60px;
+height: 50px;
 overflow-x: scroll;
 overflow-y: hidden;
 white-space: nowrap;
@@ -207,32 +213,29 @@ white-space: nowrap;
  .hourly {
  border: 1px solid rgba(123, 231, 250, 0.534);
   background-color: rgba(170, 213, 241, 0.466);
-  width: 80px;
+  width: 70px;
   padding:3px;
   border-radius: 4px;
-  font-size: 9px;
+  font-size: 10px;
   margin:2px;
   float: none;
   display: inline-block;
-  
   }
+
+#hour1-forecast, #hour2-forecast,#hour3-forecast, #hour4-forecast,#hour5-forecast,#hour6-forecast, #hour7-forecast
+#hour8-forecast, #hour9-forecast, #hour10-forecast,#hour11-forecast, #hour12-forecast,#hour13-forecast, #hour14-forecast,
+#hour15-forecast,#hour16-forecast,#hour17-forecast,#hour18-forecast,#hour19-forecast,#hour20-forecast, #hour21-forecast,
+#hour22-forecast,#hour23-forecast,#hour24-forecast {
+    padding-left:3px;
+}
+
 #hour1,#hour2, #hour3, #hour4, #hour5, #hour6, #hour7, #hour8, #hour9,#hour10, 
 #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17,#hour18,#hour19,
 #hour20,#hour21, #hour22,#hour23,#hour24  {
     font-size: 8px;
-    padding: 1px;
+    padding: 3px;
 }
-.hourly {
- border: 1px solid rgba(123, 231, 250, 0.534);
-  background-color: rgba(170, 213, 241, 0.466);
-  width: 80px;
-  padding:10px;
-  border-radius: 4px;
-  margin:2px;
-  float: none;
-  display: inline-block;
-  
-  }
+
 
 #tomorrow, #day2, #day3, #day4, #day5, #day6 {
     font-size: 13px;

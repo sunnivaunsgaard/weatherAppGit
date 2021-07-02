@@ -34,6 +34,56 @@ function findTimeStamp(response) {
         hour2= `0${hour2}`;
       }
       document.querySelector("#hour2").innerHTML = `${hour2}:00`;
+
+  let nowTime2 = new Date(response.data.hourly[2].dt * 1000);
+  let hour3 = nowTime2.getHours();
+   if (hour3 < 10) {
+      hour3= `0${hour3}`;
+      }
+      document.querySelector("#hour3").innerHTML = `${hour3}:00`;
+
+  let nowTime3 = new Date(response.data.hourly[3].dt * 1000);
+  let hour4 = nowTime3.getHours();
+  if (hour4 < 10) {
+    hour4 = `0${hour4}`;
+  }
+  document.querySelector("#hour4").innerHTML = `${hour4}:00`;
+
+  let nowTime4 = new Date(response.data.hourly[4].dt * 1000);
+  let hour5 = nowTime4.getHours();
+  if (hour5 < 10) {
+    hour5 = `0${hour5}`;
+  }
+  document.querySelector("#hour5").innerHTML = `${hour4}:00`;
+  
+  let nowTime5 = new Date(response.data.hourly[5].dt * 1000);
+  let hour6 = nowTime5.getHours();
+  if (hour6 < 10) {
+    hour6 = `0${hour6}`;
+  }
+  document.querySelector("#hour6").innerHTML = `${hour6}:00`;
+  
+  let nowTime6 = new Date(response.data.hourly[6].dt * 1000);
+  let hour7 = nowTime6.getHours();
+  if (hour7 < 10) {
+    hour7 = `0${hour7}`;
+  }
+  document.querySelector("#hour7").innerHTML = `${hour7}:00`;
+  
+  let nowTime7= new Date(response.data.hourly[7].dt * 1000);
+  let hour8 = nowTime7.getHours();
+  if (hour8 < 10) {
+    hour8 = `0${hour8}`;
+  }
+  document.querySelector("#hour8").innerHTML = `${hour8}:00`;
+  
+  let nowTime8 = new Date(response.data.hourly[8].dt * 1000);
+  let hour9 = nowTime8.getHours();
+  if (hour9 < 10) {
+    hour9 = `0${hour9}`;
+  }
+  document.querySelector("#hour9").innerHTML = `${hour9}:00`;
+  
   
 }
 
