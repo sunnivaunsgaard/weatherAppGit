@@ -1,13 +1,5 @@
 function dateToday(date) {
-  let days = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thur",
-    "Fri",
-    "Sat",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   let hour = date.getHours();
   if (hour < 10) {
@@ -23,24 +15,24 @@ function dateToday(date) {
 function findTimeStamp(response) {
   let nowTime = new Date(response.data.hourly[0].dt * 1000);
   let hour1 = nowTime.getHours();
-    if (hour1 < 10) {
-      hour1 = `0${hour1}`;
-    }
-    document.querySelector("#hour1").innerHTML = `${hour1}:00`;
+  if (hour1 < 10) {
+    hour1 = `0${hour1}`;
+  }
+  document.querySelector("#hour1").innerHTML = `${hour1}:00`;
 
-let nowTime1 = new Date(response.data.hourly[1].dt * 1000);
-let hour2 = nowTime1.getHours();
-      if (hour2 < 10) {
-        hour2= `0${hour2}`;
-      }
-      document.querySelector("#hour2").innerHTML = `${hour2}:00`;
+  let nowTime1 = new Date(response.data.hourly[1].dt * 1000);
+  let hour2 = nowTime1.getHours();
+  if (hour2 < 10) {
+    hour2 = `0${hour2}`;
+  }
+  document.querySelector("#hour2").innerHTML = `${hour2}:00`;
 
   let nowTime2 = new Date(response.data.hourly[2].dt * 1000);
   let hour3 = nowTime2.getHours();
-   if (hour3 < 10) {
-      hour3= `0${hour3}`;
-      }
-      document.querySelector("#hour3").innerHTML = `${hour3}:00`;
+  if (hour3 < 10) {
+    hour3 = `0${hour3}`;
+  }
+  document.querySelector("#hour3").innerHTML = `${hour3}:00`;
 
   let nowTime3 = new Date(response.data.hourly[3].dt * 1000);
   let hour4 = nowTime3.getHours();
@@ -55,28 +47,28 @@ let hour2 = nowTime1.getHours();
     hour5 = `0${hour5}`;
   }
   document.querySelector("#hour5").innerHTML = `${hour5}:00`;
-  
+
   let nowTime5 = new Date(response.data.hourly[5].dt * 1000);
   let hour6 = nowTime5.getHours();
   if (hour6 < 10) {
     hour6 = `0${hour6}`;
   }
   document.querySelector("#hour6").innerHTML = `${hour6}:00`;
-  
+
   let nowTime6 = new Date(response.data.hourly[6].dt * 1000);
   let hour7 = nowTime6.getHours();
   if (hour7 < 10) {
     hour7 = `0${hour7}`;
   }
   document.querySelector("#hour7").innerHTML = `${hour7}:00`;
-  
-  let nowTime7= new Date(response.data.hourly[7].dt * 1000);
+
+  let nowTime7 = new Date(response.data.hourly[7].dt * 1000);
   let hour8 = nowTime7.getHours();
   if (hour8 < 10) {
     hour8 = `0${hour8}`;
   }
   document.querySelector("#hour8").innerHTML = `${hour8}:00`;
-  
+
   let nowTime8 = new Date(response.data.hourly[8].dt * 1000);
   let hour9 = nowTime8.getHours();
   if (hour9 < 10) {
@@ -85,11 +77,11 @@ let hour2 = nowTime1.getHours();
   document.querySelector("#hour9").innerHTML = `${hour9}:00`;
 
   let nowTime9 = new Date(response.data.hourly[9].dt * 1000);
-    let hour10 = nowTime9.getHours();
-    if (hour10 < 10) {
-      hour10 = `0${hour10}`;
-    }
-    document.querySelector("#hour10").innerHTML = `${hour10}:00`;
+  let hour10 = nowTime9.getHours();
+  if (hour10 < 10) {
+    hour10 = `0${hour10}`;
+  }
+  document.querySelector("#hour10").innerHTML = `${hour10}:00`;
 
   let nowTime10 = new Date(response.data.hourly[10].dt * 1000);
   let hour11 = nowTime10.getHours();
@@ -98,97 +90,96 @@ let hour2 = nowTime1.getHours();
   }
   document.querySelector("#hour11").innerHTML = `${hour11}:00`;
 
-let nowTime11 = new Date(response.data.hourly[11].dt * 1000);
-let hour12 = nowTime11.getHours();
-    if (hour12 < 10) {
-      hour12 = `0${hour12}`;
-    }
-    document.querySelector("#hour12").innerHTML = `${hour12}:00`;
+  let nowTime11 = new Date(response.data.hourly[11].dt * 1000);
+  let hour12 = nowTime11.getHours();
+  if (hour12 < 10) {
+    hour12 = `0${hour12}`;
+  }
+  document.querySelector("#hour12").innerHTML = `${hour12}:00`;
 
-let nowTime12 = new Date(response.data.hourly[12].dt * 1000);
-let hour13 = nowTime12.getHours();
-    if (hour13 < 10) {
-      hour13 = `0${hour13}`;
-    }
-    document.querySelector("#hour13").innerHTML = `${hour13}:00`;
-  
-let nowTime13 = new Date(response.data.hourly[13].dt * 1000);
-let hour14 = nowTime13.getHours();
-    if (hour14 < 10) {
-      hour14 = `0${hour14}`;
-    }
-    document.querySelector("#hour14").innerHTML = `${hour14}:00`;
+  let nowTime12 = new Date(response.data.hourly[12].dt * 1000);
+  let hour13 = nowTime12.getHours();
+  if (hour13 < 10) {
+    hour13 = `0${hour13}`;
+  }
+  document.querySelector("#hour13").innerHTML = `${hour13}:00`;
 
-let nowTime14 = new Date(response.data.hourly[14].dt * 1000);
-let hour15 = nowTime14.getHours();
-    if (hour15 < 10) {
-      hour15 = `0${hour15}`;
-    }
-    document.querySelector("#hour15").innerHTML = `${hour15}:00`;
+  let nowTime13 = new Date(response.data.hourly[13].dt * 1000);
+  let hour14 = nowTime13.getHours();
+  if (hour14 < 10) {
+    hour14 = `0${hour14}`;
+  }
+  document.querySelector("#hour14").innerHTML = `${hour14}:00`;
 
-let nowTime15 = new Date(response.data.hourly[15].dt * 1000);
-let hour16 = nowTime15.getHours();
-    if (hour16 < 10) {
-      hour16 = `0${hour16}`;
-    }
-    document.querySelector("#hour16").innerHTML = `${hour16}:00`;
+  let nowTime14 = new Date(response.data.hourly[14].dt * 1000);
+  let hour15 = nowTime14.getHours();
+  if (hour15 < 10) {
+    hour15 = `0${hour15}`;
+  }
+  document.querySelector("#hour15").innerHTML = `${hour15}:00`;
 
-let nowTime16 = new Date(response.data.hourly[16].dt * 1000);
-let hour17 = nowTime16.getHours();
-    if (hour17 < 10) {
-      hour17 = `0${hour17}`;
-    }
-    document.querySelector("#hour17").innerHTML = `${hour17}:00`;
+  let nowTime15 = new Date(response.data.hourly[15].dt * 1000);
+  let hour16 = nowTime15.getHours();
+  if (hour16 < 10) {
+    hour16 = `0${hour16}`;
+  }
+  document.querySelector("#hour16").innerHTML = `${hour16}:00`;
 
-let nowTime17 = new Date(response.data.hourly[17].dt * 1000);
-let hour18 = nowTime17.getHours();
-    if (hour18 < 10) {
-      hour18 = `0${hour18}`;
-    }
-    document.querySelector("#hour18").innerHTML = `${hour18}:00`; 
+  let nowTime16 = new Date(response.data.hourly[16].dt * 1000);
+  let hour17 = nowTime16.getHours();
+  if (hour17 < 10) {
+    hour17 = `0${hour17}`;
+  }
+  document.querySelector("#hour17").innerHTML = `${hour17}:00`;
 
-let nowTime18 = new Date(response.data.hourly[18].dt * 1000);
-let hour19 = nowTime18.getHours();
+  let nowTime17 = new Date(response.data.hourly[17].dt * 1000);
+  let hour18 = nowTime17.getHours();
+  if (hour18 < 10) {
+    hour18 = `0${hour18}`;
+  }
+  document.querySelector("#hour18").innerHTML = `${hour18}:00`;
+
+  let nowTime18 = new Date(response.data.hourly[18].dt * 1000);
+  let hour19 = nowTime18.getHours();
   if (hour19 < 10) {
     hour19 = `0${hour19}`;
   }
   document.querySelector("#hour19").innerHTML = `${hour19}:00`;
 
-let nowTime19 = new Date(response.data.hourly[19].dt * 1000);
-let hour20 = nowTime19.getHours();
+  let nowTime19 = new Date(response.data.hourly[19].dt * 1000);
+  let hour20 = nowTime19.getHours();
   if (hour20 < 10) {
-  hour20 = `0${hour20}`;
-}
- document.querySelector("#hour20").innerHTML = `${hour20}:00`;
-  
-let nowTime20 = new Date(response.data.hourly[20].dt * 1000);
-let hour21 = nowTime20.getHours();
-if (hour21 < 10) {
-  hour21 = `0${hour21}`;
-}
-document.querySelector("#hour21").innerHTML = `${hour21}:00`;
+    hour20 = `0${hour20}`;
+  }
+  document.querySelector("#hour20").innerHTML = `${hour20}:00`;
 
-let nowTime21 = new Date(response.data.hourly[21].dt * 1000);
-let hour22 = nowTime21.getHours();
-if (hour22 < 10) {
-  hour22 = `0${hour22}`;
-}
-document.querySelector("#hour22").innerHTML = `${hour22}:00`;
+  let nowTime20 = new Date(response.data.hourly[20].dt * 1000);
+  let hour21 = nowTime20.getHours();
+  if (hour21 < 10) {
+    hour21 = `0${hour21}`;
+  }
+  document.querySelector("#hour21").innerHTML = `${hour21}:00`;
 
-let nowTime22 = new Date(response.data.hourly[22].dt * 1000);
-let hour23 = nowTime22.getHours();
-if (hour23 < 10) {
-  hour23 = `0${hour23}`;
-}
-document.querySelector("#hour23").innerHTML = `${hour23}:00`;
+  let nowTime21 = new Date(response.data.hourly[21].dt * 1000);
+  let hour22 = nowTime21.getHours();
+  if (hour22 < 10) {
+    hour22 = `0${hour22}`;
+  }
+  document.querySelector("#hour22").innerHTML = `${hour22}:00`;
 
-let nowTime23 = new Date(response.data.hourly[23].dt * 1000);
-let hour24 = nowTime23.getHours();
-if (hour24 < 10) {
-  hour24 = `0${hour24}`;
-}
-document.querySelector("#hour24").innerHTML = `${hour24}:00`;
+  let nowTime22 = new Date(response.data.hourly[22].dt * 1000);
+  let hour23 = nowTime22.getHours();
+  if (hour23 < 10) {
+    hour23 = `0${hour23}`;
+  }
+  document.querySelector("#hour23").innerHTML = `${hour23}:00`;
 
+  let nowTime23 = new Date(response.data.hourly[23].dt * 1000);
+  let hour24 = nowTime23.getHours();
+  if (hour24 < 10) {
+    hour24 = `0${hour24}`;
+  }
+  document.querySelector("#hour24").innerHTML = `${hour24}:00`;
 }
 
 function searchCityWeatherMultiple(city) {
@@ -299,8 +290,6 @@ function reportCityWeatherMultiple(response) {
   findIcon5(icon5);
   let icon6 = response.data.daily[6].weather[0].icon;
   findIcon6(icon6);
-
-
 }
 let currentClass = "wi-cloud";
 function findIcon(icon) {
@@ -330,27 +319,27 @@ function findIcon(icon) {
 }
 
 let classes1 = "wi-cloud";
-function findIcon1(icon1){
-   const icons = {
-     "01d": "wi-day-sunny",
-     "01n": "wi-day-sunny",
-     "02d": "wi-day-cloudy",
-     "02n": "wi-day-cloudy",
-     "03d": "wi-cloud",
-     "03n": "wi-cloud",
-     "04d": "wi-cloudy",
-     "04n": "wi-cloudy",
-     "09d": "wi-showers",
-     "09n": "wi-showers",
-     "10d": "wi-day-rain",
-     "10n": "wi-day-rain",
-     "11d": "wi-thunderstorm",
-     "11n": "wi-thunderstorm",
-     "13d": "wi-snowflake-cold",
-     "13n": "wi-snowflake-cold",
-     "50d": "wi-fog",
-     "50n": "wi-fog",
-   };
+function findIcon1(icon1) {
+  const icons = {
+    "01d": "wi-day-sunny",
+    "01n": "wi-day-sunny",
+    "02d": "wi-day-cloudy",
+    "02n": "wi-day-cloudy",
+    "03d": "wi-cloud",
+    "03n": "wi-cloud",
+    "04d": "wi-cloudy",
+    "04n": "wi-cloudy",
+    "09d": "wi-showers",
+    "09n": "wi-showers",
+    "10d": "wi-day-rain",
+    "10n": "wi-day-rain",
+    "11d": "wi-thunderstorm",
+    "11n": "wi-thunderstorm",
+    "13d": "wi-snowflake-cold",
+    "13n": "wi-snowflake-cold",
+    "50d": "wi-fog",
+    "50n": "wi-fog",
+  };
   document.getElementById("first-icon").classList.remove("wi", classes1);
   classes1 = icons[icon1] || "wi-cloud";
   document.getElementById("first-icon").classList.add("wi", classes1);
@@ -491,17 +480,16 @@ function findIcon6(icon6) {
   document.getElementById("sixth-icon").classList.add("wi", classes6);
 }
 
-
 function findCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
-
 }
 function findCurrentPositionMultiple(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPositionMultiple);
   let newText = document.querySelector("#current-city");
-  newText.innerHTML ="Wait while we find 📍 If asked: press 'allow'. If not: change settings"; 
+  newText.innerHTML =
+    "Wait while we find 📍 If asked: press 'allow'. If not: change settings";
 }
 
 function showCurrentPositionMultiple(position) {
@@ -550,9 +538,9 @@ function convertCelcius(event) {
   let celcius = Math.round(((temperature - 32) * 5) / 9);
   updateCelcius.innerHTML = `${celcius}`;
   changeDegreeCelcius.classList.add("f-c-change");
-  changeDegreeFahrenheit.classList.remove("f-c-change"); 
+  changeDegreeFahrenheit.classList.remove("f-c-change");
 }
-function findHourlyDegrees(response){
+function findHourlyDegrees(response) {
   let hour1 = Math.round(response.data.hourly[0].temp);
   document.querySelector("#hour1-forecast").innerHTML = `${hour1}`;
 
@@ -622,42 +610,273 @@ function findHourlyDegrees(response){
   let hour23 = Math.round(response.data.hourly[22].temp);
   document.querySelector("#hour23-forecast").innerHTML = `${hour23}`;
 
-    let hour24 = Math.round(response.data.hourly[23].temp);
-    document.querySelector("#hour24-forecast").innerHTML = `${hour24}`;
+  let hour24 = Math.round(response.data.hourly[23].temp);
+  document.querySelector("#hour24-forecast").innerHTML = `${hour24}`;
 }
 
-function findHourlyIcons(response){
+function findHourlyIcons(response) {
   let hourlyIcon1 = response.data.hourly[0].weather[0].icon;
   hourlyIcons1(hourlyIcon1);
+
+  let hourlyIcon2 = response.data.hourly[1].weather[0].icon;
+  hourlyIcons2(hourlyIcon2);
+
+  let hourlyIcon3 = response.data.hourly[2].weather[0].icon;
+  hourlyIcons3(hourlyIcon3);
+
+  let hourlyIcon4 = response.data.hourly[3].weather[0].icon;
+  hourlyIcons4(hourlyIcon4);
+
+  let hourlyIcon5 = response.data.hourly[4].weather[0].icon;
+  hourlyIcons5(hourlyIcon5);
+
+  let hourlyIcon6 = response.data.hourly[5].weather[0].icon;
+  hourlyIcons6(hourlyIcon6);
+
+  let hourlyIcon7 = response.data.hourly[6].weather[0].icon;
+  hourlyIcons7(hourlyIcon7);
+
+  let hourlyIcon8 = response.data.hourly[7].weather[0].icon;
+  hourlyIcons8(hourlyIcon8);
+
+  let hourlyIcon9 = response.data.hourly[8].weather[0].icon;
+  hourlyIcons9(hourlyIcon9);
+
+  let hourlyIcon10 = response.data.hourly[9].weather[0].icon;
+  hourlyIcons10(hourlyIcon10);
+
+  let hourlyIcon11 = response.data.hourly[10].weather[0].icon;
+  hourlyIcons11(hourlyIcon11);
+
+  let hourlyIcon12 = response.data.hourly[11].weather[0].icon;
+  hourlyIcons12(hourlyIcon12);
+
+  let hourlyIcon13 = response.data.hourly[12].weather[0].icon;
+  hourlyIcons13(hourlyIcon13);
+
+  let hourlyIcon14 = response.data.hourly[13].weather[0].icon;
+  hourlyIcons14(hourlyIcon14);
+
+  let hourlyIcon15 = response.data.hourly[14].weather[0].icon;
+  hourlyIcons15(hourlyIcon15);
+
+  let hourlyIcon16 = response.data.hourly[15].weather[0].icon;
+  hourlyIcons16(hourlyIcon16);
+
+  let hourlyIcon17 = response.data.hourly[16].weather[0].icon;
+  hourlyIcons17(hourlyIcon17);
+
+  let hourlyIcon18 = response.data.hourly[17].weather[0].icon;
+  hourlyIcons18(hourlyIcon18);
+
+  let hourlyIcon19 = response.data.hourly[18].weather[0].icon;
+  hourlyIcons19(hourlyIcon19);
+
+  let hourlyIcon20 = response.data.hourly[19].weather[0].icon;
+  hourlyIcons20(hourlyIcon20);
+
+  let hourlyIcon21 = response.data.hourly[20].weather[0].icon;
+  hourlyIcons21(hourlyIcon21);
+
+  let hourlyIcon22 = response.data.hourly[21].weather[0].icon;
+  hourlyIcons22(hourlyIcon22);
+
+  let hourlyIcon23 = response.data.hourly[22].weather[0].icon;
+  hourlyIcons23(hourlyIcon23);
+
+  let hourlyIcon24 = response.data.hourly[23].weather[0].icon;
+  hourlyIcons24(hourlyIcon24);
 }
 
+const icons = {
+  "01d": "wi-day-sunny",
+  "01n": "wi-day-sunny",
+  "02d": "wi-day-cloudy",
+  "02n": "wi-day-cloudy",
+  "03d": "wi-cloud",
+  "03n": "wi-cloud",
+  "04d": "wi-cloudy",
+  "04n": "wi-cloudy",
+  "09d": "wi-showers",
+  "09n": "wi-showers",
+  "10d": "wi-day-rain",
+  "10n": "wi-day-rain",
+  "11d": "wi-thunderstorm",
+  "11n": "wi-thunderstorm",
+  "13d": "wi-snowflake-cold",
+  "13n": "wi-snowflake-cold",
+  "50d": "wi-fog",
+  "50n": "wi-fog",
+};
+
 let spareClass1 = "wi-cloud";
-function hourlyIcons1(hourlyIcon1){
-    const icons = {
-      "01d": "wi-day-sunny",
-      "01n": "wi-day-sunny",
-      "02d": "wi-day-cloudy",
-      "02n": "wi-day-cloudy",
-      "03d": "wi-cloud",
-      "03n": "wi-cloud",
-      "04d": "wi-cloudy",
-      "04n": "wi-cloudy",
-      "09d": "wi-showers",
-      "09n": "wi-showers",
-      "10d": "wi-day-rain",
-      "10n": "wi-day-rain",
-      "11d": "wi-thunderstorm",
-      "11n": "wi-thunderstorm",
-      "13d": "wi-snowflake-cold",
-      "13n": "wi-snowflake-cold",
-      "50d": "wi-fog",
-      "50n": "wi-fog",
-    };
+function hourlyIcons1(hourlyIcon1) {
   document.getElementById("hourly-icon1").classList.remove("wi", spareClass1);
   spareClass1 = icons[hourlyIcon1] || "wi-cloud";
   document.getElementById("hourly-icon1").classList.add("wi", spareClass1);
 }
 
+let spareClass2 = "wi-cloud";
+function hourlyIcons2(hourlyIcon2) {
+  document.getElementById("hourly-icon2").classList.remove("wi", spareClass2);
+  spareClass2 = icons[hourlyIcon2] || "wi-cloud";
+  document.getElementById("hourly-icon2").classList.add("wi", spareClass2);
+}
+
+let spareClass3 = "wi-cloud";
+function hourlyIcons3(hourlyIcon3) {
+  document.getElementById("hourly-icon3").classList.remove("wi", spareClass3);
+  spareClass3 = icons[hourlyIcon3] || "wi-cloud";
+  document.getElementById("hourly-icon3").classList.add("wi", spareClass3);
+}
+
+let spareClass4 = "wi-cloud";
+function hourlyIcons4(hourlyIcon4) {
+  document.getElementById("hourly-icon4").classList.remove("wi", spareClass4);
+  spareClass4 = icons[hourlyIcon4] || "wi-cloud";
+  document.getElementById("hourly-icon4").classList.add("wi", spareClass4);
+}
+
+let spareClass5 = "wi-cloud";
+function hourlyIcons5(hourlyIcon5) {
+  document.getElementById("hourly-icon5").classList.remove("wi", spareClass5);
+  spareClass5 = icons[hourlyIcon5] || "wi-cloud";
+  document.getElementById("hourly-icon5").classList.add("wi", spareClass5);
+}
+
+let spareClass6 = "wi-cloud";
+function hourlyIcons6(hourlyIcon6) {
+  document.getElementById("hourly-icon6").classList.remove("wi", spareClass6);
+  spareClass6 = icons[hourlyIcon6] || "wi-cloud";
+  document.getElementById("hourly-icon6").classList.add("wi", spareClass6);
+}
+
+let spareClass7 = "wi-cloud";
+function hourlyIcons7(hourlyIcon7) {
+
+  document.getElementById("hourly-icon7").classList.remove("wi", spareClass7);
+  spareClass7 = icons[hourlyIcon7] || "wi-cloud";
+  document.getElementById("hourly-icon7").classList.add("wi", spareClass7);
+}
+
+let spareClass8 = "wi-cloud";
+function hourlyIcons8(hourlyIcon8) {
+  document.getElementById("hourly-icon8").classList.remove("wi", spareClass8);
+  spareClass8 = icons[hourlyIcon8] || "wi-cloud";
+  document.getElementById("hourly-icon8").classList.add("wi", spareClass8);
+}
+
+let spareClass9 = "wi-cloud";
+function hourlyIcons9(hourlyIcon9) {
+  document.getElementById("hourly-icon9").classList.remove("wi", spareClass9);
+  spareClass9 = icons[hourlyIcon9] || "wi-cloud";
+  document.getElementById("hourly-icon9").classList.add("wi", spareClass9);
+}
+
+let spareClass10 = "wi-cloud";
+function hourlyIcons10(hourlyIcon10) {
+  document.getElementById("hourly-icon10").classList.remove("wi", spareClass10);
+  spareClass10 = icons[hourlyIcon10] || "wi-cloud";
+  document.getElementById("hourly-icon10").classList.add("wi", spareClass10);
+}
+
+let spareClass11 = "wi-cloud";
+function hourlyIcons11(hourlyIcon11) {
+  document.getElementById("hourly-icon11").classList.remove("wi", spareClass11);
+  spareClass11 = icons[hourlyIcon11] || "wi-cloud";
+  document.getElementById("hourly-icon11").classList.add("wi", spareClass11);
+}
+
+let spareClass12 = "wi-cloud";
+function hourlyIcons12(hourlyIcon12) {
+  document.getElementById("hourly-icon12").classList.remove("wi", spareClass12);
+  spareClass12 = icons[hourlyIcon12] || "wi-cloud";
+  document.getElementById("hourly-icon12").classList.add("wi", spareClass12);
+}
+
+let spareClass13 = "wi-cloud";
+function hourlyIcons13(hourlyIcon13) {
+  document.getElementById("hourly-icon13").classList.remove("wi", spareClass13);
+  spareClass13 = icons[hourlyIcon13] || "wi-cloud";
+  document.getElementById("hourly-icon13").classList.add("wi", spareClass13);
+}
+
+let spareClass14 = "wi-cloud";
+function hourlyIcons14(hourlyIcon14) {
+  document.getElementById("hourly-icon14").classList.remove("wi", spareClass14);
+  spareClass14 = icons[hourlyIcon14] || "wi-cloud";
+  document.getElementById("hourly-icon14").classList.add("wi", spareClass14);
+}
+
+let spareClass15 = "wi-cloud";
+function hourlyIcons15(hourlyIcon15) {
+  document.getElementById("hourly-icon15").classList.remove("wi", spareClass15);
+  spareClass15 = icons[hourlyIcon15] || "wi-cloud";
+  document.getElementById("hourly-icon15").classList.add("wi", spareClass15);
+}
+
+let spareClass16 = "wi-cloud";
+function hourlyIcons16(hourlyIcon16) {
+  document.getElementById("hourly-icon16").classList.remove("wi", spareClass16);
+  spareClass16 = icons[hourlyIcon16] || "wi-cloud";
+  document.getElementById("hourly-icon16").classList.add("wi", spareClass16);
+}
+
+let spareClass17 = "wi-cloud";
+function hourlyIcons17(hourlyIcon17) {
+  document.getElementById("hourly-icon17").classList.remove("wi", spareClass17);
+  spareClass17 = icons[hourlyIcon17] || "wi-cloud";
+  document.getElementById("hourly-icon17").classList.add("wi", spareClass17);
+}
+
+let spareClass18 = "wi-cloud";
+function hourlyIcons18(hourlyIcon18) {
+  document.getElementById("hourly-icon18").classList.remove("wi", spareClass18);
+  spareClass18 = icons[hourlyIcon18] || "wi-cloud";
+  document.getElementById("hourly-icon18").classList.add("wi", spareClass18);
+}
+
+let spareClass19 = "wi-cloud";
+function hourlyIcons19(hourlyIcon19) {
+  document.getElementById("hourly-icon19").classList.remove("wi", spareClass19);
+  spareClass19 = icons[hourlyIcon19] || "wi-cloud";
+  document.getElementById("hourly-icon19").classList.add("wi", spareClass19);
+}
+
+let spareClass20 = "wi-cloud";
+function hourlyIcons20(hourlyIcon20) {
+  document.getElementById("hourly-icon20").classList.remove("wi", spareClass20);
+  spareClass20 = icons[hourlyIcon20] || "wi-cloud";
+  document.getElementById("hourly-icon20").classList.add("wi", spareClass20);
+}
+
+let spareClass21 = "wi-cloud";
+function hourlyIcons21(hourlyIcon21) {
+  document.getElementById("hourly-icon21").classList.remove("wi", spareClass21);
+  spareClass21 = icons[hourlyIcon21] || "wi-cloud";
+  document.getElementById("hourly-icon21").classList.add("wi", spareClass21);
+}
+
+let spareClass22 = "wi-cloud";
+function hourlyIcons22(hourlyIcon22) {
+  document.getElementById("hourly-icon22").classList.remove("wi", spareClass22);
+  spareClass22 = icons[hourlyIcon22] || "wi-cloud";
+  document.getElementById("hourly-icon22").classList.add("wi", spareClass22);
+}
+
+let spareClass23 = "wi-cloud";
+function hourlyIcons23(hourlyIcon23) {
+  document.getElementById("hourly-icon23").classList.remove("wi", spareClass23);
+  spareClass23 = icons[hourlyIcon23] || "wi-cloud";
+  document.getElementById("hourly-icon23").classList.add("wi", spareClass23);
+}
+
+let spareClass24 = "wi-cloud";
+function hourlyIcons24(hourlyIcon24) {
+  document.getElementById("hourly-icon24").classList.remove("wi", spareClass24);
+  spareClass24 = icons[hourlyIcon24] || "wi-cloud";
+  document.getElementById("hourly-icon24").classList.add("wi", spareClass24);
+}
 
 let time = new Date();
 
@@ -678,7 +897,6 @@ function findDate(days) {
   newDate.setDate(newDate.getDate() + days);
   setDayDate = newDate.getDate();
   setDayMonth = months[newDate.getMonth()];
-  
 
   if (days == 2) {
     return (document.querySelector(
@@ -713,7 +931,6 @@ findDate(4);
 findDate(5);
 findDate(6);
 
-
 let isCelcius = true;
 
 let updateTime = document.querySelector("#date-today");
@@ -741,7 +958,6 @@ axios.get(apiUrl).then(reportCityWeatherMultiple);
 axios.get(apiUrl).then(findTimeStamp);
 axios.get(apiUrl).then(findHourlyDegrees);
 axios.get(apiUrl).then(findHourlyIcons);
-
 
 let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
 changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
