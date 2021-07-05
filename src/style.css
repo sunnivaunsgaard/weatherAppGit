@@ -212,7 +212,7 @@ color: rgb(65, 63, 62);
 
 .scrolling-wrapper {
 margin: 4px, 4px;
-padding-left: 5px;;
+padding-left: 5px;
 width: 460px;
 height: 65px;
 overflow-x: scroll;
@@ -222,7 +222,7 @@ white-space: nowrap;
 
  .hourly {
   background-color: rgba(218, 234, 245, 0.466);
-  width: 70px;
+  width: 75px;
   padding: 10px 3px;
   border-radius: 4px;
   font-size: 11px;
@@ -237,6 +237,7 @@ white-space: nowrap;
 #hour22-forecast,#hour23-forecast,#hour24-forecast {
     padding-left:3px;
     line-height: 25px;
+    
 }
 
 #hour1,#hour2, #hour3, #hour4, #hour5, #hour6, #hour7, #hour8, #hour9,#hour10, 
@@ -244,6 +245,7 @@ white-space: nowrap;
 #hour20,#hour21, #hour22,#hour23,#hour24  {
     font-size: 8px;
     padding-left:3px;
+    color:rgba(71, 70, 69, 0.9);
 }
 
 

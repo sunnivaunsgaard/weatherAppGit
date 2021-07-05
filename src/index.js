@@ -240,6 +240,8 @@ function extractPosition(response) {
   let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
   axios.get(apiUrl).then(findTimeStamp);
+  axios.get(apiUrl).then(findHourlyDegrees);
+  axios.get(apiUrl).then(findHourlyIcons);
 }
 
 function reportCityWeather(response) {
@@ -300,7 +302,7 @@ function reportCityWeatherMultiple(response) {
 
 
 }
-
+let currentClass = "wi-cloud";
 function findIcon(icon) {
   const icons = {
     "01d": "wi-day-sunny",
@@ -489,9 +491,6 @@ function findIcon6(icon6) {
   document.getElementById("sixth-icon").classList.add("wi", classes6);
 }
 
-let currentClass = "wi-cloud";
-
-
 
 function findCurrentPosition(event) {
   event.preventDefault();
@@ -513,7 +512,8 @@ function showCurrentPositionMultiple(position) {
   let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
   axios.get(apiUrl).then(findTimeStamp);
-  
+  axios.get(apiUrl).then(findHourlyDegrees);
+  axios.get(apiUrl).then(findHourlyIcons);
 }
 
 function showCurrentPosition(position) {
@@ -551,6 +551,111 @@ function convertCelcius(event) {
   updateCelcius.innerHTML = `${celcius}`;
   changeDegreeCelcius.classList.add("f-c-change");
   changeDegreeFahrenheit.classList.remove("f-c-change"); 
+}
+function findHourlyDegrees(response){
+  let hour1 = Math.round(response.data.hourly[0].temp);
+  document.querySelector("#hour1-forecast").innerHTML = `${hour1}`;
+
+  let hour2 = Math.round(response.data.hourly[1].temp);
+  document.querySelector("#hour2-forecast").innerHTML = `${hour2}`;
+
+  let hour3 = Math.round(response.data.hourly[2].temp);
+  document.querySelector("#hour3-forecast").innerHTML = `${hour3}`;
+
+  let hour4 = Math.round(response.data.hourly[3].temp);
+  document.querySelector("#hour4-forecast").innerHTML = `${hour4}`;
+
+  let hour5 = Math.round(response.data.hourly[4].temp);
+  document.querySelector("#hour5-forecast").innerHTML = `${hour5}`;
+
+  let hour6 = Math.round(response.data.hourly[5].temp);
+  document.querySelector("#hour6-forecast").innerHTML = `${hour6}`;
+
+  let hour7 = Math.round(response.data.hourly[6].temp);
+  document.querySelector("#hour7-forecast").innerHTML = `${hour7}`;
+
+  let hour8 = Math.round(response.data.hourly[7].temp);
+  document.querySelector("#hour8-forecast").innerHTML = `${hour8}`;
+
+  let hour9 = Math.round(response.data.hourly[8].temp);
+  document.querySelector("#hour9-forecast").innerHTML = `${hour9}`;
+
+  let hour10 = Math.round(response.data.hourly[9].temp);
+  document.querySelector("#hour10-forecast").innerHTML = `${hour10}`;
+
+  let hour11 = Math.round(response.data.hourly[11].temp);
+  document.querySelector("#hour11-forecast").innerHTML = `${hour11}`;
+
+  let hour12 = Math.round(response.data.hourly[11].temp);
+  document.querySelector("#hour12-forecast").innerHTML = `${hour12}`;
+
+  let hour13 = Math.round(response.data.hourly[12].temp);
+  document.querySelector("#hour13-forecast").innerHTML = `${hour13}`;
+
+  let hour14 = Math.round(response.data.hourly[13].temp);
+  document.querySelector("#hour14-forecast").innerHTML = `${hour14}`;
+
+  let hour15 = Math.round(response.data.hourly[14].temp);
+  document.querySelector("#hour15-forecast").innerHTML = `${hour15}`;
+
+  let hour16 = Math.round(response.data.hourly[15].temp);
+  document.querySelector("#hour16-forecast").innerHTML = `${hour16}`;
+
+  let hour17 = Math.round(response.data.hourly[16].temp);
+  document.querySelector("#hour17-forecast").innerHTML = `${hour17}`;
+
+  let hour18 = Math.round(response.data.hourly[17].temp);
+  document.querySelector("#hour18-forecast").innerHTML = `${hour18}`;
+
+  let hour19 = Math.round(response.data.hourly[18].temp);
+  document.querySelector("#hour19-forecast").innerHTML = `${hour19}`;
+
+  let hour20 = Math.round(response.data.hourly[19].temp);
+  document.querySelector("#hour20-forecast").innerHTML = `${hour20}`;
+
+  let hour21 = Math.round(response.data.hourly[20].temp);
+  document.querySelector("#hour21-forecast").innerHTML = `${hour21}`;
+
+  let hour22 = Math.round(response.data.hourly[21].temp);
+  document.querySelector("#hour22-forecast").innerHTML = `${hour22}`;
+
+  let hour23 = Math.round(response.data.hourly[22].temp);
+  document.querySelector("#hour23-forecast").innerHTML = `${hour23}`;
+
+    let hour24 = Math.round(response.data.hourly[23].temp);
+    document.querySelector("#hour24-forecast").innerHTML = `${hour24}`;
+}
+
+function findHourlyIcons(response){
+  let hourlyIcon1 = response.data.hourly[0].weather[0].icon;
+  hourlyIcons1(hourlyIcon1);
+}
+
+let spareClass1 = "wi-cloud";
+function hourlyIcons1(hourlyIcon1){
+    const icons = {
+      "01d": "wi-day-sunny",
+      "01n": "wi-day-sunny",
+      "02d": "wi-day-cloudy",
+      "02n": "wi-day-cloudy",
+      "03d": "wi-cloud",
+      "03n": "wi-cloud",
+      "04d": "wi-cloudy",
+      "04n": "wi-cloudy",
+      "09d": "wi-showers",
+      "09n": "wi-showers",
+      "10d": "wi-day-rain",
+      "10n": "wi-day-rain",
+      "11d": "wi-thunderstorm",
+      "11n": "wi-thunderstorm",
+      "13d": "wi-snowflake-cold",
+      "13n": "wi-snowflake-cold",
+      "50d": "wi-fog",
+      "50n": "wi-fog",
+    };
+  document.getElementById("hourly-icon1").classList.remove("wi", spareClass1);
+  spareClass1 = icons[hourlyIcon1] || "wi-cloud";
+  document.getElementById("hourly-icon1").classList.add("wi", spareClass1);
 }
 
 
@@ -627,7 +732,6 @@ let currentLocationCityMultiple = document.querySelector("#current-location");
 currentLocationCity.addEventListener("click", findCurrentPositionMultiple);
 
 searchCityWeather("Trondheim");
-
 let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
 let currentLat = `lat=63.4305`;
 let currentLon = `&lon=10.3951`;
@@ -635,6 +739,9 @@ let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
 let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(reportCityWeatherMultiple);
 axios.get(apiUrl).then(findTimeStamp);
+axios.get(apiUrl).then(findHourlyDegrees);
+axios.get(apiUrl).then(findHourlyIcons);
+
 
 let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
 changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
