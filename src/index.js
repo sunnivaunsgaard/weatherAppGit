@@ -1,12 +1,12 @@
 function dateToday(date) {
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri",
+    "Sat",
   ];
   let day = days[date.getDay()];
   let hour = date.getHours();
@@ -28,8 +28,8 @@ function findTimeStamp(response) {
     }
     document.querySelector("#hour1").innerHTML = `${hour1}:00`;
 
-      let nowTime1 = new Date(response.data.hourly[1].dt * 1000);
-      let hour2 = nowTime1.getHours();
+let nowTime1 = new Date(response.data.hourly[1].dt * 1000);
+let hour2 = nowTime1.getHours();
       if (hour2 < 10) {
         hour2= `0${hour2}`;
       }
@@ -54,7 +54,7 @@ function findTimeStamp(response) {
   if (hour5 < 10) {
     hour5 = `0${hour5}`;
   }
-  document.querySelector("#hour5").innerHTML = `${hour4}:00`;
+  document.querySelector("#hour5").innerHTML = `${hour5}:00`;
   
   let nowTime5 = new Date(response.data.hourly[5].dt * 1000);
   let hour6 = nowTime5.getHours();
@@ -83,8 +83,112 @@ function findTimeStamp(response) {
     hour9 = `0${hour9}`;
   }
   document.querySelector("#hour9").innerHTML = `${hour9}:00`;
+
+  let nowTime9 = new Date(response.data.hourly[9].dt * 1000);
+    let hour10 = nowTime9.getHours();
+    if (hour10 < 10) {
+      hour10 = `0${hour10}`;
+    }
+    document.querySelector("#hour10").innerHTML = `${hour10}:00`;
+
+  let nowTime10 = new Date(response.data.hourly[10].dt * 1000);
+  let hour11 = nowTime10.getHours();
+  if (hour11 < 10) {
+    hour11 = `0${hour11}`;
+  }
+  document.querySelector("#hour11").innerHTML = `${hour11}:00`;
+
+let nowTime11 = new Date(response.data.hourly[11].dt * 1000);
+let hour12 = nowTime11.getHours();
+    if (hour12 < 10) {
+      hour12 = `0${hour12}`;
+    }
+    document.querySelector("#hour12").innerHTML = `${hour12}:00`;
+
+let nowTime12 = new Date(response.data.hourly[12].dt * 1000);
+let hour13 = nowTime12.getHours();
+    if (hour13 < 10) {
+      hour13 = `0${hour13}`;
+    }
+    document.querySelector("#hour13").innerHTML = `${hour13}:00`;
   
+let nowTime13 = new Date(response.data.hourly[13].dt * 1000);
+let hour14 = nowTime13.getHours();
+    if (hour14 < 10) {
+      hour14 = `0${hour14}`;
+    }
+    document.querySelector("#hour14").innerHTML = `${hour14}:00`;
+
+let nowTime14 = new Date(response.data.hourly[14].dt * 1000);
+let hour15 = nowTime14.getHours();
+    if (hour15 < 10) {
+      hour15 = `0${hour15}`;
+    }
+    document.querySelector("#hour15").innerHTML = `${hour15}:00`;
+
+let nowTime15 = new Date(response.data.hourly[15].dt * 1000);
+let hour16 = nowTime15.getHours();
+    if (hour16 < 10) {
+      hour16 = `0${hour16}`;
+    }
+    document.querySelector("#hour16").innerHTML = `${hour16}:00`;
+
+let nowTime16 = new Date(response.data.hourly[16].dt * 1000);
+let hour17 = nowTime16.getHours();
+    if (hour17 < 10) {
+      hour17 = `0${hour17}`;
+    }
+    document.querySelector("#hour17").innerHTML = `${hour17}:00`;
+
+let nowTime17 = new Date(response.data.hourly[17].dt * 1000);
+let hour18 = nowTime17.getHours();
+    if (hour18 < 10) {
+      hour18 = `0${hour18}`;
+    }
+    document.querySelector("#hour18").innerHTML = `${hour18}:00`; 
+
+let nowTime18 = new Date(response.data.hourly[18].dt * 1000);
+let hour19 = nowTime18.getHours();
+  if (hour19 < 10) {
+    hour19 = `0${hour19}`;
+  }
+  document.querySelector("#hour19").innerHTML = `${hour19}:00`;
+
+let nowTime19 = new Date(response.data.hourly[19].dt * 1000);
+let hour20 = nowTime19.getHours();
+  if (hour20 < 10) {
+  hour20 = `0${hour20}`;
+}
+ document.querySelector("#hour20").innerHTML = `${hour20}:00`;
   
+let nowTime20 = new Date(response.data.hourly[20].dt * 1000);
+let hour21 = nowTime20.getHours();
+if (hour21 < 10) {
+  hour21 = `0${hour21}`;
+}
+document.querySelector("#hour21").innerHTML = `${hour21}:00`;
+
+let nowTime21 = new Date(response.data.hourly[21].dt * 1000);
+let hour22 = nowTime21.getHours();
+if (hour22 < 10) {
+  hour22 = `0${hour22}`;
+}
+document.querySelector("#hour22").innerHTML = `${hour22}:00`;
+
+let nowTime22 = new Date(response.data.hourly[22].dt * 1000);
+let hour23 = nowTime22.getHours();
+if (hour23 < 10) {
+  hour23 = `0${hour23}`;
+}
+document.querySelector("#hour23").innerHTML = `${hour23}:00`;
+
+let nowTime23 = new Date(response.data.hourly[23].dt * 1000);
+let hour24 = nowTime23.getHours();
+if (hour24 < 10) {
+  hour24 = `0${hour24}`;
+}
+document.querySelector("#hour24").innerHTML = `${hour24}:00`;
+
 }
 
 function searchCityWeatherMultiple(city) {
