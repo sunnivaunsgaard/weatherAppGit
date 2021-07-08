@@ -238,12 +238,12 @@ function extractPosition(response) {
 function reportCityWeather(response) {
   document.querySelector("#current-city").innerHTML =
     response.data.name.toUpperCase();
-  document.querySelector("#degrees-city").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#percieved").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
+  document.querySelector("#degrees-city").innerHTML = Math.round(response.data.main.temp);
+ let tempMax = Math.round(response.data.main.temp_max);
+ let tempMin = Math.round(response.data.main.temp_min);
+  document.querySelector("#max").innerHTML = `${tempMax} `;
+  document.querySelector("#min").innerHTML = ` ${tempMin} `;
+  document.querySelector("#percieved").innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
@@ -258,25 +258,20 @@ function reportCityWeather(response) {
   findIcon(icon);
 }
 
+
 function reportCityWeatherMultiple(response) {
-  document.querySelector("#tomorrow-temperature").innerHTML = Math.round(
-    response.data.daily[1].temp.day
-  );
-  document.querySelector("#second-day-temperature").innerHTML = Math.round(
-    response.data.daily[2].temp.day
-  );
-  document.querySelector("#third-day-temperature").innerHTML = Math.round(
-    response.data.daily[3].temp.day
-  );
-  document.querySelector("#fourth-day-temperature").innerHTML = Math.round(
-    response.data.daily[4].temp.day
-  );
-  document.querySelector("#fifth-day-temperature").innerHTML = Math.round(
-    response.data.daily[5].temp.day
-  );
-  document.querySelector("#sixth-day-temperature").innerHTML = Math.round(
-    response.data.daily[6].temp.day
-  );
+  celciusTomorrow = response.data.daily[1].temp.day;
+  document.querySelector("#tomorrow-temperature").innerHTML = ` ${Math.round(celciusTomorrow)} °C`;
+  celciusDay2 = response.data.daily[2].temp.day;
+  document.querySelector("#second-day-temperature").innerHTML = ` ${Math.round(celciusDay2)} °C`;
+  celciusDay3 = response.data.daily[3].temp.day;
+  document.querySelector("#third-day-temperature").innerHTML = ` ${Math.round(celciusDay3)} °C`; 
+  celciusDay4 = response.data.daily[4].temp.day;
+  document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(celciusDay4)} °C`;
+ celciusDay5 = response.data.daily[5].temp.day;
+  document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(celciusDay5)} °C`;
+  celciusDay6 = response.data.daily[6].temp.day;
+  document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(celciusDay6)} °C`;
 
   let icon1 = response.data.daily[1].weather[0].icon;
   findIcon1(icon1);
@@ -291,28 +286,10 @@ function reportCityWeatherMultiple(response) {
   let icon6 = response.data.daily[6].weather[0].icon;
   findIcon6(icon6);
 }
+
 let currentClass = "wi-cloud";
 function findIcon(icon) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
+
   document.getElementById("main-icon").classList.remove("wi", currentClass);
   currentClass = icons[icon] || "wi-cloud";
   document.getElementById("main-icon").classList.add("wi", currentClass);
@@ -320,26 +297,6 @@ function findIcon(icon) {
 
 let classes1 = "wi-cloud";
 function findIcon1(icon1) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
   document.getElementById("first-icon").classList.remove("wi", classes1);
   classes1 = icons[icon1] || "wi-cloud";
   document.getElementById("first-icon").classList.add("wi", classes1);
@@ -347,26 +304,6 @@ function findIcon1(icon1) {
 
 let classes2 = "wi-cloud";
 function findIcon2(icon2) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
   document.getElementById("second-icon").classList.remove("wi", classes2);
   classes2 = icons[icon2] || "wi-cloud";
   document.getElementById("second-icon").classList.add("wi", classes2);
@@ -374,26 +311,6 @@ function findIcon2(icon2) {
 
 let classes3 = "wi-cloud";
 function findIcon3(icon3) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
   document.getElementById("third-icon").classList.remove("wi", classes3);
   classes3 = icons[icon3] || "wi-cloud";
   document.getElementById("third-icon").classList.add("wi", classes3);
@@ -401,26 +318,6 @@ function findIcon3(icon3) {
 
 let classes4 = "wi-cloud";
 function findIcon4(icon4) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
   document.getElementById("fourth-icon").classList.remove("wi", classes4);
   classes4 = icons[icon4] || "wi-cloud";
   document.getElementById("fourth-icon").classList.add("wi", classes4);
@@ -428,26 +325,7 @@ function findIcon4(icon4) {
 
 let classes5 = "wi-cloud";
 function findIcon5(icon5) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
+
   document.getElementById("fifth-icon").classList.remove("wi", classes5);
   classes5 = icons[icon5] || "wi-cloud";
   document.getElementById("fifth-icon").classList.add("wi", classes5);
@@ -455,26 +333,6 @@ function findIcon5(icon5) {
 
 let classes6 = "wi-cloud";
 function findIcon6(icon6) {
-  const icons = {
-    "01d": "wi-day-sunny",
-    "01n": "wi-day-sunny",
-    "02d": "wi-day-cloudy",
-    "02n": "wi-day-cloudy",
-    "03d": "wi-cloud",
-    "03n": "wi-cloud",
-    "04d": "wi-cloudy",
-    "04n": "wi-cloudy",
-    "09d": "wi-showers",
-    "09n": "wi-showers",
-    "10d": "wi-day-rain",
-    "10n": "wi-day-rain",
-    "11d": "wi-thunderstorm",
-    "11n": "wi-thunderstorm",
-    "13d": "wi-snowflake-cold",
-    "13n": "wi-snowflake-cold",
-    "50d": "wi-fog",
-    "50n": "wi-fog",
-  };
   document.getElementById("sixth-icon").classList.remove("wi", classes6);
   classes6 = icons[icon6] || "wi-cloud";
   document.getElementById("sixth-icon").classList.add("wi", classes6);
@@ -527,6 +385,19 @@ function convertFahrenheit(event) {
   updateFahrenheit.innerHTML = `${fahrenheit}`;
   changeDegreeFahrenheit.classList.add("f-c-change");
   changeDegreeCelcius.classList.remove("f-c-change");
+
+  let maximum= document.querySelector("#max");
+  let temperatureMax = maximum.innerHTML
+  temperatureMax = Number(temperatureMax);
+  let fahrenheitMax = Math.round(temperatureMax * 1.8 + 32);
+  let minimum = document.querySelector("#min");
+  let temperatureMin = minimum.innerHTML;
+  temperatureMin = Number(temperatureMin);
+  let fahrenheitMin = Math.round(temperatureMin * 1.8 + 32);
+  maximum.innerHTML = `${fahrenheitMax} `;
+  minimum.innerHTML = `${fahrenheitMin} `;
+
+
 }
 
 function convertCelcius(event) {
@@ -541,79 +412,90 @@ function convertCelcius(event) {
   updateCelcius.innerHTML = `${celcius}`;
   changeDegreeCelcius.classList.add("f-c-change");
   changeDegreeFahrenheit.classList.remove("f-c-change");
+
+    let maximum = document.querySelector("#max");
+    let temperatureMax = maximum.innerHTML;
+    temperatureMax = Number(temperatureMax);
+    let celciusMax = Math.round(((temperatureMax - 32) * 5) / 9);
+    let minimum = document.querySelector("#min");
+    let temperatureMin = minimum.innerHTML;
+    temperatureMin = Number(temperatureMin);
+    let celciusMin = Math.round(((temperatureMin - 32) * 5) / 9);
+    maximum.innerHTML = `${celciusMax} `;
+    minimum.innerHTML = `${celciusMin} `;
 }
 function findHourlyDegrees(response) {
   let hour1 = Math.round(response.data.hourly[0].temp);
-  document.querySelector("#hour1-forecast").innerHTML = `${hour1}`;
+  document.querySelector("#hour1-forecast").innerHTML = `${hour1} °C`;
 
   let hour2 = Math.round(response.data.hourly[1].temp);
-  document.querySelector("#hour2-forecast").innerHTML = `${hour2}`;
+  document.querySelector("#hour2-forecast").innerHTML = `${hour2} °C`;
 
   let hour3 = Math.round(response.data.hourly[2].temp);
-  document.querySelector("#hour3-forecast").innerHTML = `${hour3}`;
+  document.querySelector("#hour3-forecast").innerHTML = `${hour3} °C`;
 
   let hour4 = Math.round(response.data.hourly[3].temp);
-  document.querySelector("#hour4-forecast").innerHTML = `${hour4}`;
+  document.querySelector("#hour4-forecast").innerHTML = `${hour4} °C`;
 
   let hour5 = Math.round(response.data.hourly[4].temp);
-  document.querySelector("#hour5-forecast").innerHTML = `${hour5}`;
+  document.querySelector("#hour5-forecast").innerHTML = `${hour5} °C`;
 
   let hour6 = Math.round(response.data.hourly[5].temp);
-  document.querySelector("#hour6-forecast").innerHTML = `${hour6}`;
+  document.querySelector("#hour6-forecast").innerHTML = `${hour6} °C`;
 
   let hour7 = Math.round(response.data.hourly[6].temp);
-  document.querySelector("#hour7-forecast").innerHTML = `${hour7}`;
+  document.querySelector("#hour7-forecast").innerHTML = `${hour7} °C`;
 
   let hour8 = Math.round(response.data.hourly[7].temp);
-  document.querySelector("#hour8-forecast").innerHTML = `${hour8}`;
+  document.querySelector("#hour8-forecast").innerHTML = `${hour8} °C`;
 
   let hour9 = Math.round(response.data.hourly[8].temp);
-  document.querySelector("#hour9-forecast").innerHTML = `${hour9}`;
+  document.querySelector("#hour9-forecast").innerHTML = `${hour9} °C`;
 
   let hour10 = Math.round(response.data.hourly[9].temp);
-  document.querySelector("#hour10-forecast").innerHTML = `${hour10}`;
+  document.querySelector("#hour10-forecast").innerHTML = `${hour10} °C`;
 
   let hour11 = Math.round(response.data.hourly[11].temp);
-  document.querySelector("#hour11-forecast").innerHTML = `${hour11}`;
+  document.querySelector("#hour11-forecast").innerHTML = `${hour11} °C`;
 
   let hour12 = Math.round(response.data.hourly[11].temp);
-  document.querySelector("#hour12-forecast").innerHTML = `${hour12}`;
+  document.querySelector("#hour12-forecast").innerHTML = `${hour12} °C`;
 
   let hour13 = Math.round(response.data.hourly[12].temp);
-  document.querySelector("#hour13-forecast").innerHTML = `${hour13}`;
+  document.querySelector("#hour13-forecast").innerHTML = `${hour13} °C`;
 
   let hour14 = Math.round(response.data.hourly[13].temp);
-  document.querySelector("#hour14-forecast").innerHTML = `${hour14}`;
+  document.querySelector("#hour14-forecast").innerHTML = `${hour14} °C`;
 
   let hour15 = Math.round(response.data.hourly[14].temp);
-  document.querySelector("#hour15-forecast").innerHTML = `${hour15}`;
+  document.querySelector("#hour15-forecast").innerHTML = `${hour15} °C`;
 
   let hour16 = Math.round(response.data.hourly[15].temp);
-  document.querySelector("#hour16-forecast").innerHTML = `${hour16}`;
+  document.querySelector("#hour16-forecast").innerHTML = `${hour16} °C`;
 
   let hour17 = Math.round(response.data.hourly[16].temp);
-  document.querySelector("#hour17-forecast").innerHTML = `${hour17}`;
+  document.querySelector("#hour17-forecast").innerHTML = `${hour17} °C`;
 
   let hour18 = Math.round(response.data.hourly[17].temp);
-  document.querySelector("#hour18-forecast").innerHTML = `${hour18}`;
+  document.querySelector("#hour18-forecast").innerHTML = `${hour18} °C`;
 
   let hour19 = Math.round(response.data.hourly[18].temp);
-  document.querySelector("#hour19-forecast").innerHTML = `${hour19}`;
+  document.querySelector("#hour19-forecast").innerHTML = `${hour19} °C`;
 
   let hour20 = Math.round(response.data.hourly[19].temp);
-  document.querySelector("#hour20-forecast").innerHTML = `${hour20}`;
+  document.querySelector("#hour20-forecast").innerHTML = `${hour20} °C`;
 
   let hour21 = Math.round(response.data.hourly[20].temp);
-  document.querySelector("#hour21-forecast").innerHTML = `${hour21}`;
+  document.querySelector("#hour21-forecast").innerHTML = `${hour21} °C`;
 
   let hour22 = Math.round(response.data.hourly[21].temp);
-  document.querySelector("#hour22-forecast").innerHTML = `${hour22}`;
+  document.querySelector("#hour22-forecast").innerHTML = `${hour22} °C`;
 
   let hour23 = Math.round(response.data.hourly[22].temp);
-  document.querySelector("#hour23-forecast").innerHTML = `${hour23}`;
+  document.querySelector("#hour23-forecast").innerHTML = `${hour23} °C`;
 
   let hour24 = Math.round(response.data.hourly[23].temp);
-  document.querySelector("#hour24-forecast").innerHTML = `${hour24}`;
+  document.querySelector("#hour24-forecast").innerHTML = `${hour24} °C`;
 }
 
 function findHourlyIcons(response) {
@@ -689,27 +571,6 @@ function findHourlyIcons(response) {
   let hourlyIcon24 = response.data.hourly[23].weather[0].icon;
   hourlyIcons24(hourlyIcon24);
 }
-
-const icons = {
-  "01d": "wi-day-sunny",
-  "01n": "wi-day-sunny",
-  "02d": "wi-day-cloudy",
-  "02n": "wi-day-cloudy",
-  "03d": "wi-cloud",
-  "03n": "wi-cloud",
-  "04d": "wi-cloudy",
-  "04n": "wi-cloudy",
-  "09d": "wi-showers",
-  "09n": "wi-showers",
-  "10d": "wi-day-rain",
-  "10n": "wi-day-rain",
-  "11d": "wi-thunderstorm",
-  "11n": "wi-thunderstorm",
-  "13d": "wi-snowflake-cold",
-  "13n": "wi-snowflake-cold",
-  "50d": "wi-fog",
-  "50n": "wi-fog",
-};
 
 let spareClass1 = "wi-cloud";
 function hourlyIcons1(hourlyIcon1) {
@@ -973,3 +834,31 @@ let suggestedCityTwo = document.querySelector("#second-city");
 suggestedCityTwo.addEventListener("click", handleCityTwo);
 let suggestedCityThree = document.querySelector("#third-city");
 suggestedCityThree.addEventListener("click", handleCityThree);
+
+let celciusTomorrow = null; 
+let celciusDay2 = null;
+let celciusDay3 = null;
+let celciusDay4 = null;
+let celciusDay5 = null;
+let celciusDay6 = null;
+
+const icons = {
+  "01d": "wi-day-sunny",
+  "01n": "wi-day-sunny",
+  "02d": "wi-day-cloudy",
+  "02n": "wi-day-cloudy",
+  "03d": "wi-cloud",
+  "03n": "wi-cloud",
+  "04d": "wi-cloudy",
+  "04n": "wi-cloudy",
+  "09d": "wi-showers",
+  "09n": "wi-showers",
+  "10d": "wi-day-rain",
+  "10n": "wi-day-rain",
+  "11d": "wi-thunderstorm",
+  "11n": "wi-thunderstorm",
+  "13d": "wi-snowflake-cold",
+  "13n": "wi-snowflake-cold",
+  "50d": "wi-fog",
+  "50n": "wi-fog",
+};
