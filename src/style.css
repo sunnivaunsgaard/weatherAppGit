@@ -90,8 +90,8 @@ border-radius:30px;
 }
 
 .button-aurora {
-    font-size: 8px;
-    padding:5px;
+    font-size: 9px;
+    padding:10px;
     border-radius: 15px;
     border:none;
     background: radial-gradient(circle, rgba(9,223,66,0.1) 26%, rgba(30,241,249,0.2) 76%);
@@ -101,14 +101,14 @@ border-radius:30px;
 .aurora-spacing {
     position: relative;
     bottom: 35px;
-    left: 15px;
+    left: 40px;
 }
 .back-card {
     background-color:rgba(175, 180, 189, 0.2);
     padding: 10px;
     padding-top: 20px;
-    min-width: 700px;
-    max-width: 700px;
+    min-width: 720px;
+    max-width: 720px;
     max-height: 550px;
     min-height: 550px;
     display: block;
