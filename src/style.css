@@ -19,6 +19,11 @@ h1 {
 a {
     text-decoration: none;
 }
+.total-spacing {
+    display:block;
+    margin: 0 auto;
+    max-width: 900px;
+}
 
 .first-line{
   display: flex;
@@ -176,27 +181,28 @@ color: rgb(65, 63, 62);
     padding-left: 10px;
 }
 
+
 .time {
-    position: relative;
-    bottom: 2px;
+font-size: 12px;
+
 }
 .extra-description {
     font-weight: lighter;
     text-align: right;
-    font-size: 10px;
-    position: relative;
-    top: 9px;
 }
 
+#date-today {
+    font-size: 12px;
+ 
+}
 .extra-value {
     font-weight: lighter;
-    font-size: 10px;
-    margin-top: 5px;;
+    font-size: 12px;
 }
 
 .apparent-description {
-    font-size: 10px;
-    padding-top: 5px;
+    font-size: 12px;
+    margin-top: 10px;
     font-weight: lighter;
     line-height: 20px;
 }
@@ -222,7 +228,7 @@ white-space: nowrap;
  }
 
  .hourly {
-  background-color: rgba(218, 234, 245, 0.466);
+  background-color: rgba(218, 234, 245, 0.366);
   width: 85px;
   padding: 10px 3px;
   border-radius: 4px;
@@ -269,6 +275,15 @@ white-space: nowrap;
   margin:none;
   margin: 40px 0px 10px 0px;
 }
+
+.scroll-bar {  
+  width: 100px;
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
 
 .box1, .box2, .box3, .box4, .box5, .box6 {
   border: 1px solid rgba(123, 231, 250, 0.534);
