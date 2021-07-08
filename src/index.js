@@ -264,16 +264,84 @@ function reportCityWeather(response) {
 function reportCityWeatherMultiple(response) {
   celciusTomorrow = response.data.daily[1].temp.day;
   document.querySelector("#tomorrow-temperature").innerHTML = ` ${Math.round(celciusTomorrow)} °`;
+  celciusMoreInfo1Max = Math.round(response.data.daily[1].temp.max);
+  document.querySelector("#info1-max").innerHTML = `${celciusMoreInfo1Max} °`;
+  celciusMoreInfo1Min = Math.round(response.data.daily[1].temp.min);
+  document.querySelector("#info1-min").innerHTML = `${celciusMoreInfo1Min} °`;
+  celciusMoreInfo1Percieved = Math.round(response.data.daily[1].feels_like.day);
+  document.querySelector("#info1-percieved").innerHTML = `${celciusMoreInfo1Percieved} °`;
+  humidityTomorrow = response.data.daily[1].humidity; 
+  document.querySelector("#info1-humidity").innerHTML = ` ${humidityTomorrow}`;
+  windTomorrow = response.data.daily[1].wind_speed;
+  document.querySelector("#info1-wind").innerHTML = ` ${windTomorrow}`;
+
+
   celciusDay2 = response.data.daily[2].temp.day;
   document.querySelector("#second-day-temperature").innerHTML = ` ${Math.round(celciusDay2)} °`;
+  celciusMoreInfo2Max = Math.round(response.data.daily[2].temp.max);
+  document.querySelector("#info2-max").innerHTML = `${celciusMoreInfo2Max} °`;
+  celciusMoreInfo2Min = Math.round(response.data.daily[2].temp.min);
+  document.querySelector("#info2-min").innerHTML = `${celciusMoreInfo2Min} °`;
+  celciusMoreInfo2Percieved = Math.round(response.data.daily[2].feels_like.day);
+  document.querySelector("#info2-percieved").innerHTML = `${celciusMoreInfo2Percieved} °`;
+  humidityDay2 = response.data.daily[2].humidity;
+  document.querySelector("#info2-humidity").innerHTML = ` ${humidityDay2}`;
+  windDay2 = response.data.daily[2].wind_speed;
+  document.querySelector("#info2-wind").innerHTML = ` ${windDay2}`;
+
+
   celciusDay3 = response.data.daily[3].temp.day;
   document.querySelector("#third-day-temperature").innerHTML = ` ${Math.round(celciusDay3)} °`; 
+  celciusMoreInfo3Max = Math.round(response.data.daily[3].temp.max);
+  document.querySelector("#info3-max").innerHTML = `${celciusMoreInfo3Max} °`;
+  celciusMoreInfo3Min = Math.round(response.data.daily[3].temp.min);
+  document.querySelector("#info3-min").innerHTML = `${celciusMoreInfo3Min} °`;
+  celciusMoreInfo3Percieved = Math.round(response.data.daily[3].feels_like.day);
+  document.querySelector("#info3-percieved").innerHTML = `${celciusMoreInfo3Percieved} °`;
+  humidityDay3 = response.data.daily[3].humidity;
+  document.querySelector("#info3-humidity").innerHTML = ` ${humidityDay3}`;
+  windDay3 = response.data.daily[3].wind_speed;
+  document.querySelector("#info3-wind").innerHTML = ` ${windDay3}`;
+
+
   celciusDay4 = response.data.daily[4].temp.day;
   document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(celciusDay4)} °`;
+  celciusMoreInfo4Max = Math.round(response.data.daily[4].temp.max);
+  document.querySelector("#info4-max").innerHTML = `${celciusMoreInfo4Max} °`;
+  celciusMoreInfo4Min = Math.round(response.data.daily[4].temp.min);
+  document.querySelector("#info4-min").innerHTML = `${celciusMoreInfo4Min} °`;
+  celciusMoreInfo4Percieved = Math.round(response.data.daily[4].feels_like.day);
+  document.querySelector("#info4-percieved").innerHTML = `${celciusMoreInfo4Percieved} °`;
+  humidityDay4 = response.data.daily[4].humidity;
+  document.querySelector("#info4-humidity").innerHTML = ` ${humidityDay4}`;
+  windDay4 = response.data.daily[4].wind_speed;
+  document.querySelector("#info4-wind").innerHTML = ` ${windDay4}`;
+  
  celciusDay5 = response.data.daily[5].temp.day;
   document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(celciusDay5)} °`;
+  celciusMoreInfo5Max = Math.round(response.data.daily[5].temp.max);
+  document.querySelector("#info5-max").innerHTML = `${celciusMoreInfo5Max} °`;
+  celciusMoreInfo5Min = Math.round(response.data.daily[5].temp.min);
+  document.querySelector("#info5-min").innerHTML = `${celciusMoreInfo5Min} °`;
+  celciusMoreInfo5Percieved = Math.round(response.data.daily[5].feels_like.day);
+  document.querySelector("#info5-percieved").innerHTML = `${celciusMoreInfo5Percieved} °`;
+  humidityDay5 = response.data.daily[5].humidity;
+  document.querySelector("#info5-humidity").innerHTML = ` ${humidityDay5}`;
+  windDay5 = response.data.daily[5].wind_speed;
+  document.querySelector("#info5-wind").innerHTML = ` ${windDay5}`;
+
   celciusDay6 = response.data.daily[6].temp.day;
   document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(celciusDay6)} °`;
+  celciusMoreInfo6Max = Math.round(response.data.daily[6].temp.max);
+  document.querySelector("#info6-max").innerHTML = `${celciusMoreInfo6Max} °`;
+  celciusMoreInfo6Min = Math.round(response.data.daily[6].temp.min);
+  document.querySelector("#info6-min").innerHTML = `${celciusMoreInfo6Min} °`;
+  celciusMoreInfo6Percieved = Math.round(response.data.daily[6].feels_like.day);
+  document.querySelector("#info6-percieved").innerHTML = `${celciusMoreInfo6Percieved} °`;
+  humidityDay6 = response.data.daily[6].humidity;
+  document.querySelector("#info6-humidity").innerHTML = ` ${humidityDay6}`;
+  windDay6 = response.data.daily[6].wind_speed;
+  document.querySelector("#info6-wind").innerHTML = ` ${windDay6}`; 
 
   let icon1 = response.data.daily[1].weather[0].icon;
   findIcon1(icon1);
@@ -872,6 +940,25 @@ let celciusDay3 = null;
 let celciusDay4 = null;
 let celciusDay5 = null;
 let celciusDay6 = null;
+
+let celciusMoreInfo1Max = null;
+let celciusMoreInfo1Min = null;
+let celciusMoreInfo1Percieved = null;
+let celciusMoreInfo2Max = null;
+let celciusMoreInfo2Min = null;
+let celciusMoreInfo2Percieved = null;
+let celciusMoreInfo3Max = null;
+let celciusMoreInfo3Min = null;
+let celciusMoreInfo3Percieved = null;
+let celciusMoreInfo4Max = null;
+let celciusMoreInfo4Min = null;
+let celciusMoreInfo4Percieved = null;
+let celciusMoreInfo5Max = null;
+let celciusMoreInfo5Min = null;
+let celciusMoreInfo5Percieved = null;
+let celciusMoreInfo6Max = null;
+let celciusMoreInfo6Min = null;
+let celciusMoreInfo6Percieved = null;
 
 
 const icons = {
