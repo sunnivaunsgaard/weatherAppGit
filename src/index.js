@@ -235,6 +235,7 @@ function extractPosition(response) {
   axios.get(apiUrl).then(findHourlyIcons);
 }
 
+
 function reportCityWeather(response) {
   document.querySelector("#current-city").innerHTML =
     response.data.name.toUpperCase();
@@ -243,7 +244,8 @@ function reportCityWeather(response) {
  let tempMin = Math.round(response.data.main.temp_min);
   document.querySelector("#max").innerHTML = `${tempMax} `;
   document.querySelector("#min").innerHTML = ` ${tempMin} `;
-  document.querySelector("#percieved").innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
+  percievedTemperature = Math.round(response.data.main.feels_like);
+  document.querySelector("#percieved").innerHTML = `${percievedTemperature}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
@@ -397,6 +399,7 @@ function convertFahrenheit(event) {
   maximum.innerHTML = `${fahrenheitMax} `;
   minimum.innerHTML = `${fahrenheitMin} `;
 
+  document.querySelector("#percieved").innerHTML= Math.round(percievedTemperature * 1.8 +32);
 
 }
 
@@ -423,6 +426,8 @@ function convertCelcius(event) {
     let celciusMin = Math.round(((temperatureMin - 32) * 5) / 9);
     maximum.innerHTML = `${celciusMax} `;
     minimum.innerHTML = `${celciusMin} `;
+
+   document.querySelector("#percieved").innerHTML = percievedTemperature; 
 }
 function findHourlyDegrees(response) {
   let hour1 = Math.round(response.data.hourly[0].temp);
@@ -835,12 +840,14 @@ suggestedCityTwo.addEventListener("click", handleCityTwo);
 let suggestedCityThree = document.querySelector("#third-city");
 suggestedCityThree.addEventListener("click", handleCityThree);
 
+let percievedTemperature = null; 
 let celciusTomorrow = null; 
 let celciusDay2 = null;
 let celciusDay3 = null;
 let celciusDay4 = null;
 let celciusDay5 = null;
 let celciusDay6 = null;
+
 
 const icons = {
   "01d": "wi-day-sunny",
