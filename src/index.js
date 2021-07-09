@@ -500,6 +500,32 @@ document.querySelector("#info6-max").innerHTML = `${Math.round(celciusMoreInfo6M
 document.querySelector("#info6-min").innerHTML = `${Math.round(celciusMoreInfo6Min * 1.8 + 32)} °`;
 document.querySelector("#info6-percieved").innerHTML = `${Math.round(celciusMoreInfo6Percieved * 1.8 + 32)} °`; 
 
+document.querySelector("#hour1-forecast").innerHTML = `${Math.round(hour1 * 1.8 + 32)} °`;
+document.querySelector("#hour2-forecast").innerHTML = `${Math.round(hour2 * 1.8 + 32)} °`;
+document.querySelector("#hour3-forecast").innerHTML = `${Math.round(hour3 * 1.8 + 32)} °`;
+document.querySelector("#hour4-forecast").innerHTML = `${Math.round(hour4 * 1.8 + 32)} °`;
+document.querySelector("#hour5-forecast").innerHTML = `${Math.round(hour5 * 1.8 + 32)} °`;
+document.querySelector("#hour6-forecast").innerHTML = `${Math.round(hour6 * 1.8 + 32)} °`;
+document.querySelector("#hour7-forecast").innerHTML = `${Math.round(hour7 * 1.8 + 32)} °`;
+document.querySelector("#hour8-forecast").innerHTML = `${Math.round(hour8 * 1.8 + 32)} °`;
+document.querySelector("#hour9-forecast").innerHTML = `${Math.round(hour9 * 1.8 + 32)} °`;
+document.querySelector("#hour10-forecast").innerHTML = `${Math.round(hour10 * 1.8 + 32)} °`;
+document.querySelector("#hour11-forecast").innerHTML = `${Math.round(hour11 * 1.8 + 32)} °`;
+document.querySelector("#hour12-forecast").innerHTML = `${Math.round(hour12 * 1.8 + 32)} °`;
+document.querySelector("#hour13-forecast").innerHTML = `${Math.round(hour13 * 1.8 + 32)} °`;
+document.querySelector("#hour14-forecast").innerHTML = `${Math.round(hour14 * 1.8 + 32)} °`;
+document.querySelector("#hour15-forecast").innerHTML = `${Math.round(hour15 * 1.8 + 32)} °`;
+document.querySelector("#hour16-forecast").innerHTML = `${Math.round(hour16 * 1.8 + 32)} °`;
+document.querySelector("#hour17-forecast").innerHTML = `${Math.round(hour17 * 1.8 + 32)} °`;
+document.querySelector("#hour18-forecast").innerHTML = `${Math.round(hour18 * 1.8 + 32)} °`;
+document.querySelector("#hour19-forecast").innerHTML = `${Math.round(hour19 * 1.8 + 32)} °`;
+document.querySelector("#hour20-forecast").innerHTML = `${Math.round(hour20 * 1.8 + 32)} °`;
+document.querySelector("#hour21-forecast").innerHTML = `${Math.round(hour21 * 1.8 + 32)} °`;
+document.querySelector("#hour22-forecast").innerHTML = `${Math.round(hour22 * 1.8 + 32)} °`;
+document.querySelector("#hour23-forecast").innerHTML = `${Math.round(hour23 * 1.8 + 32)} °`;
+document.querySelector("#hour24-forecast").innerHTML = `${Math.round(hour24 * 1.8 + 32)} °`;
+
+
 }
 
 function convertCelcius(event) {
@@ -552,84 +578,110 @@ function convertCelcius(event) {
   document.querySelector("#info5-min").innerHTML = `${Math.round(celciusMoreInfo5Min)} °`;
   document.querySelector("#info5-percieved").innerHTML = `${Math.round(celciusMoreInfo5Percieved)} °`; 
 
-   document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(celciusDay6)} °`; 
+document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(celciusDay6)} °`; 
 document.querySelector("#info6-max").innerHTML = `${Math.round(celciusMoreInfo6Max)} °`;
 document.querySelector("#info6-min").innerHTML = `${Math.round(celciusMoreInfo6Min)} °`;
 document.querySelector("#info6-percieved").innerHTML = `${Math.round(celciusMoreInfo6Percieved)} °`; 
+
+document.querySelector("#hour1-forecast").innerHTML = `${hour1} °`;
+document.querySelector("#hour2-forecast").innerHTML = `${hour2} °`;
+document.querySelector("#hour3-forecast").innerHTML = `${hour3} °`;
+document.querySelector("#hour4-forecast").innerHTML = `${hour4} °`;
+document.querySelector("#hour5-forecast").innerHTML = `${hour5} °`;
+document.querySelector("#hour6-forecast").innerHTML = `${hour6} °`;
+document.querySelector("#hour7-forecast").innerHTML = `${hour7} °`;
+document.querySelector("#hour8-forecast").innerHTML = `${hour8} °`;
+document.querySelector("#hour9-forecast").innerHTML = `${hour9} °`;
+document.querySelector("#hour10-forecast").innerHTML = `${hour10} °`;
+document.querySelector("#hour11-forecast").innerHTML = `${hour11} °`;
+document.querySelector("#hour12-forecast").innerHTML = `${hour12} °`;
+document.querySelector("#hour13-forecast").innerHTML = `${hour13} °`;
+document.querySelector("#hour14-forecast").innerHTML = `${hour14} °`;
+document.querySelector("#hour15-forecast").innerHTML = `${hour15} °`;
+document.querySelector("#hour16-forecast").innerHTML = `${hour16} °`;
+document.querySelector("#hour17-forecast").innerHTML = `${hour17} °`;
+document.querySelector("#hour18-forecast").innerHTML = `${hour18} °`;
+document.querySelector("#hour19-forecast").innerHTML = `${hour19} °`;
+document.querySelector("#hour20-forecast").innerHTML = `${hour20} °`;
+document.querySelector("#hour21-forecast").innerHTML = `${hour21} °`;
+document.querySelector("#hour22-forecast").innerHTML = `${hour22} °`;
+document.querySelector("#hour23-forecast").innerHTML = `${hour23} °`;
+document.querySelector("#hour24-forecast").innerHTML = `${hour24} °`;
+
 }
 
 function findHourlyDegrees(response) {
-  let hour1 = Math.round(response.data.hourly[0].temp);
-  document.querySelector("#hour1-forecast").innerHTML = `${hour1} °C`;
+  hour1 = Math.round(response.data.hourly[0].temp);
+  document.querySelector("#hour1-forecast").innerHTML = `${hour1} °`;
 
-  let hour2 = Math.round(response.data.hourly[1].temp);
-  document.querySelector("#hour2-forecast").innerHTML = `${hour2} °C`;
+  hour2 = Math.round(response.data.hourly[1].temp);
+  document.querySelector("#hour2-forecast").innerHTML = `${hour2} °`;
 
-  let hour3 = Math.round(response.data.hourly[2].temp);
-  document.querySelector("#hour3-forecast").innerHTML = `${hour3} °C`;
+  hour3 = Math.round(response.data.hourly[2].temp);
+  document.querySelector("#hour3-forecast").innerHTML = `${hour3} °`;
 
-  let hour4 = Math.round(response.data.hourly[3].temp);
-  document.querySelector("#hour4-forecast").innerHTML = `${hour4} °C`;
+  hour4 = Math.round(response.data.hourly[3].temp);
+  document.querySelector("#hour4-forecast").innerHTML = `${hour4} °`;
 
-  let hour5 = Math.round(response.data.hourly[4].temp);
-  document.querySelector("#hour5-forecast").innerHTML = `${hour5} °C`;
+  hour5 = Math.round(response.data.hourly[4].temp);
+  document.querySelector("#hour5-forecast").innerHTML = `${hour5} °`;
 
-  let hour6 = Math.round(response.data.hourly[5].temp);
-  document.querySelector("#hour6-forecast").innerHTML = `${hour6} °C`;
+  hour6 = Math.round(response.data.hourly[5].temp);
+  document.querySelector("#hour6-forecast").innerHTML = `${hour6} °`;
 
-  let hour7 = Math.round(response.data.hourly[6].temp);
-  document.querySelector("#hour7-forecast").innerHTML = `${hour7} °C`;
+  hour7 = Math.round(response.data.hourly[6].temp);
+  document.querySelector("#hour7-forecast").innerHTML = `${hour7} °`;
 
-  let hour8 = Math.round(response.data.hourly[7].temp);
-  document.querySelector("#hour8-forecast").innerHTML = `${hour8} °C`;
+  hour8 = Math.round(response.data.hourly[7].temp);
+  document.querySelector("#hour8-forecast").innerHTML = `${hour8} °`;
 
-  let hour9 = Math.round(response.data.hourly[8].temp);
-  document.querySelector("#hour9-forecast").innerHTML = `${hour9} °C`;
+  hour9 = Math.round(response.data.hourly[8].temp);
+  document.querySelector("#hour9-forecast").innerHTML = `${hour9} °`;
 
-  let hour10 = Math.round(response.data.hourly[9].temp);
-  document.querySelector("#hour10-forecast").innerHTML = `${hour10} °C`;
+  hour10 = Math.round(response.data.hourly[9].temp);
+  document.querySelector("#hour10-forecast").innerHTML = `${hour10} °`;
 
-  let hour11 = Math.round(response.data.hourly[11].temp);
-  document.querySelector("#hour11-forecast").innerHTML = `${hour11} °C`;
+  hour11 = Math.round(response.data.hourly[11].temp);
+  document.querySelector("#hour11-forecast").innerHTML = `${hour11} °`;
 
-  let hour12 = Math.round(response.data.hourly[11].temp);
-  document.querySelector("#hour12-forecast").innerHTML = `${hour12} °C`;
+  hour12 = Math.round(response.data.hourly[11].temp);
+  document.querySelector("#hour12-forecast").innerHTML = `${hour12} °`;
 
-  let hour13 = Math.round(response.data.hourly[12].temp);
-  document.querySelector("#hour13-forecast").innerHTML = `${hour13} °C`;
+  hour13 = Math.round(response.data.hourly[12].temp);
+  document.querySelector("#hour13-forecast").innerHTML = `${hour13} °`;
 
-  let hour14 = Math.round(response.data.hourly[13].temp);
-  document.querySelector("#hour14-forecast").innerHTML = `${hour14} °C`;
+  hour14 = Math.round(response.data.hourly[13].temp);
+  document.querySelector("#hour14-forecast").innerHTML = `${hour14} °`;
 
-  let hour15 = Math.round(response.data.hourly[14].temp);
-  document.querySelector("#hour15-forecast").innerHTML = `${hour15} °C`;
+  hour15 = Math.round(response.data.hourly[14].temp);
+  document.querySelector("#hour15-forecast").innerHTML = `${hour15} °`;
 
-  let hour16 = Math.round(response.data.hourly[15].temp);
-  document.querySelector("#hour16-forecast").innerHTML = `${hour16} °C`;
+  hour16 = Math.round(response.data.hourly[15].temp);
+  document.querySelector("#hour16-forecast").innerHTML = `${hour16} °`;
 
-  let hour17 = Math.round(response.data.hourly[16].temp);
-  document.querySelector("#hour17-forecast").innerHTML = `${hour17} °C`;
+  hour17 = Math.round(response.data.hourly[16].temp);
+  document.querySelector("#hour17-forecast").innerHTML = `${hour17} °`;
 
-  let hour18 = Math.round(response.data.hourly[17].temp);
-  document.querySelector("#hour18-forecast").innerHTML = `${hour18} °C`;
+  hour18 = Math.round(response.data.hourly[17].temp);
+  document.querySelector("#hour18-forecast").innerHTML = `${hour18} °`;
 
-  let hour19 = Math.round(response.data.hourly[18].temp);
-  document.querySelector("#hour19-forecast").innerHTML = `${hour19} °C`;
+  hour19 = Math.round(response.data.hourly[18].temp);
+  document.querySelector("#hour19-forecast").innerHTML = `${hour19} °`;
 
-  let hour20 = Math.round(response.data.hourly[19].temp);
-  document.querySelector("#hour20-forecast").innerHTML = `${hour20} °C`;
+  hour20 = Math.round(response.data.hourly[19].temp);
+  document.querySelector("#hour20-forecast").innerHTML = `${hour20} °`;
 
-  let hour21 = Math.round(response.data.hourly[20].temp);
-  document.querySelector("#hour21-forecast").innerHTML = `${hour21} °C`;
+  hour21 = Math.round(response.data.hourly[20].temp);
+  document.querySelector("#hour21-forecast").innerHTML = `${hour21} °`;
 
-  let hour22 = Math.round(response.data.hourly[21].temp);
-  document.querySelector("#hour22-forecast").innerHTML = `${hour22} °C`;
+  hour22 = Math.round(response.data.hourly[21].temp);
+  document.querySelector("#hour22-forecast").innerHTML = `${hour22} °`;
 
-  let hour23 = Math.round(response.data.hourly[22].temp);
-  document.querySelector("#hour23-forecast").innerHTML = `${hour23} °C`;
+  hour23 = Math.round(response.data.hourly[22].temp);
+  document.querySelector("#hour23-forecast").innerHTML = `${hour23} °`;
 
-  let hour24 = Math.round(response.data.hourly[23].temp);
-  document.querySelector("#hour24-forecast").innerHTML = `${hour24} °C`;
+  hour24 = Math.round(response.data.hourly[23].temp);
+  document.querySelector("#hour24-forecast").innerHTML = `${hour24} °`;
 }
 
 function findHourlyIcons(response) {
@@ -995,6 +1047,31 @@ let celciusMoreInfo5Percieved = null;
 let celciusMoreInfo6Max = null;
 let celciusMoreInfo6Min = null;
 let celciusMoreInfo6Percieved = null;
+
+let hour1 = null; 
+let hour2 = null; 
+let hour3 = null; 
+let hour4 = null; 
+let hour5 = null; 
+let hour6 = null; 
+let hour7 = null; 
+let hour8 = null; 
+let hour9 = null; 
+let hour10 = null; 
+let hour11 = null; 
+let hour12 = null; 
+let hour13 = null; 
+let hour14 = null; 
+let hour15 = null; 
+let hour16 = null; 
+let hour17 = null; 
+let hour18 = null; 
+let hour19 = null; 
+let hour20 = null; 
+let hour21 = null; 
+let hour22 = null; 
+let hour23 = null; 
+let hour24 = null; 
 
 
 const icons = {
