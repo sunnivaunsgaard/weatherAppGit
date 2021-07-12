@@ -53,24 +53,34 @@ function handleCityThree(event) {
   searchCityWeatherMultiple("Quito");
 }
 
+let hourlyIconPlaceHolder = "wi-cloud";
+
 function getHourlyForecast(response) {
   let forecast = response.data.hourly;
   let forecastElement = document.querySelector("#inner-hourly-forecast");
   let forecastHTML = ``;
 
+
   forecast.forEach(function (forecastHour) {
+  let icon = forecastHour.weather[0].icon; 
+    hourlyCelcius = forecastHour.temp;
       let findTime = new Date(forecastHour.dt * 1000);
       let hourlyTime = findTime.getHours();
       if (hourlyTime < 10) {
         hourlyTime = `0${hourlyTime}`;
       }
-      forecastHTML = forecastHTML + `<div class="hourly"> 
+      forecastHTML =
+        forecastHTML +
+        `<div class="hourly"> 
         <div id="hour"> ${hourlyTime}:00 </div>
-                       <span id="hour1-forecast">${Math.round(
-                         forecastHour.temp)} ° </span> 
-                       <i id="hourly-icon1"> </i> </div>`;
+        <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
+        <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
     });
   forecastElement.innerHTML = `${forecastHTML}`;
+  //document.getElementById("hourly-icon").classList.remove("wi", hourlyIconPlaceHolder);
+  //hourlyIconPlaceHolder = icons[icon] || "wi-cloud";
+ // document.getElementById("hourly-icon").classList.add("wi", hourlyIconPlaceHolder);
+
 }
 
 function extractPosition(response) {
@@ -228,9 +238,9 @@ function reportCityWeatherMultiple(response) {
 }
 
 let currentClass = "wi-cloud";
-function findIcon(icon) {
+function findIcon(icon0) {
   document.getElementById("main-icon").classList.remove("wi", currentClass);
-  currentClass = icons[icon] || "wi-cloud";
+  currentClass = icons[icon0] || "wi-cloud";
   document.getElementById("main-icon").classList.add("wi", currentClass);
 }
 
@@ -238,42 +248,42 @@ let classes1 = "wi-cloud";
 function findIcon1(icon1) {
   document.getElementById("first-icon").classList.remove("wi", classes1);
   classes1 = icons[icon1] || "wi-cloud";
-  document.getElementById("first-icon").classList.add("wi", classes1);
+  document.getElementById("first-icon").classList.add( "wi", classes1);
 }
 
-let classes2 = "wi-cloud";
+let classes2 = "wi wi-cloud";
 function findIcon2(icon2) {
-  document.getElementById("second-icon").classList.remove("wi", classes2);
-  classes2 = icons[icon2] || "wi-cloud";
-  document.getElementById("second-icon").classList.add("wi", classes2);
+  document.getElementById("second-icon").classList.remove(classes2);
+  classes2 = icons[icon2] || "wi wi-cloud";
+  document.getElementById("second-icon").classList.add(classes2);
 }
 
-let classes3 = "wi-cloud";
+let classes3 = "wi wi-cloud";
 function findIcon3(icon3) {
-  document.getElementById("third-icon").classList.remove("wi", classes3);
-  classes3 = icons[icon3] || "wi-cloud";
-  document.getElementById("third-icon").classList.add("wi", classes3);
+  document.getElementById("third-icon").classList.remove(classes3);
+  classes3 = icons[icon3] || "wi wi-cloud";
+  document.getElementById("third-icon").classList.add(classes3);
 }
 
-let classes4 = "wi-cloud";
+let classes4 = "wi wi-cloud";
 function findIcon4(icon4) {
-  document.getElementById("fourth-icon").classList.remove("wi", classes4);
-  classes4 = icons[icon4] || "wi-cloud";
-  document.getElementById("fourth-icon").classList.add("wi", classes4);
+  document.getElementById("fourth-icon").classList.remove(classes4);
+  classes4 = icons[icon4] || "wi wi-cloud";
+  document.getElementById("fourth-icon").classList.add(classes4);
 }
 
-let classes5 = "wi-cloud";
+let classes5 = "wi wi-cloud";
 function findIcon5(icon5) {
-  document.getElementById("fifth-icon").classList.remove("wi", classes5);
-  classes5 = icons[icon5] || "wi-cloud";
-  document.getElementById("fifth-icon").classList.add("wi", classes5);
+  document.getElementById("fifth-icon").classList.remove(classes5);
+  classes5 = icons[icon5] || "wi wi-cloud";
+  document.getElementById("fifth-icon").classList.add(classes5);
 }
 
-let classes6 = "wi-cloud";
+let classes6 = "wi wi-cloud";
 function findIcon6(icon6) {
-  document.getElementById("sixth-icon").classList.remove("wi", classes6);
-  classes6 = icons[icon6] || "wi-cloud";
-  document.getElementById("sixth-icon").classList.add("wi", classes6);
+  document.getElementById("sixth-icon").classList.remove(classes6);
+  classes6 = icons[icon6] || "wi wi-cloud";
+  document.getElementById("sixth-icon").classList.add(classes6);
 }
 
 function findCurrentPosition(event) {
@@ -652,7 +662,6 @@ let apiUrlDefault = `${apiHolderDefault}${currentLatDefault}${currentLonDefault}
 axios.get(apiUrlDefault).then(reportCityWeatherMultiple);
 
 
-//axios.get(apiUrl).then(findHourlyDegrees);
 //axios.get(apiUrl).then(findHourlyIcons);
 
 let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
@@ -695,23 +704,25 @@ let celciusMoreInfo6Max = null;
 let celciusMoreInfo6Min = null;
 let celciusMoreInfo6Percieved = null;
 
+let hourlyCelcius = null;
+
 const icons = {
-  "01d": "wi-day-sunny",
-  "01n": "wi-day-sunny",
-  "02d": "wi-day-cloudy",
-  "02n": "wi-day-cloudy",
-  "03d": "wi-cloud",
-  "03n": "wi-cloud",
-  "04d": "wi-cloudy",
-  "04n": "wi-cloudy",
-  "09d": "wi-showers",
-  "09n": "wi-showers",
-  "10d": "wi-day-rain",
-  "10n": "wi-day-rain",
-  "11d": "wi-thunderstorm",
-  "11n": "wi-thunderstorm",
-  "13d": "wi-snowflake-cold",
-  "13n": "wi-snowflake-cold",
-  "50d": "wi-fog",
-  "50n": "wi-fog",
+  "01d": "wi wi-day-sunny",
+  "01n": "wi wi-day-sunny",
+  "02d": "wi wi-day-cloudy",
+  "02n": "wi wi-day-cloudy",
+  "03d": "wi wi-cloud",
+  "03n": "wi wi-cloud",
+  "04d": "wi wi-cloudy",
+  "04n": "wi wi-cloudy",
+  "09d": "wi wi-showers",
+  "09n": "wi wi-showers",
+  "10d": "wi wi-day-rain",
+  "10n": "wi wi-day-rain",
+  "11d": "wi wi-thunderstorm",
+  "11n": "wi wi-thunderstorm",
+  "13d": "wi wi-snowflake-cold",
+  "13n": "wi wi-snowflake-cold",
+  "50d": "wi wi-fog",
+  "50n": "wi wi-fog",
 };
