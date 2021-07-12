@@ -233,26 +233,6 @@ function reportCityWeatherMultiple(response) {
 
 let currentClass = "wi-cloud";
 function findIcon(icon0) {
-    let theIcons = {
-      "01d": "wi-day-sunny",
-      "01n": "wi-day-sunny",
-      "02d": "wi-day-cloudy",
-      "02n": "wi-day-cloudy",
-      "03d": "wi-cloud",
-      "03n": "wi-cloud",
-      "04d": "wi-cloudy",
-      "04n": "wi-cloudy",
-      "09d": "wi-showers",
-      "09n": "wi-showers",
-      "10d": "wi-day-rain",
-      "10n": "wi-day-rain",
-      "11d": "wi-thunderstorm",
-      "11n": "wi-thunderstorm",
-      "13d": "wi-snowflake-cold",
-      "13n": "wi-snowflake-cold",
-      "50d": "wi-fog",
-      "50n": "wi-fog",
-    };
   document.getElementById("main-icon").classList.remove("wi", currentClass);
   currentClass = theIcons[icon0] || "wi-cloud";
   document.getElementById("main-icon").classList.add("wi", currentClass);
@@ -262,43 +242,43 @@ function findIcon(icon0) {
 let classes1 = "wi-cloud";
 function findIcon1(icon1) {
   document.getElementById("first-icon").classList.remove("wi", classes1);
-  classes1 = icons[icon1] || "wi-cloud";
+  classes1 = theIcons[icon1] || "wi-cloud";
   document.getElementById("first-icon").classList.add( "wi", classes1);
 }
 
-let classes2 = "wi wi-cloud";
+let classes2 = "wi-cloud";
 function findIcon2(icon2) {
-  document.getElementById("second-icon").classList.remove(classes2);
-  classes2 = icons[icon2] || "wi wi-cloud";
-  document.getElementById("second-icon").classList.add(classes2);
+  document.getElementById("second-icon").classList.remove("wi", classes2);
+  classes2 = theIcons[icon2] || "wi wi-cloud";
+  document.getElementById("second-icon").classList.add("wi", classes2);
 }
 
-let classes3 = "wi wi-cloud";
+let classes3 = "wi-cloud";
 function findIcon3(icon3) {
-  document.getElementById("third-icon").classList.remove(classes3);
-  classes3 = icons[icon3] || "wi wi-cloud";
-  document.getElementById("third-icon").classList.add(classes3);
+  document.getElementById("third-icon").classList.remove("wi", classes3);
+  classes3 = theIcons[icon3] || "wi wi-cloud";
+  document.getElementById("third-icon").classList.add("wi", classes3);
 }
 
-let classes4 = "wi wi-cloud";
+let classes4 = "wi-cloud";
 function findIcon4(icon4) {
-  document.getElementById("fourth-icon").classList.remove(classes4);
-  classes4 = icons[icon4] || "wi wi-cloud";
-  document.getElementById("fourth-icon").classList.add(classes4);
+  document.getElementById("fourth-icon").classList.remove("wi", classes4);
+  classes4 = theIcons[icon4] || "wi wi-cloud";
+  document.getElementById("fourth-icon").classList.add("wi", classes4);
 }
 
-let classes5 = "wi wi-cloud";
+let classes5 = "wi-cloud";
 function findIcon5(icon5) {
-  document.getElementById("fifth-icon").classList.remove(classes5);
-  classes5 = icons[icon5] || "wi wi-cloud";
-  document.getElementById("fifth-icon").classList.add(classes5);
+  document.getElementById("fifth-icon").classList.remove("wi", classes5);
+  classes5 = theIcons[icon5] || "wi wi-cloud";
+  document.getElementById("fifth-icon").classList.add("wi", classes5);
 }
 
-let classes6 = "wi wi-cloud";
+let classes6 = "wi-cloud";
 function findIcon6(icon6) {
-  document.getElementById("sixth-icon").classList.remove(classes6);
-  classes6 = icons[icon6] || "wi wi-cloud";
-  document.getElementById("sixth-icon").classList.add(classes6);
+  document.getElementById("sixth-icon").classList.remove("wi", classes6);
+  classes6 = theIcons[icon6] || "wi wi-cloud";
+  document.getElementById("sixth-icon").classList.add("wi", classes6);
 }
 
 function findCurrentPosition(event) {
@@ -741,3 +721,24 @@ const icons = {
   "50d": "wi wi-fog",
   "50n": "wi wi-fog",
 };
+
+    let theIcons = {
+      "01d": "wi-day-sunny",
+      "01n": "wi-day-sunny",
+      "02d": "wi-day-cloudy",
+      "02n": "wi-day-cloudy",
+      "03d": "wi-cloud",
+      "03n": "wi-cloud",
+      "04d": "wi-cloudy",
+      "04n": "wi-cloudy",
+      "09d": "wi-showers",
+      "09n": "wi-showers",
+      "10d": "wi-day-rain",
+      "10n": "wi-day-rain",
+      "11d": "wi-thunderstorm",
+      "11n": "wi-thunderstorm",
+      "13d": "wi-snowflake-cold",
+      "13n": "wi-snowflake-cold",
+      "50d": "wi-fog",
+      "50n": "wi-fog",
+    };
