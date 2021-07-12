@@ -53,8 +53,6 @@ function handleCityThree(event) {
   searchCityWeatherMultiple("Quito");
 }
 
-let hourlyIconPlaceHolder = "wi-cloud";
-
 function getHourlyForecast(response) {
   let forecast = response.data.hourly;
   let forecastElement = document.querySelector("#inner-hourly-forecast");
@@ -77,9 +75,6 @@ function getHourlyForecast(response) {
         <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
     });
   forecastElement.innerHTML = `${forecastHTML}`;
-  //document.getElementById("hourly-icon").classList.remove("wi", hourlyIconPlaceHolder);
-  //hourlyIconPlaceHolder = icons[icon] || "wi-cloud";
- // document.getElementById("hourly-icon").classList.add("wi", hourlyIconPlaceHolder);
 
 }
 
@@ -91,7 +86,6 @@ function extractPosition(response) {
   let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
   axios.get(apiUrl).then(getHourlyForecast);
-  //axios.get(apiUrl).then(findHourlyIcons);
 }
 
 function reportCityWeather(response) {
@@ -239,9 +233,30 @@ function reportCityWeatherMultiple(response) {
 
 let currentClass = "wi-cloud";
 function findIcon(icon0) {
+    let theIcons = {
+      "01d": "wi-day-sunny",
+      "01n": "wi-day-sunny",
+      "02d": "wi-day-cloudy",
+      "02n": "wi-day-cloudy",
+      "03d": "wi-cloud",
+      "03n": "wi-cloud",
+      "04d": "wi-cloudy",
+      "04n": "wi-cloudy",
+      "09d": "wi-showers",
+      "09n": "wi-showers",
+      "10d": "wi-day-rain",
+      "10n": "wi-day-rain",
+      "11d": "wi-thunderstorm",
+      "11n": "wi-thunderstorm",
+      "13d": "wi-snowflake-cold",
+      "13n": "wi-snowflake-cold",
+      "50d": "wi-fog",
+      "50n": "wi-fog",
+    };
   document.getElementById("main-icon").classList.remove("wi", currentClass);
-  currentClass = icons[icon0] || "wi-cloud";
+  currentClass = theIcons[icon0] || "wi-cloud";
   document.getElementById("main-icon").classList.add("wi", currentClass);
+
 }
 
 let classes1 = "wi-cloud";
