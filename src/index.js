@@ -11,6 +11,21 @@ function dateToday(date) {
   }
   return `${day} ${hour}:${minutes}`;
 }
+function findDate(timestamp) {
+  let findDate = new Date(timestamp * 1000);
+  let day = findDate.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
 
 function searchCityWeatherMultiple(city) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
@@ -167,289 +182,113 @@ function reportCityWeather(response) {
   findIcon(icon);
 }
 
-function reportCityWeatherMultipleFahrenheit(response) {
-  celciusTomorrow = response.data.daily[1].temp.day;
-  document.querySelector("#tomorrow-temperature").innerHTML = ` ${Math.round(
-    celciusTomorrow
-  )} °`;
-  celciusMoreInfo1Max = Math.round(response.data.daily[1].temp.max);
-  document.querySelector("#info1-max").innerHTML = `${celciusMoreInfo1Max} °`;
-  celciusMoreInfo1Min = Math.round(response.data.daily[1].temp.min);
-  document.querySelector("#info1-min").innerHTML = `${celciusMoreInfo1Min} °`;
-  celciusMoreInfo1Percieved = Math.round(response.data.daily[1].feels_like.day);
-  document.querySelector(
-    "#info1-percieved"
-  ).innerHTML = `${celciusMoreInfo1Percieved} °`;
-  humidityTomorrow = response.data.daily[1].humidity;
-  document.querySelector("#info1-humidity").innerHTML = ` ${humidityTomorrow}`;
-  windTomorrow = response.data.daily[1].wind_speed;
-  document.querySelector("#info1-wind").innerHTML = ` ${windTomorrow}`;
-
-  celciusDay2 = response.data.daily[2].temp.day;
-  document.querySelector("#second-day-temperature").innerHTML = ` ${Math.round(
-    celciusDay2
-  )} °`;
-  celciusMoreInfo2Max = Math.round(response.data.daily[2].temp.max);
-  document.querySelector("#info2-max").innerHTML = `${celciusMoreInfo2Max} °`;
-  celciusMoreInfo2Min = Math.round(response.data.daily[2].temp.min);
-  document.querySelector("#info2-min").innerHTML = `${celciusMoreInfo2Min} °`;
-  celciusMoreInfo2Percieved = Math.round(response.data.daily[2].feels_like.day);
-  document.querySelector(
-    "#info2-percieved"
-  ).innerHTML = `${celciusMoreInfo2Percieved} °`;
-  humidityDay2 = response.data.daily[2].humidity;
-  document.querySelector("#info2-humidity").innerHTML = ` ${humidityDay2}`;
-  windDay2 = response.data.daily[2].wind_speed;
-  document.querySelector("#info2-wind").innerHTML = ` ${windDay2}`;
-
-  celciusDay3 = response.data.daily[3].temp.day;
-  document.querySelector("#third-day-temperature").innerHTML = ` ${Math.round(
-    celciusDay3
-  )} °`;
-  celciusMoreInfo3Max = Math.round(response.data.daily[3].temp.max);
-  document.querySelector("#info3-max").innerHTML = `${celciusMoreInfo3Max} °`;
-  celciusMoreInfo3Min = Math.round(response.data.daily[3].temp.min);
-  document.querySelector("#info3-min").innerHTML = `${celciusMoreInfo3Min} °`;
-  celciusMoreInfo3Percieved = Math.round(response.data.daily[3].feels_like.day);
-  document.querySelector(
-    "#info3-percieved"
-  ).innerHTML = `${celciusMoreInfo3Percieved} °`;
-  humidityDay3 = response.data.daily[3].humidity;
-  document.querySelector("#info3-humidity").innerHTML = ` ${humidityDay3}`;
-  windDay3 = response.data.daily[3].wind_speed;
-  document.querySelector("#info3-wind").innerHTML = ` ${windDay3}`;
-
-  celciusDay4 = response.data.daily[4].temp.day;
-  document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(
-    celciusDay4
-  )} °`;
-  celciusMoreInfo4Max = Math.round(response.data.daily[4].temp.max);
-  document.querySelector("#info4-max").innerHTML = `${celciusMoreInfo4Max} °`;
-  celciusMoreInfo4Min = Math.round(response.data.daily[4].temp.min);
-  document.querySelector("#info4-min").innerHTML = `${celciusMoreInfo4Min} °`;
-  celciusMoreInfo4Percieved = Math.round(response.data.daily[4].feels_like.day);
-  document.querySelector(
-    "#info4-percieved"
-  ).innerHTML = `${celciusMoreInfo4Percieved} °`;
-  humidityDay4 = response.data.daily[4].humidity;
-  document.querySelector("#info4-humidity").innerHTML = ` ${humidityDay4}`;
-  windDay4 = response.data.daily[4].wind_speed;
-  document.querySelector("#info4-wind").innerHTML = ` ${windDay4}`;
-
-  celciusDay5 = response.data.daily[5].temp.day;
-  document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(
-    celciusDay5
-  )} °`;
-  celciusMoreInfo5Max = Math.round(response.data.daily[5].temp.max);
-  document.querySelector("#info5-max").innerHTML = `${celciusMoreInfo5Max} °`;
-  celciusMoreInfo5Min = Math.round(response.data.daily[5].temp.min);
-  document.querySelector("#info5-min").innerHTML = `${celciusMoreInfo5Min} °`;
-  celciusMoreInfo5Percieved = Math.round(response.data.daily[5].feels_like.day);
-  document.querySelector(
-    "#info5-percieved"
-  ).innerHTML = `${celciusMoreInfo5Percieved} °`;
-  humidityDay5 = response.data.daily[5].humidity;
-  document.querySelector("#info5-humidity").innerHTML = ` ${humidityDay5}`;
-  windDay5 = response.data.daily[5].wind_speed;
-  document.querySelector("#info5-wind").innerHTML = ` ${windDay5}`;
-
-  celciusDay6 = response.data.daily[6].temp.day;
-  document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(
-    celciusDay6
-  )} °`;
-  celciusMoreInfo6Max = Math.round(response.data.daily[6].temp.max);
-  document.querySelector("#info6-max").innerHTML = `${celciusMoreInfo6Max} °`;
-  celciusMoreInfo6Min = Math.round(response.data.daily[6].temp.min);
-  document.querySelector("#info6-min").innerHTML = `${celciusMoreInfo6Min} °`;
-  celciusMoreInfo6Percieved = Math.round(response.data.daily[6].feels_like.day);
-  document.querySelector(
-    "#info6-percieved"
-  ).innerHTML = `${celciusMoreInfo6Percieved} °`;
-  humidityDay6 = response.data.daily[6].humidity;
-  document.querySelector("#info6-humidity").innerHTML = ` ${humidityDay6}`;
-  windDay6 = response.data.daily[6].wind_speed;
-  document.querySelector("#info6-wind").innerHTML = ` ${windDay6}`;
-
-  let icon1 = response.data.daily[1].weather[0].icon;
-  findIcon1(icon1);
-  let icon2 = response.data.daily[2].weather[0].icon;
-  findIcon2(icon2);
-  let icon3 = response.data.daily[3].weather[0].icon;
-  findIcon3(icon3);
-  let icon4 = response.data.daily[4].weather[0].icon;
-  findIcon4(icon4);
-  let icon5 = response.data.daily[5].weather[0].icon;
-  findIcon5(icon5);
-  let icon6 = response.data.daily[6].weather[0].icon;
-  findIcon6(icon6);
-}
-
-function reportCityWeatherMultiple(response) {
-  celciusTomorrow = response.data.daily[1].temp.day;
-  document.querySelector("#tomorrow-temperature").innerHTML = ` ${Math.round(
-    celciusTomorrow
-  )} °`;
-  celciusMoreInfo1Max = Math.round(response.data.daily[1].temp.max);
-  document.querySelector("#info1-max").innerHTML = `${celciusMoreInfo1Max} °`;
-  celciusMoreInfo1Min = Math.round(response.data.daily[1].temp.min);
-  document.querySelector("#info1-min").innerHTML = `${celciusMoreInfo1Min} °`;
-  celciusMoreInfo1Percieved = Math.round(response.data.daily[1].feels_like.day);
-  document.querySelector(
-    "#info1-percieved"
-  ).innerHTML = `${celciusMoreInfo1Percieved} °`;
-  humidityTomorrow = response.data.daily[1].humidity;
-  document.querySelector("#info1-humidity").innerHTML = ` ${humidityTomorrow}`;
-  windTomorrow = response.data.daily[1].wind_speed;
-  document.querySelector("#info1-wind").innerHTML = ` ${windTomorrow}`;
-
-  celciusDay2 = response.data.daily[2].temp.day;
-  document.querySelector("#second-day-temperature").innerHTML = ` ${Math.round(
-    celciusDay2
-  )} °`;
-  celciusMoreInfo2Max = Math.round(response.data.daily[2].temp.max);
-  document.querySelector("#info2-max").innerHTML = `${celciusMoreInfo2Max} °`;
-  celciusMoreInfo2Min = Math.round(response.data.daily[2].temp.min);
-  document.querySelector("#info2-min").innerHTML = `${celciusMoreInfo2Min} °`;
-  celciusMoreInfo2Percieved = Math.round(response.data.daily[2].feels_like.day);
-  document.querySelector(
-    "#info2-percieved"
-  ).innerHTML = `${celciusMoreInfo2Percieved} °`;
-  humidityDay2 = response.data.daily[2].humidity;
-  document.querySelector("#info2-humidity").innerHTML = ` ${humidityDay2}`;
-  windDay2 = response.data.daily[2].wind_speed;
-  document.querySelector("#info2-wind").innerHTML = ` ${windDay2}`;
-
-  celciusDay3 = response.data.daily[3].temp.day;
-  document.querySelector("#third-day-temperature").innerHTML = ` ${Math.round(
-    celciusDay3
-  )} °`;
-  celciusMoreInfo3Max = Math.round(response.data.daily[3].temp.max);
-  document.querySelector("#info3-max").innerHTML = `${celciusMoreInfo3Max} °`;
-  celciusMoreInfo3Min = Math.round(response.data.daily[3].temp.min);
-  document.querySelector("#info3-min").innerHTML = `${celciusMoreInfo3Min} °`;
-  celciusMoreInfo3Percieved = Math.round(response.data.daily[3].feels_like.day);
-  document.querySelector(
-    "#info3-percieved"
-  ).innerHTML = `${celciusMoreInfo3Percieved} °`;
-  humidityDay3 = response.data.daily[3].humidity;
-  document.querySelector("#info3-humidity").innerHTML = ` ${humidityDay3}`;
-  windDay3 = response.data.daily[3].wind_speed;
-  document.querySelector("#info3-wind").innerHTML = ` ${windDay3}`;
-
-  celciusDay4 = response.data.daily[4].temp.day;
-  document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(
-    celciusDay4
-  )} °`;
-  celciusMoreInfo4Max = Math.round(response.data.daily[4].temp.max);
-  document.querySelector("#info4-max").innerHTML = `${celciusMoreInfo4Max} °`;
-  celciusMoreInfo4Min = Math.round(response.data.daily[4].temp.min);
-  document.querySelector("#info4-min").innerHTML = `${celciusMoreInfo4Min} °`;
-  celciusMoreInfo4Percieved = Math.round(response.data.daily[4].feels_like.day);
-  document.querySelector(
-    "#info4-percieved"
-  ).innerHTML = `${celciusMoreInfo4Percieved} °`;
-  humidityDay4 = response.data.daily[4].humidity;
-  document.querySelector("#info4-humidity").innerHTML = ` ${humidityDay4}`;
-  windDay4 = response.data.daily[4].wind_speed;
-  document.querySelector("#info4-wind").innerHTML = ` ${windDay4}`;
-
-  celciusDay5 = response.data.daily[5].temp.day;
-  document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(
-    celciusDay5
-  )} °`;
-  celciusMoreInfo5Max = Math.round(response.data.daily[5].temp.max);
-  document.querySelector("#info5-max").innerHTML = `${celciusMoreInfo5Max} °`;
-  celciusMoreInfo5Min = Math.round(response.data.daily[5].temp.min);
-  document.querySelector("#info5-min").innerHTML = `${celciusMoreInfo5Min} °`;
-  celciusMoreInfo5Percieved = Math.round(response.data.daily[5].feels_like.day);
-  document.querySelector(
-    "#info5-percieved"
-  ).innerHTML = `${celciusMoreInfo5Percieved} °`;
-  humidityDay5 = response.data.daily[5].humidity;
-  document.querySelector("#info5-humidity").innerHTML = ` ${humidityDay5}`;
-  windDay5 = response.data.daily[5].wind_speed;
-  document.querySelector("#info5-wind").innerHTML = ` ${windDay5}`;
-
-  celciusDay6 = response.data.daily[6].temp.day;
-  document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(
-    celciusDay6
-  )} °`;
-  celciusMoreInfo6Max = Math.round(response.data.daily[6].temp.max);
-  document.querySelector("#info6-max").innerHTML = `${celciusMoreInfo6Max} °`;
-  celciusMoreInfo6Min = Math.round(response.data.daily[6].temp.min);
-  document.querySelector("#info6-min").innerHTML = `${celciusMoreInfo6Min} °`;
-  celciusMoreInfo6Percieved = Math.round(response.data.daily[6].feels_like.day);
-  document.querySelector(
-    "#info6-percieved"
-  ).innerHTML = `${celciusMoreInfo6Percieved} °`;
-  humidityDay6 = response.data.daily[6].humidity;
-  document.querySelector("#info6-humidity").innerHTML = ` ${humidityDay6}`;
-  windDay6 = response.data.daily[6].wind_speed;
-  document.querySelector("#info6-wind").innerHTML = ` ${windDay6}`;
-
-  let icon1 = response.data.daily[1].weather[0].icon;
-  findIcon1(icon1);
-  let icon2 = response.data.daily[2].weather[0].icon;
-  findIcon2(icon2);
-  let icon3 = response.data.daily[3].weather[0].icon;
-  findIcon3(icon3);
-  let icon4 = response.data.daily[4].weather[0].icon;
-  findIcon4(icon4);
-  let icon5 = response.data.daily[5].weather[0].icon;
-  findIcon5(icon5);
-  let icon6 = response.data.daily[6].weather[0].icon;
-  findIcon6(icon6);
-}
-
-let currentClass = "wi-cloud";
 function findIcon(icon0) {
   document.getElementById("main-icon").classList.remove("wi", currentClass);
   currentClass = theIcons[icon0] || "wi-cloud";
   document.getElementById("main-icon").classList.add("wi", currentClass);
-
 }
 
-let classes1 = "wi-cloud";
-function findIcon1(icon1) {
-  document.getElementById("first-icon").classList.remove("wi", classes1);
-  classes1 = theIcons[icon1] || "wi-cloud";
-  document.getElementById("first-icon").classList.add( "wi", classes1);
+function reportCityWeatherMultipleFahrenheit(response) {
+let forecast = response.data.daily;
+let forecastElement = document.querySelector("#daily-forcast-boxes");
+let forecastHTML = ``;
+
+forecast.forEach(function (forecastDaily, index) {
+  if (index < 1) return;
+  if (index < 7) {
+    let icon = forecastDaily.weather[0].icon;
+
+    forecastHTML =
+      forecastHTML +
+      `<div class="scroll-bar" id="scroll-daily-forecast">
+    <div class="box1 "> <span id="tomorrow">${findDate(forecastDaily.dt)}</span>
+            <div class="child-box"><span id="tomorrow-temperature">
+            ${Math.round(forecastDaily.temp.day)} °</span>
+                <div> <i class = "${icons[icon]}" id="first-icon"> </i></div>
+            </div>
+        </div>
+          <div id = "more-info1"> 
+            <ul>
+            <li class= "info-max-min">
+            <strong><span id="info1-max">
+              ${Math.round(forecastDaily.temp.max)} °
+              </span></strong> <span id="info1-min">
+              ${Math.round(forecastDaily.temp.min)} °
+              </span>
+              </li>
+              <li class="info-percieved">
+              Percieved: <span id="info1-percieved">
+              ${Math.round(forecastDaily.feels_like.day)} °
+              </span> 
+              </li>
+              <li class="info-humidity">
+              Humidity: <span id="info1-humidity">${
+                forecastDaily.humidity
+              }</span> %
+              </li>
+              <li class="info-wind">
+              Wind: <span id="info1-wind">
+              ${forecastDaily.wind_speed}
+              </span> m/h
+              </li>
+              </ul> 
+            </div>
+            </div>`;
+  }
+});
+forecastElement.innerHTML = `${forecastHTML}`;
 }
 
-let classes2 = "wi-cloud";
-function findIcon2(icon2) {
-  document.getElementById("second-icon").classList.remove("wi", classes2);
-  classes2 = theIcons[icon2] || "wi wi-cloud";
-  document.getElementById("second-icon").classList.add("wi", classes2);
+function reportCityWeatherMultiple(response) {
+let forecast = response.data.daily;
+let forecastElement = document.querySelector("#daily-forcast-boxes");
+let forecastHTML = ``;
+
+forecast.forEach(function (forecastDaily, index) {
+ if (index < 1) return;
+if (index < 7 ){
+  let icon = forecastDaily.weather[0].icon;
+
+  forecastHTML =
+    forecastHTML +
+    `<div class="scroll-bar" id="scroll-daily-forecast">
+    <div class="box1 "> <span id="tomorrow">${findDate(forecastDaily.dt)}</span>
+            <div class="child-box"><span id="tomorrow-temperature">
+            ${Math.round(forecastDaily.temp.day)} °</span>
+                <div> <i class = "${icons[icon]}" id="first-icon"> </i></div>
+            </div>
+        </div>
+          <div id = "more-info1"> 
+            <ul>
+            <li class= "info-max-min">
+            <strong><span id="info1-max">
+              ${Math.round(forecastDaily.temp.max)} °
+              </span></strong> <span id="info1-min">
+              ${Math.round(forecastDaily.temp.min)} °
+              </span>
+              </li>
+              <li class="info-percieved">
+              Percieved: <span id="info1-percieved">
+              ${Math.round(forecastDaily.feels_like.day)} °
+              </span> 
+              </li>
+              <li class="info-humidity">
+              Humidity: <span id="info1-humidity">${
+                forecastDaily.humidity}</span> %
+              </li>
+              <li class="info-wind">
+              Wind: <span id="info1-wind">
+              ${forecastDaily.wind_speed}
+              </span> m/h
+              </li>
+              </ul> 
+            </div>
+            </div>`;}
+});
+forecastElement.innerHTML = `${forecastHTML}`;
 }
 
-let classes3 = "wi-cloud";
-function findIcon3(icon3) {
-  document.getElementById("third-icon").classList.remove("wi", classes3);
-  classes3 = theIcons[icon3] || "wi wi-cloud";
-  document.getElementById("third-icon").classList.add("wi", classes3);
-}
 
-let classes4 = "wi-cloud";
-function findIcon4(icon4) {
-  document.getElementById("fourth-icon").classList.remove("wi", classes4);
-  classes4 = theIcons[icon4] || "wi wi-cloud";
-  document.getElementById("fourth-icon").classList.add("wi", classes4);
-}
-
-let classes5 = "wi-cloud";
-function findIcon5(icon5) {
-  document.getElementById("fifth-icon").classList.remove("wi", classes5);
-  classes5 = theIcons[icon5] || "wi wi-cloud";
-  document.getElementById("fifth-icon").classList.add("wi", classes5);
-}
-
-let classes6 = "wi-cloud";
-function findIcon6(icon6) {
-  document.getElementById("sixth-icon").classList.remove("wi", classes6);
-  classes6 = theIcons[icon6] || "wi wi-cloud";
-  document.getElementById("sixth-icon").classList.add("wi", classes6);
-}
 
 function findCurrentPosition(event) {
   event.preventDefault();
@@ -508,7 +347,11 @@ function convertFahrenheit(event) {
   maximum.innerHTML = `${fahrenheitMax} `;
   minimum.innerHTML = `${fahrenheitMin} `;
 
-
+  let percievedTemperature = document.querySelector("#percieved");
+  let percievedFahrenheit = percievedTemperature.innerHTML;
+  percievedFahrenheit = Number(percievedFahrenheit);
+  let percieved = Math.round(percievedFahrenheit * 1.8 +32);
+  percievedTemperature.innerHTML = `${percieved}`;
 }
 
 function convertCelcius(event) {
@@ -535,60 +378,15 @@ function convertCelcius(event) {
   maximum.innerHTML = `${celciusMax} `;
   minimum.innerHTML = `${celciusMin} `;
 
+    let percievedTemperature = document.querySelector("#percieved");
+    let percievedCelcius = percievedTemperature.innerHTML;
+    percievedCelcius = Number(percievedCelcius);
+    let percieved = Math.round((percievedCelcius - 32) * 5 /9);
+    percievedTemperature.innerHTML = `${percieved}`;
+
 }
 
 let time = new Date();
-
-function findDate(days) {
-  let months = [
-    "Dec",
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Nov",
-  ];
-  let newDate = new Date(time);
-  newDate.setDate(newDate.getDate() + days);
-  setDayDate = newDate.getDate();
-  setDayMonth = months[newDate.getMonth()];
-
-  if (days == 2) {
-    return (document.querySelector(
-      "#day2"
-    ).innerHTML = `${setDayDate} ${setDayMonth}`);
-  }
-  if (days == 3) {
-    return (document.querySelector(
-      "#day3"
-    ).innerHTML = `${setDayDate} ${setDayMonth}`);
-  }
-  if (days == 4) {
-    return (document.querySelector(
-      "#day4"
-    ).innerHTML = `${setDayDate} ${setDayMonth}`);
-  }
-  if (days == 5) {
-    return (document.querySelector(
-      "#day5"
-    ).innerHTML = `${setDayDate} ${setDayMonth}`);
-  }
-  if (days == 6) {
-    return (document.querySelector(
-      "#day6"
-    ).innerHTML = `${setDayDate} ${setDayMonth}`);
-  }
-}
-
-findDate(2);
-findDate(3);
-findDate(4);
-findDate(5);
-findDate(6);
 
 let isCelcius = true;
 
@@ -637,33 +435,6 @@ let suggestedCityThree = document.querySelector("#third-city");
 suggestedCityThree.addEventListener("click", handleCityThree);
 
 
-let percievedTemperature = null;
-let celciusTomorrow = null;
-let celciusDay2 = null;
-let celciusDay3 = null;
-let celciusDay4 = null;
-let celciusDay5 = null;
-let celciusDay6 = null;
-
-let celciusMoreInfo1Max = null;
-let celciusMoreInfo1Min = null;
-let celciusMoreInfo1Percieved = null;
-let celciusMoreInfo2Max = null;
-let celciusMoreInfo2Min = null;
-let celciusMoreInfo2Percieved = null;
-let celciusMoreInfo3Max = null;
-let celciusMoreInfo3Min = null;
-let celciusMoreInfo3Percieved = null;
-let celciusMoreInfo4Max = null;
-let celciusMoreInfo4Min = null;
-let celciusMoreInfo4Percieved = null;
-let celciusMoreInfo5Max = null;
-let celciusMoreInfo5Min = null;
-let celciusMoreInfo5Percieved = null;
-let celciusMoreInfo6Max = null;
-let celciusMoreInfo6Min = null;
-let celciusMoreInfo6Percieved = null;
-
 let hourlyCelcius = null;
 
 const icons = {
@@ -686,6 +457,8 @@ const icons = {
   "50d": "wi wi-fog",
   "50n": "wi wi-fog",
 };
+
+let currentClass = "wi-cloud";
 
     let theIcons = {
       "01d": "wi-day-sunny",
