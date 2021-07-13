@@ -111,6 +111,15 @@ function convertHourlyFahrenheit(event) {
     axios.get(apiUrl).then(extractPositionFahrenheit);
 }
 
+function convertHourlyCelcius(event) {
+  event.preventDefault();
+  let newCity = document.querySelector("#current-city");
+  let city = newCity.innerHTML;
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(extractPosition);
+}
+
 function extractPosition(response) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let latitude = `lat=${response.data.coord.lat}`;
@@ -120,6 +129,7 @@ function extractPosition(response) {
   axios.get(apiUrl).then(reportCityWeatherMultiple);
   axios.get(apiUrl).then(getHourlyForecast);
 }
+
 function extractPositionFahrenheit(response) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let latitude = `lat=${response.data.coord.lat}`;
@@ -129,6 +139,7 @@ function extractPositionFahrenheit(response) {
   axios.get(apiUrl).then(reportCityWeatherMultipleFahrenheit);
   axios.get(apiUrl).then(getHourlyForecastFahrenheit);
 }
+
 
 function reportCityWeather(response) {
   document.querySelector("#current-city").innerHTML =
@@ -614,6 +625,9 @@ changeHourlyDegreeFahrenheit.addEventListener("click", convertHourlyFahrenheit);
 
 let changeDegreeCelcius = document.querySelector("#celcius");
 changeDegreeCelcius.addEventListener("click", convertCelcius);
+let changeHourlyDegreeCelcius = document.querySelector("#celcius");
+changeHourlyDegreeCelcius.addEventListener("click", convertHourlyCelcius);
+
 
 let suggestedCityOne = document.querySelector("#first-city");
 suggestedCityOne.addEventListener("click", handleCityOne);
