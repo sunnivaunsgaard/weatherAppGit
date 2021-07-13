@@ -1,43 +1,3 @@
-function dateToday(date) {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-  let day = days[date.getDay()];
-  let hour = date.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${day} ${hour}:${minutes}`;
-}
-function findDate(timestamp) {
-  let findDate = new Date(timestamp * 1000);
-  let day = findDate.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  return days[day];
-}
-
-function searchCityWeatherMultiple(city) {
-  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(extractPosition);
-}
-
-function searchCityWeather(city) {
-  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(reportCityWeather);
-}
 
 function handleCityWeatherMultiple(event) {
   event.preventDefault();
@@ -67,74 +27,6 @@ function handleCityThree(event) {
   searchCityWeather("Quito");
   searchCityWeatherMultiple("Quito");
 }
-
-function getHourlyForecast(response) {
-  let forecast = response.data.hourly;
-  let forecastElement = document.querySelector("#inner-hourly-forecast");
-  let forecastHTML = ``;
-
-
-  forecast.forEach(function (forecastHour) {
- 
-      let findTime = new Date(forecastHour.dt * 1000);
-      let hourlyTime = findTime.getHours();
-      if (hourlyTime < 10) {
-        hourlyTime = `0${hourlyTime}`;
-      }
-    let icon = forecastHour.weather[0].icon; 
-    hourlyCelcius = forecastHour.temp;
-       forecastHTML =
-         forecastHTML +
-         `<div class="hourly"> 
-        <div id="hour"> ${hourlyTime}:00 </div>
-        <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
-        <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
-    });
-  forecastElement.innerHTML = `${forecastHTML}`;
-}
-
-
-function getHourlyForecastFahrenheit(response) {
-  let forecast = response.data.hourly;
-  let forecastElement = document.querySelector("#inner-hourly-forecast");
-  let forecastHTML = ``;
-
-  forecast.forEach(function (forecastHour) {
-    let findTime = new Date(forecastHour.dt * 1000);
-    let hourlyTime = findTime.getHours();
-    if (hourlyTime < 10) {
-      hourlyTime = `0${hourlyTime}`;
-    }
-    let icon = forecastHour.weather[0].icon;
-    hourlyCelcius = forecastHour.temp;
-    forecastHTML =
-      forecastHTML +
-      `<div class="hourly"> 
-        <div id="hour"> ${hourlyTime}:00 </div>
-        <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
-        <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
-  });
-  forecastElement.innerHTML = `${forecastHTML}`;
-}
-
-function convertHourlyFahrenheit(event) {
-  event.preventDefault();
-  let newCity = document.querySelector("#current-city");
-  let city = newCity.innerHTML;
-    let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(extractPositionFahrenheit);
-}
-
-function convertHourlyCelcius(event) {
-  event.preventDefault();
-  let newCity = document.querySelector("#current-city");
-  let city = newCity.innerHTML;
-  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(extractPosition);
-}
-
 function extractPosition(response) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let latitude = `lat=${response.data.coord.lat}`;
@@ -142,7 +34,7 @@ function extractPosition(response) {
   let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
   let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
-  axios.get(apiUrl).then(getHourlyForecast);
+  axios.get(apiUrl).then(reportHourlyForecast);
 }
 
 function extractPositionFahrenheit(response) {
@@ -152,40 +44,7 @@ function extractPositionFahrenheit(response) {
   let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
   let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(reportCityWeatherMultipleFahrenheit);
-  axios.get(apiUrl).then(getHourlyForecastFahrenheit);
-}
-
-
-function reportCityWeather(response) {
-  document.querySelector("#current-city").innerHTML =
-    response.data.name.toUpperCase();
-  document.querySelector("#degrees-city").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  let tempMax = Math.round(response.data.main.temp_max);
-  let tempMin = Math.round(response.data.main.temp_min);
-  document.querySelector("#max").innerHTML = `${tempMax} `;
-  document.querySelector("#min").innerHTML = ` ${tempMin} `;
-  percievedTemperature = Math.round(response.data.main.feels_like);
-  document.querySelector("#percieved").innerHTML = `${percievedTemperature}`;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  let divElementC = document.querySelector("#celcius");
-  divElementC.classList.add("f-c-change");
-  let divElementF = document.querySelector("#fahrenheit");
-  divElementF.classList.remove("f-c-change");
-  let icon = response.data.weather[0].icon;
-  findIcon(icon);
-}
-
-function findIcon(icon0) {
-  document.getElementById("main-icon").classList.remove("wi", currentClass);
-  currentClass = theIcons[icon0] || "wi-cloud";
-  document.getElementById("main-icon").classList.add("wi", currentClass);
+  axios.get(apiUrl).then(reportHourlyForecastFahrenheit);
 }
 
 function reportCityWeatherMultipleFahrenheit(response) {
@@ -288,12 +147,89 @@ if (index < 7 ){
 forecastElement.innerHTML = `${forecastHTML}`;
 }
 
+function reportHourlyForecast(response) {
+  let forecast = response.data.hourly;
+  let forecastElement = document.querySelector("#inner-hourly-forecast");
+  let forecastHTML = ``;
 
+  forecast.forEach(function (forecastHour) {
+    let findTime = new Date(forecastHour.dt * 1000);
+    let hourlyTime = findTime.getHours();
+    if (hourlyTime < 10) {
+      hourlyTime = `0${hourlyTime}`;
+    }
+    let icon = forecastHour.weather[0].icon;
+    hourlyCelcius = forecastHour.temp;
+    forecastHTML =
+      forecastHTML +
+      `<div class="hourly"> 
+        <div id="hour"> ${hourlyTime}:00 </div>
+        <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
+        <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
+  });
+  forecastElement.innerHTML = `${forecastHTML}`;
+}
+
+function reportHourlyForecastFahrenheit(response) {
+  let forecast = response.data.hourly;
+  let forecastElement = document.querySelector("#inner-hourly-forecast");
+  let forecastHTML = ``;
+
+  forecast.forEach(function (forecastHour) {
+    let findTime = new Date(forecastHour.dt * 1000);
+    let hourlyTime = findTime.getHours();
+    if (hourlyTime < 10) {
+      hourlyTime = `0${hourlyTime}`;
+    }
+    let icon = forecastHour.weather[0].icon;
+    hourlyCelcius = forecastHour.temp;
+    forecastHTML =
+      forecastHTML +
+      `<div class="hourly"> 
+        <div id="hour"> ${hourlyTime}:00 </div>
+        <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
+        <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
+  });
+  forecastElement.innerHTML = `${forecastHTML}`;
+}
+
+function reportCityWeather(response) {
+  document.querySelector("#current-city").innerHTML =
+    response.data.name.toUpperCase();
+  document.querySelector("#degrees-city").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempMin = Math.round(response.data.main.temp_min);
+  document.querySelector("#max").innerHTML = `${tempMax} `;
+  document.querySelector("#min").innerHTML = ` ${tempMin} `;
+  percievedTemperature = Math.round(response.data.main.feels_like);
+  document.querySelector("#percieved").innerHTML = `${percievedTemperature}`;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  let divElementC = document.querySelector("#celcius");
+  divElementC.classList.add("f-c-change");
+  let divElementF = document.querySelector("#fahrenheit");
+  divElementF.classList.remove("f-c-change");
+  let icon = response.data.weather[0].icon;
+  findIcon(icon);
+}
+
+function findIcon(icon0) {
+  document.getElementById("main-icon").classList.remove("wi", currentClass);
+  currentClass = theIcons[icon0] || "wi-cloud";
+  document.getElementById("main-icon").classList.add("wi", currentClass);
+}
 
 function findCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
+
 function findCurrentPositionMultiple(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPositionMultiple);
@@ -302,6 +238,48 @@ function findCurrentPositionMultiple(event) {
   let newText = document.querySelector("#weather-description");
   newText.innerHTML =
     "Wait while we find 📍 If asked, press 'allow'. If not, change settings";
+}
+
+function findDateToday(date) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hour}:${minutes}`;
+}
+
+function findDate(timestamp) {
+  let findDate = new Date(timestamp * 1000);
+  let day = findDate.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
+function searchCityWeatherMultiple(city) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(extractPosition);
+}
+
+function searchCityWeather(city) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(reportCityWeather);
 }
 
 function showCurrentPositionMultiple(position) {
@@ -313,7 +291,6 @@ function showCurrentPositionMultiple(position) {
   axios.get(apiUrl).then(reportCityWeatherMultiple);
 }
  
-
 function showCurrentPosition(position) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
   let currentLat = `lat=${position.coords.latitude}`;
@@ -321,6 +298,24 @@ function showCurrentPosition(position) {
   let apiHolder = `https://api.openweathermap.org/data/2.5/weather?`;
   let apiUrl = `${apiHolder}${currentLat}${currentLon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeather);
+}
+
+function convertHourlyFahrenheit(event) {
+  event.preventDefault();
+  let newCity = document.querySelector("#current-city");
+  let city = newCity.innerHTML;
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(extractPositionFahrenheit);
+}
+
+function convertHourlyCelcius(event) {
+  event.preventDefault();
+  let newCity = document.querySelector("#current-city");
+  let city = newCity.innerHTML;
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(extractPosition);
 }
 
 function convertFahrenheit(event) {
@@ -386,12 +381,12 @@ function convertCelcius(event) {
 
 }
 
-let time = new Date();
-
 let isCelcius = true;
 
+let time = new Date();
+
 let updateTime = document.querySelector("#date-today");
-updateTime.innerHTML = dateToday(time);
+updateTime.innerHTML = findDateToday(time);
 
 let findCityWeather = document.querySelector("#input-form");
 findCityWeather.addEventListener("submit", handleCityWeather);
