@@ -60,22 +60,55 @@ function getHourlyForecast(response) {
 
 
   forecast.forEach(function (forecastHour) {
-  let icon = forecastHour.weather[0].icon; 
-    hourlyCelcius = forecastHour.temp;
+ 
       let findTime = new Date(forecastHour.dt * 1000);
       let hourlyTime = findTime.getHours();
       if (hourlyTime < 10) {
         hourlyTime = `0${hourlyTime}`;
       }
-      forecastHTML =
-        forecastHTML +
-        `<div class="hourly"> 
+    let icon = forecastHour.weather[0].icon; 
+    hourlyCelcius = forecastHour.temp;
+       forecastHTML =
+         forecastHTML +
+         `<div class="hourly"> 
         <div id="hour"> ${hourlyTime}:00 </div>
         <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
         <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
     });
   forecastElement.innerHTML = `${forecastHTML}`;
+}
 
+
+function getHourlyForecastFahrenheit(response) {
+  let forecast = response.data.hourly;
+  let forecastElement = document.querySelector("#inner-hourly-forecast");
+  let forecastHTML = ``;
+
+  forecast.forEach(function (forecastHour) {
+    let findTime = new Date(forecastHour.dt * 1000);
+    let hourlyTime = findTime.getHours();
+    if (hourlyTime < 10) {
+      hourlyTime = `0${hourlyTime}`;
+    }
+    let icon = forecastHour.weather[0].icon;
+    hourlyCelcius = forecastHour.temp;
+    forecastHTML =
+      forecastHTML +
+      `<div class="hourly"> 
+        <div id="hour"> ${hourlyTime}:00 </div>
+        <span id="hour1-forecast">${Math.round(hourlyCelcius)} ° </span> 
+        <i class= "hourly-icon ${icons[icon]}">  </i> </div>`;
+  });
+  forecastElement.innerHTML = `${forecastHTML}`;
+}
+
+function convertHourlyFahrenheit(event) {
+  event.preventDefault();
+  let newCity = document.querySelector("#current-city");
+  let city = newCity.innerHTML;
+    let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(extractPositionFahrenheit);
 }
 
 function extractPosition(response) {
@@ -86,6 +119,15 @@ function extractPosition(response) {
   let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
   axios.get(apiUrl).then(getHourlyForecast);
+}
+function extractPositionFahrenheit(response) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let latitude = `lat=${response.data.coord.lat}`;
+  let longitude = `&lon=${response.data.coord.lon}`;
+  let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
+  let apiUrl = `${apiHolder}${latitude}${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(reportCityWeatherMultipleFahrenheit);
+  axios.get(apiUrl).then(getHourlyForecastFahrenheit);
 }
 
 function reportCityWeather(response) {
@@ -112,6 +154,123 @@ function reportCityWeather(response) {
   divElementF.classList.remove("f-c-change");
   let icon = response.data.weather[0].icon;
   findIcon(icon);
+}
+
+function reportCityWeatherMultipleFahrenheit(response) {
+  celciusTomorrow = response.data.daily[1].temp.day;
+  document.querySelector("#tomorrow-temperature").innerHTML = ` ${Math.round(
+    celciusTomorrow
+  )} °`;
+  celciusMoreInfo1Max = Math.round(response.data.daily[1].temp.max);
+  document.querySelector("#info1-max").innerHTML = `${celciusMoreInfo1Max} °`;
+  celciusMoreInfo1Min = Math.round(response.data.daily[1].temp.min);
+  document.querySelector("#info1-min").innerHTML = `${celciusMoreInfo1Min} °`;
+  celciusMoreInfo1Percieved = Math.round(response.data.daily[1].feels_like.day);
+  document.querySelector(
+    "#info1-percieved"
+  ).innerHTML = `${celciusMoreInfo1Percieved} °`;
+  humidityTomorrow = response.data.daily[1].humidity;
+  document.querySelector("#info1-humidity").innerHTML = ` ${humidityTomorrow}`;
+  windTomorrow = response.data.daily[1].wind_speed;
+  document.querySelector("#info1-wind").innerHTML = ` ${windTomorrow}`;
+
+  celciusDay2 = response.data.daily[2].temp.day;
+  document.querySelector("#second-day-temperature").innerHTML = ` ${Math.round(
+    celciusDay2
+  )} °`;
+  celciusMoreInfo2Max = Math.round(response.data.daily[2].temp.max);
+  document.querySelector("#info2-max").innerHTML = `${celciusMoreInfo2Max} °`;
+  celciusMoreInfo2Min = Math.round(response.data.daily[2].temp.min);
+  document.querySelector("#info2-min").innerHTML = `${celciusMoreInfo2Min} °`;
+  celciusMoreInfo2Percieved = Math.round(response.data.daily[2].feels_like.day);
+  document.querySelector(
+    "#info2-percieved"
+  ).innerHTML = `${celciusMoreInfo2Percieved} °`;
+  humidityDay2 = response.data.daily[2].humidity;
+  document.querySelector("#info2-humidity").innerHTML = ` ${humidityDay2}`;
+  windDay2 = response.data.daily[2].wind_speed;
+  document.querySelector("#info2-wind").innerHTML = ` ${windDay2}`;
+
+  celciusDay3 = response.data.daily[3].temp.day;
+  document.querySelector("#third-day-temperature").innerHTML = ` ${Math.round(
+    celciusDay3
+  )} °`;
+  celciusMoreInfo3Max = Math.round(response.data.daily[3].temp.max);
+  document.querySelector("#info3-max").innerHTML = `${celciusMoreInfo3Max} °`;
+  celciusMoreInfo3Min = Math.round(response.data.daily[3].temp.min);
+  document.querySelector("#info3-min").innerHTML = `${celciusMoreInfo3Min} °`;
+  celciusMoreInfo3Percieved = Math.round(response.data.daily[3].feels_like.day);
+  document.querySelector(
+    "#info3-percieved"
+  ).innerHTML = `${celciusMoreInfo3Percieved} °`;
+  humidityDay3 = response.data.daily[3].humidity;
+  document.querySelector("#info3-humidity").innerHTML = ` ${humidityDay3}`;
+  windDay3 = response.data.daily[3].wind_speed;
+  document.querySelector("#info3-wind").innerHTML = ` ${windDay3}`;
+
+  celciusDay4 = response.data.daily[4].temp.day;
+  document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(
+    celciusDay4
+  )} °`;
+  celciusMoreInfo4Max = Math.round(response.data.daily[4].temp.max);
+  document.querySelector("#info4-max").innerHTML = `${celciusMoreInfo4Max} °`;
+  celciusMoreInfo4Min = Math.round(response.data.daily[4].temp.min);
+  document.querySelector("#info4-min").innerHTML = `${celciusMoreInfo4Min} °`;
+  celciusMoreInfo4Percieved = Math.round(response.data.daily[4].feels_like.day);
+  document.querySelector(
+    "#info4-percieved"
+  ).innerHTML = `${celciusMoreInfo4Percieved} °`;
+  humidityDay4 = response.data.daily[4].humidity;
+  document.querySelector("#info4-humidity").innerHTML = ` ${humidityDay4}`;
+  windDay4 = response.data.daily[4].wind_speed;
+  document.querySelector("#info4-wind").innerHTML = ` ${windDay4}`;
+
+  celciusDay5 = response.data.daily[5].temp.day;
+  document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(
+    celciusDay5
+  )} °`;
+  celciusMoreInfo5Max = Math.round(response.data.daily[5].temp.max);
+  document.querySelector("#info5-max").innerHTML = `${celciusMoreInfo5Max} °`;
+  celciusMoreInfo5Min = Math.round(response.data.daily[5].temp.min);
+  document.querySelector("#info5-min").innerHTML = `${celciusMoreInfo5Min} °`;
+  celciusMoreInfo5Percieved = Math.round(response.data.daily[5].feels_like.day);
+  document.querySelector(
+    "#info5-percieved"
+  ).innerHTML = `${celciusMoreInfo5Percieved} °`;
+  humidityDay5 = response.data.daily[5].humidity;
+  document.querySelector("#info5-humidity").innerHTML = ` ${humidityDay5}`;
+  windDay5 = response.data.daily[5].wind_speed;
+  document.querySelector("#info5-wind").innerHTML = ` ${windDay5}`;
+
+  celciusDay6 = response.data.daily[6].temp.day;
+  document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(
+    celciusDay6
+  )} °`;
+  celciusMoreInfo6Max = Math.round(response.data.daily[6].temp.max);
+  document.querySelector("#info6-max").innerHTML = `${celciusMoreInfo6Max} °`;
+  celciusMoreInfo6Min = Math.round(response.data.daily[6].temp.min);
+  document.querySelector("#info6-min").innerHTML = `${celciusMoreInfo6Min} °`;
+  celciusMoreInfo6Percieved = Math.round(response.data.daily[6].feels_like.day);
+  document.querySelector(
+    "#info6-percieved"
+  ).innerHTML = `${celciusMoreInfo6Percieved} °`;
+  humidityDay6 = response.data.daily[6].humidity;
+  document.querySelector("#info6-humidity").innerHTML = ` ${humidityDay6}`;
+  windDay6 = response.data.daily[6].wind_speed;
+  document.querySelector("#info6-wind").innerHTML = ` ${windDay6}`;
+
+  let icon1 = response.data.daily[1].weather[0].icon;
+  findIcon1(icon1);
+  let icon2 = response.data.daily[2].weather[0].icon;
+  findIcon2(icon2);
+  let icon3 = response.data.daily[3].weather[0].icon;
+  findIcon3(icon3);
+  let icon4 = response.data.daily[4].weather[0].icon;
+  findIcon4(icon4);
+  let icon5 = response.data.daily[5].weather[0].icon;
+  findIcon5(icon5);
+  let icon6 = response.data.daily[6].weather[0].icon;
+  findIcon6(icon6);
 }
 
 function reportCityWeatherMultiple(response) {
@@ -288,9 +447,9 @@ function findCurrentPosition(event) {
 function findCurrentPositionMultiple(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPositionMultiple);
-  let removeText = document.querySelector("#weather-description");
+  let removeText = document.querySelector("#current-city");
   removeText.innerHTML = " ";
-  let newText = document.querySelector("#current-city");
+  let newText = document.querySelector("#weather-description");
   newText.innerHTML =
     "Wait while we find 📍 If asked, press 'allow'. If not, change settings";
 }
@@ -302,9 +461,8 @@ function showCurrentPositionMultiple(position) {
   let apiHolder = `https://api.openweathermap.org/data/2.5/onecall?`;
   let apiUrl = `${apiHolder}${currentLat}${currentLon}&exclude=minutely,alerts&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeatherMultiple);
-  //axios.get(apiUrl).then(findHourlyDegrees);
-  //axios.get(apiUrl).then(findHourlyIcons);
 }
+ 
 
 function showCurrentPosition(position) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
@@ -339,113 +497,7 @@ function convertFahrenheit(event) {
   maximum.innerHTML = `${fahrenheitMax} `;
   minimum.innerHTML = `${fahrenheitMin} `;
 
-  document.querySelector("#percieved").innerHTML = Math.round(
-    percievedTemperature * 1.8 + 32
-  );
 
-  document.querySelector("#tomorrow-temperature").innerHTML = `${Math.round(
-    celciusTomorrow * 1.8 + 32
-  )} °`;
-  document.querySelector("#second-day-temperature").innerHTML = `${Math.round(
-    celciusDay2 * 1.8 + 32
-  )} °`;
-  document.querySelector("#third-day-temperature").innerHTML = `${Math.round(
-    celciusDay3 * 1.8 + 32
-  )} °`;
-  document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(
-    celciusDay4 * 1.8 + 32
-  )} °`;
-  document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(
-    celciusDay5 * 1.8 + 32
-  )} °`;
-  document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(
-    celciusDay6 * 1.8 + 32
-  )} °`;
-
-  document.querySelector("#info1-max").innerHTML = `${Math.round(
-    celciusMoreInfo1Max * 1.8 + 32
-  )} °`;
-  document.querySelector("#info1-min").innerHTML = `${Math.round(
-    celciusMoreInfo1Min * 1.8 + 32
-  )} °`;
-  document.querySelector("#info1-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo1Percieved * 1.8 + 32
-  )} °`;
-
-  document.querySelector("#info2-max").innerHTML = `${Math.round(
-    celciusMoreInfo2Max * 1.8 + 32
-  )} °`;
-  document.querySelector("#info2-min").innerHTML = `${Math.round(
-    celciusMoreInfo2Min * 1.8 + 32
-  )} °`;
-  document.querySelector("#info2-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo2Percieved * 1.8 + 32
-  )} °`;
-
-  document.querySelector("#info3-max").innerHTML = `${Math.round(
-    celciusMoreInfo3Max * 1.8 + 32
-  )} °`;
-  document.querySelector("#info3-min").innerHTML = `${Math.round(
-    celciusMoreInfo3Min * 1.8 + 32
-  )} °`;
-  document.querySelector("#info3-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo3Percieved * 1.8 + 32
-  )} °`;
-
-  document.querySelector("#info4-max").innerHTML = `${Math.round(
-    celciusMoreInfo4Max * 1.8 + 32
-  )} °`;
-  document.querySelector("#info4-min").innerHTML = `${Math.round(
-    celciusMoreInfo4Min * 1.8 + 32
-  )} °`;
-  document.querySelector("#info4-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo4Percieved * 1.8 + 32
-  )} °`;
-
-  document.querySelector("#info5-max").innerHTML = `${Math.round(
-    celciusMoreInfo5Max * 1.8 + 32
-  )} °`;
-  document.querySelector("#info5-min").innerHTML = `${Math.round(
-    celciusMoreInfo5Min * 1.8 + 32
-  )} °`;
-  document.querySelector("#info5-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo5Percieved * 1.8 + 32
-  )} °`;
-
-  document.querySelector("#info6-max").innerHTML = `${Math.round(
-    celciusMoreInfo6Max * 1.8 + 32
-  )} °`;
-  document.querySelector("#info6-min").innerHTML = `${Math.round(
-    celciusMoreInfo6Min * 1.8 + 32
-  )} °`;
-  document.querySelector("#info6-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo6Percieved * 1.8 + 32
-  )} °`;
-
-  //document.querySelector("#hour1-forecast").innerHTML = `${Math.round(hour1 * 1.8 + 32)} °`;
-  //document.querySelector("#hour2-forecast").innerHTML = `${Math.round(hour2 * 1.8 + 32)} °`;
-  //document.querySelector("#hour3-forecast").innerHTML = `${Math.round(hour3 * 1.8 + 32)} °`;
-  //document.querySelector("#hour4-forecast").innerHTML = `${Math.round(hour4 * 1.8 + 32)} °`;
-  //document.querySelector("#hour5-forecast").innerHTML = `${Math.round(hour5 * 1.8 + 32)} °`;
-  //document.querySelector("#hour6-forecast").innerHTML = `${Math.round(hour6 * 1.8 + 32)} °`;
-  //document.querySelector("#hour7-forecast").innerHTML = `${Math.round(hour7 * 1.8 + 32)} °`;
-  //document.querySelector("#hour8-forecast").innerHTML = `${Math.round(hour8 * 1.8 + 32)} °`;
-  //document.querySelector("#hour9-forecast").innerHTML = `${Math.round(hour9 * 1.8 + 32)} °`;
-  //document.querySelector("#hour10-forecast").innerHTML = `${Math.round(hour10 * 1.8 + 32)} °`;
-  //document.querySelector("#hour11-forecast").innerHTML = `${Math.round(hour11 * 1.8 + 32)} °`;
-  //document.querySelector("#hour12-forecast").innerHTML = `${Math.round(hour12 * 1.8 + 32)} °`;
-  //document.querySelector("#hour13-forecast").innerHTML = `${Math.round(hour13 * 1.8 + 32)} °`;
-  //document.querySelector("#hour14-forecast").innerHTML = `${Math.round(hour14 * 1.8 + 32)} °`;
-  //document.querySelector("#hour15-forecast").innerHTML = `${Math.round(hour15 * 1.8 + 32)} °`;
-  //document.querySelector("#hour16-forecast").innerHTML = `${Math.round(hour16 * 1.8 + 32)} °`;
-  //document.querySelector("#hour17-forecast").innerHTML = `${Math.round(hour17 * 1.8 + 32)} °`;
-  //document.querySelector("#hour18-forecast").innerHTML = `${Math.round(hour18 * 1.8 + 32)} °`;
-  //document.querySelector("#hour19-forecast").innerHTML = `${Math.round(hour19 * 1.8 + 32)} °`;
-  //document.querySelector("#hour20-forecast").innerHTML = `${Math.round(hour20 * 1.8 + 32)} °`;
-  //document.querySelector("#hour21-forecast").innerHTML = `${Math.round(hour21 * 1.8 + 32)} °`;
-  //document.querySelector("#hour22-forecast").innerHTML = `${Math.round(hour22 * 1.8 + 32)} °`;
-  //document.querySelector("#hour23-forecast").innerHTML = `${Math.round(hour23 * 1.8 + 32)} °`;
-  //document.querySelector("#hour24-forecast").innerHTML = `${Math.round(hour24 * 1.8 + 32)} °`;
 }
 
 function convertCelcius(event) {
@@ -471,110 +523,7 @@ function convertCelcius(event) {
   let celciusMin = Math.round(((temperatureMin - 32) * 5) / 9);
   maximum.innerHTML = `${celciusMax} `;
   minimum.innerHTML = `${celciusMin} `;
-  document.querySelector("#percieved").innerHTML = percievedTemperature;
 
-  document.querySelector("#tomorrow-temperature").innerHTML = `${Math.round(
-    celciusTomorrow
-  )} °`;
-  document.querySelector("#info1-max").innerHTML = `${Math.round(
-    celciusMoreInfo1Max
-  )} °`;
-  document.querySelector("#info1-min").innerHTML = `${Math.round(
-    celciusMoreInfo1Min
-  )} °`;
-  document.querySelector("#info1-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo1Percieved
-  )} °`;
-
-  document.querySelector("#second-day-temperature").innerHTML = `${Math.round(
-    celciusDay2
-  )} °`;
-  document.querySelector("#info2-max").innerHTML = `${Math.round(
-    celciusMoreInfo2Max
-  )} °`;
-  document.querySelector("#info2-min").innerHTML = `${Math.round(
-    celciusMoreInfo2Min
-  )} °`;
-  document.querySelector("#info2-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo2Percieved
-  )} °`;
-
-  document.querySelector("#third-day-temperature").innerHTML = `${Math.round(
-    celciusDay3
-  )} °`;
-  document.querySelector("#info3-max").innerHTML = `${Math.round(
-    celciusMoreInfo3Max
-  )} °`;
-  document.querySelector("#info3-min").innerHTML = `${Math.round(
-    celciusMoreInfo3Min
-  )} °`;
-  document.querySelector("#info3-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo3Percieved
-  )} °`;
-
-  document.querySelector("#fourth-day-temperature").innerHTML = `${Math.round(
-    celciusDay4
-  )} °`;
-  document.querySelector("#info4-max").innerHTML = `${Math.round(
-    celciusMoreInfo4Max
-  )} °`;
-  document.querySelector("#info4-min").innerHTML = `${Math.round(
-    celciusMoreInfo4Min
-  )} °`;
-  document.querySelector("#info4-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo4Percieved
-  )} °`;
-
-  document.querySelector("#fifth-day-temperature").innerHTML = `${Math.round(
-    celciusDay5
-  )} °`;
-  document.querySelector("#info5-max").innerHTML = `${Math.round(
-    celciusMoreInfo5Max
-  )} °`;
-  document.querySelector("#info5-min").innerHTML = `${Math.round(
-    celciusMoreInfo5Min
-  )} °`;
-  document.querySelector("#info5-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo5Percieved
-  )} °`;
-
-  document.querySelector("#sixth-day-temperature").innerHTML = `${Math.round(
-    celciusDay6
-  )} °`;
-  document.querySelector("#info6-max").innerHTML = `${Math.round(
-    celciusMoreInfo6Max
-  )} °`;
-  document.querySelector("#info6-min").innerHTML = `${Math.round(
-    celciusMoreInfo6Min
-  )} °`;
-  document.querySelector("#info6-percieved").innerHTML = `${Math.round(
-    celciusMoreInfo6Percieved
-  )} °`;
-
-  //document.querySelector("#hour1-forecast").innerHTML = `${hour1} °`;
-  //document.querySelector("#hour2-forecast").innerHTML = `${hour2} °`;
-  //document.querySelector("#hour3-forecast").innerHTML = `${hour3} °`;
-  //document.querySelector("#hour4-forecast").innerHTML = `${hour4} °`;
-  //document.querySelector("#hour5-forecast").innerHTML = `${hour5} °`;
-  //document.querySelector("#hour6-forecast").innerHTML = `${hour6} °`;
-  //document.querySelector("#hour7-forecast").innerHTML = `${hour7} °`;
-  //document.querySelector("#hour8-forecast").innerHTML = `${hour8} °`;
-  //document.querySelector("#hour9-forecast").innerHTML = `${hour9} °`;
-  //document.querySelector("#hour10-forecast").innerHTML = `${hour10} °`;
-  //document.querySelector("#hour11-forecast").innerHTML = `${hour11} °`;
-  //document.querySelector("#hour12-forecast").innerHTML = `${hour12} °`;
-  //document.querySelector("#hour13-forecast").innerHTML = `${hour13} °`;
-  //document.querySelector("#hour14-forecast").innerHTML = `${hour14} °`;
-  //document.querySelector("#hour15-forecast").innerHTML = `${hour15} °`;
-  //document.querySelector("#hour16-forecast").innerHTML = `${hour16} °`;
-  //document.querySelector("#hour17-forecast").innerHTML = `${hour17} °`;
-  //document.querySelector("#hour18-forecast").innerHTML = `${hour18} °`;
-  //document.querySelector("#hour19-forecast").innerHTML = `${hour19} °`;
-  //document.querySelector("#hour20-forecast").innerHTML = `${hour20} °`;
-  //document.querySelector("#hour21-forecast").innerHTML = `${hour21} °`;
-  //document.querySelector("#hour22-forecast").innerHTML = `${hour22} °`;
-  //document.querySelector("#hour23-forecast").innerHTML = `${hour23} °`;
-  //document.querySelector("#hour24-forecast").innerHTML = `${hour24} °`;
 }
 
 let time = new Date();
@@ -657,10 +606,11 @@ let apiUrlDefault = `${apiHolderDefault}${currentLatDefault}${currentLonDefault}
 axios.get(apiUrlDefault).then(reportCityWeatherMultiple);
 
 
-//axios.get(apiUrl).then(findHourlyIcons);
-
 let changeDegreeFahrenheit = document.querySelector("#fahrenheit");
 changeDegreeFahrenheit.addEventListener("click", convertFahrenheit);
+let changeHourlyDegreeFahrenheit = document.querySelector("#fahrenheit");
+changeHourlyDegreeFahrenheit.addEventListener("click", convertHourlyFahrenheit);
+
 
 let changeDegreeCelcius = document.querySelector("#celcius");
 changeDegreeCelcius.addEventListener("click", convertCelcius);
@@ -671,6 +621,7 @@ let suggestedCityTwo = document.querySelector("#second-city");
 suggestedCityTwo.addEventListener("click", handleCityTwo);
 let suggestedCityThree = document.querySelector("#third-city");
 suggestedCityThree.addEventListener("click", handleCityThree);
+
 
 let percievedTemperature = null;
 let celciusTomorrow = null;
