@@ -60,10 +60,9 @@ forecast.forEach(function (forecastDaily, index) {
     forecastHTML =
       forecastHTML +
       `<div class="scroll-bar" id="scroll-daily-forecast">
-    <div class="box1 "> <span id="tomorrow">${findDate(forecastDaily.dt)}</span>
-            <div class="child-box"><span id="tomorrow-temperature">
-            ${Math.round(forecastDaily.temp.day)} °</span>
-                <div> <i class = "${icons[icon]}" id="first-icon"> </i></div>
+    <div class="box1"> <span id="tomorrow">${findDate(forecastDaily.dt)}</span>
+            <div class="child-box"> 
+            ${Math.round(forecastDaily.temp.day)} ° <span> <i class = "${icons[icon]}" id= "first-icon"> </i></span>
             </div>
         </div>
           <div id = "more-info1"> 
@@ -112,9 +111,9 @@ if (index < 7 ){
     forecastHTML +
     `<div class="scroll-bar" id="scroll-daily-forecast">
     <div class="box1 "> <span id="tomorrow">${findDate(forecastDaily.dt)}</span>
-            <div class="child-box"><span id="tomorrow-temperature">
-            ${Math.round(forecastDaily.temp.day)} °</span>
-                <div> <i class = "${icons[icon]}" id="first-icon"> </i></div>
+            <div class="child-box">
+            ${Math.round(forecastDaily.temp.day)} ° <span>
+              <i class = "${icons[icon]}" id="first-icon"> </i></span>
             </div>
         </div>
           <div id = "more-info1"> 
