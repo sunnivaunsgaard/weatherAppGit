@@ -343,7 +343,7 @@ white-space: nowrap;
 
 
 
-@media (max-width: 420px) {
+@media (max-width: 470px) {
 
     h1 {
     padding-top: 150px;
@@ -354,6 +354,10 @@ a {
     text-decoration: none;
     color:inherit;
 }
+a:hover {
+    color:inherit;
+}
+
 
 ul {
     list-style: none;
@@ -443,7 +447,7 @@ border-radius:30px;
     background-color:rgba(175, 180, 189, 0.2);
     padding: 20px;
     min-width: 100%;
-    min-height: 1650px;
+    min-height: 1660px;
 }
 
 .posision-entity{
@@ -512,6 +516,10 @@ color: rgb(65, 63, 62);
 .f-c-change {
     color: rgb(10, 10, 10);
     font-weight: bold;
+}
+
+.f-c-change:hover {
+    color: rgb(10, 10, 10);
 }
 
 #main-icon {
@@ -598,7 +606,7 @@ white-space: nowrap;
 
 .forecast-boxes{
     padding-top: 50px;
-    width: 870px;
+    width: 100%;
     height: 200px;
     margin: 0 auto;
     display: grid;
@@ -607,7 +615,7 @@ white-space: nowrap;
 }
 
 .scroll-bar {  
-  width: 870px;
+  width: 100%;
   height: 150px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -620,7 +628,7 @@ white-space: nowrap;
   display: block;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
-  width: 860px;
+  width: 100%;
   height: 80px;
   padding:10px;
   color:rgb(65, 63, 62);
