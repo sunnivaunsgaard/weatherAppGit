@@ -468,7 +468,7 @@ border-radius:30px;
 }
 
 .first-collumn {
-    min-width: 365px;
+    min-width: 370px;
 }
 
 #date-today {
@@ -515,8 +515,8 @@ color: rgb(65, 63, 62);
 
 #main-icon {
     color:rgb(71, 70, 69);
-    font-size: 60px;
-    padding-left: 15px;
+    font-size: 50px;
+    padding-left: 10px;
     position: relative;
     bottom: 10px;
 }
@@ -670,7 +670,6 @@ white-space: nowrap;
 }
 
 
-
 .info-max-min {
     font-size: 30px;
     padding-top: 5px;
@@ -688,7 +687,7 @@ white-space: nowrap;
     text-align: center;
     font-size: 20px;
     font-weight:lighter;
-    padding: 100px 100px 50px;
+    padding: 150px 100px 50px;
 }
 
     
