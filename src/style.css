@@ -408,20 +408,20 @@ border-radius:30px;
     bottom: 4px;
 }
 .search-button-spacing {
-    padding-right: 50px;
+    padding-right: 40px;
 }
 
 #current-location {
-    padding:10px 10px;
+    padding:10px 20px 10px 15px;
     border-radius:10px;
     border: 1px solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
     color:rgb(65, 63, 62);
-    font-size: 19px;
-    line-height: 20xp;
+    font-size: 24px;
+    text-align: center;
     position:relative;
-    bottom: 14px;
-     box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
+    bottom: 19px;
+    box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
 
 }
 #first-city, #second-city, #third-city {
@@ -430,13 +430,13 @@ border-radius:30px;
     border: 1px solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
     color:rgb(65, 63, 62);
-    font-size: 20px;
+    font-size: 25px;
     position:relative;
-    bottom: 15px;
-     box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
+    bottom: 20px;
+    box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
 }
 .button-spacing {
-   padding: 10px;
+   padding: 14px;
 }
 
 .back-card {
