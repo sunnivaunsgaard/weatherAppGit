@@ -352,7 +352,7 @@ white-space: nowrap;
 }
 a {
     text-decoration: none;
-    color: inherit;
+    color:inherit;
 }
 
 ul {
@@ -507,9 +507,10 @@ color: rgb(65, 63, 62);
     bottom:25px;
     font-size: 45px;
     font-weight: lighter;
+
 }
 .f-c-change {
-    color: rgb(32, 32, 32);
+    color: rgb(10, 10, 10);
     font-weight: bold;
 }
 
@@ -597,7 +598,7 @@ white-space: nowrap;
 
 .forecast-boxes{
     padding-top: 50px;
-    width: 860px;
+    width: 870px;
     height: 200px;
     margin: 0 auto;
     display: grid;
@@ -606,7 +607,7 @@ white-space: nowrap;
 }
 
 .scroll-bar {  
-  width: 860px;
+  width: 870px;
   height: 150px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -619,7 +620,7 @@ white-space: nowrap;
   display: block;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
-  width: 850px;
+  width: 860px;
   height: 80px;
   padding:10px;
   color:rgb(65, 63, 62);
