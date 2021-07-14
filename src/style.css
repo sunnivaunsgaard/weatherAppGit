@@ -344,7 +344,7 @@ white-space: nowrap;
 @media (max-width: 420px) {
 
     h1 {
-    padding: 200px 0px 80px 180px;
+    padding: 100px 0px 50px 80px;
     color: rgba(144, 186, 248, 0.8);
     font-size: 80px;
     font-family: 'Pacifico', cursive;
@@ -365,21 +365,20 @@ li {
     line-height: 25px;
 }
 .total-spacing {
-max-height: 90%;
+max-height: 80;
 }
 
 .first-line{
-  display: flex;
-  margin:none;
   margin-top:10px;
+  padding-bottom: 20px;
 }
 #type-city {
     border-radius: 30px;
     border: solid 0.5px; 
     border-color: gray;
-    max-width: 170px;
-    max-height: 30px;
-    font-size: 12px;
+    min-width: 300px;
+    min-height: 50px;
+    font-size: 20px;
 }
 .search:focus {
 outline: none;
@@ -391,11 +390,11 @@ border-radius:30px;
 }
 .search-button {
     background-color:rgba(170, 213, 241, 0.6);
-    padding:6px 8px;
-    border-radius:10px;
+    padding:10px 10px;
+    border-radius:15px;
     box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
     color:rgb(65, 63, 62);
-    font-size: 12px;
+    font-size: 20px;
     border: 1px solid rgba(123, 231, 250, 0.534);
     position: relative;
     bottom: 4px;
@@ -449,13 +448,10 @@ border-radius:30px;
 .back-card {
     background-color:rgba(175, 180, 189, 0.2);
     padding: 20px;
-    min-width: 90%;
+    min-width: 100%;
     min-height: 1500px;
 }
 
-#input-form {
-padding: 
-}
 
 .posision-entity{
     display: block;
@@ -468,14 +464,14 @@ padding:
     background-color: rgba(247, 213, 119, 0.3);
     box-shadow: 5px 5px 5px rgba(65, 63, 62, 0.4) ;
     max-width: 700px;
-    min-height: 400px;
+    min-height: 350px;
     display:block;
     margin: 0 auto;
 
 }
 .inside-card-body {
     color:rgb(77, 76, 76);
-    padding: 50px 0px 30px 30px;
+    padding: 30px 0px 30px 35px;
 }
 
 #date-today {
@@ -485,24 +481,25 @@ padding:
 }
 
 #weather-description {
-    font-size: 13px;
+    font-size: 20px;
 }
 #weather-description::first-letter{
     text-transform: capitalize;
 }
 
 .current-city{
-font-size: 18px;
+font-size: 30px;
 color: rgb(65, 63, 62); 
 font-weight: bolder;
+padding-bottom: 10px;
 }
 .current-city-waiting{
-font-size: 10px;
+font-size: 12px;
 color: rgb(65, 63, 62); 
 }
 
 #degrees-city {
-    font-size: 45px;
+    font-size: 55px;
     color: rgb(32, 32, 32);
     padding-left: 5px;
 }
@@ -511,7 +508,7 @@ color: rgb(65, 63, 62);
     color: gray;
     position: relative;
     bottom:15px;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: lighter;
 }
 .f-c-change {
@@ -521,15 +518,15 @@ color: rgb(65, 63, 62);
 
 #main-icon {
     color:rgb(71, 70, 69);
-    font-size: 35px;
-    padding-left: 10px;
+    font-size: 40px;
+    padding-left: 15px;
     position: relative;
     bottom: 10px;
 }
 
 
 .time {
-font-size: 12px;
+font-size: 20px;
 }
 #max {
     font-weight: bold;
@@ -542,17 +539,19 @@ font-size: 12px;
 }
 
 #date-today {
-    font-size: 12px;
+    font-size: 20px;
  
 }
-.extra-value {
-    font-size: 12px;
+.extra-values {
+    font-size: 20px;
+    min-width: 130px;
+
 }
 
 .apparent-description {
-    font-size: 12px;
+    font-size: 20px;
     margin-top: 10px;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 
@@ -599,7 +598,7 @@ white-space: nowrap;
 
 
 #tomorrow {
-    font-size: 20px;
+    font-size: 18px;
     color:rgb(65, 63, 62);
     font-weight: lighter;
 }
@@ -634,7 +633,7 @@ white-space: nowrap;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
   width: 700px;
-  height: 100px;
+  height: 90px;
   padding:10px;
   color:rgb(65, 63, 62);
   border-radius: 4px;
@@ -649,7 +648,7 @@ white-space: nowrap;
 }
 
 .child-box{
-    padding:10px;
+    padding-bottom: 10px;
     text-align: center;
     font-size: 22px;
 
@@ -673,7 +672,7 @@ white-space: nowrap;
     text-align: center;
     font-size: 15px;
     font-weight:lighter;
-    padding: 100px 100px 400px;
+    padding: 100px 100px 50px;
 }
 
     
