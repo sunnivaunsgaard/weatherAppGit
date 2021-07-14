@@ -9,9 +9,9 @@ body {
 }
 h1 {
     padding: 200px 0px 60px 180px;
-    color: rgba(144, 186, 248, 0.8);
+    color: rgba(120, 171, 247, 0.8);
     font-size: 50px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Poiret One', Verdana;
 }
 a {
     text-decoration: none;
@@ -27,6 +27,21 @@ li {
     color:gray;
     font-size: 11px;
     line-height: 25px;
+}
+
+.button-aurora {
+    font-size: 14px;
+    font-family: 'Poiret One', Verdana;
+    padding:15px;
+    border:none;
+    background: radial-gradient(circle, rgba(9,223,66,0.1) 26%, rgba(30,241,249,0.2) 76%);
+    color:rgb(65, 63, 62);
+    box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.6) ;
+}
+.aurora-spacing {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .total-spacing {
     display:block;
@@ -45,9 +60,9 @@ li {
     border-radius: 30px;
     border: solid 0.5px; 
     border-color: gray;
-    max-width: 170px;
-    max-height: 30px;
-    font-size: 12px;
+    min-width: 225px;
+    max-height: 40px;
+    font-size: 14px;
 }
 .search:focus {
 outline: none;
@@ -63,7 +78,7 @@ border-radius:30px;
     border-radius:10px;
     box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
     color:rgb(65, 63, 62);
-    font-size: 12px;
+    font-size: 14px;
     border: 1px solid rgba(123, 231, 250, 0.534);
     position: relative;
     bottom: 4px;
@@ -78,42 +93,28 @@ border-radius:30px;
     border: 1px solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
     color:rgb(65, 63, 62);
-    font-size: 11px;
-    line-height: 12xp;
+    font-size: 14px;
+    line-height: 14xp;
     position:relative;
     bottom: 14px;
      box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
 
 }
 #first-city, #second-city, #third-city {
-    padding:6px 8px;
+    padding:6px 10px;
     border-radius:10px;
     border: 1px solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
     color:rgb(65, 63, 62);
-    font-size: 12px;
+    font-size: 14px;
     position:relative;
     bottom: 15px;
-     box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
+     box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6);
 }
 .button-spacing {
    padding: 10px;
 }
 
-.button-aurora {
-    font-size: 9px;
-    padding:10px;
-    border-radius: 15px;
-    border:none;
-    background: radial-gradient(circle, rgba(9,223,66,0.1) 26%, rgba(30,241,249,0.2) 76%);
-    color:rgb(65, 63, 62);
-     box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.6) ;
-}
-.aurora-spacing {
-    position: relative;
-    bottom: 35px;
-    left: 40px;
-}
 .back-card {
     background-color:rgba(175, 180, 189, 0.2);
     padding: 10px;
@@ -229,6 +230,7 @@ font-size: 12px;
     font-size: 12px;
     padding-bottom: none;
     margin: 3px;
+    font-family: 'Poiret One', Verdana;
 }
 
 .scrolling-wrapper {
@@ -243,11 +245,11 @@ white-space: nowrap;
 
  .hourly {
   background-color: rgba(218, 234, 245, 0.366);
-  width: 85px;
+  width: 80px;
   padding: 10px 3px;
   border-radius: 10px;
   font-size: 11px;
-  margin: 1px;
+  margin: 6px;
   float: none;
   display: inline-block;
   box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.2) ;
@@ -344,10 +346,9 @@ white-space: nowrap;
 @media (max-width: 420px) {
 
     h1 {
-    padding: 100px 0px 50px 80px;
-    color: rgba(144, 186, 248, 0.8);
+    padding-top: 150px;
+    color: rgba(121, 171, 245, 0.8);
     font-size: 80px;
-    font-family: 'Pacifico', cursive;
 }
 a {
     text-decoration: none;
@@ -364,8 +365,15 @@ li {
     font-size: 11px;
     line-height: 25px;
 }
-.total-spacing {
-max-height: 80;
+
+.button-aurora {
+    font-size: 14px;
+    font-family: 'Poiret One', Verdana;
+    padding:15px;
+    border:none;
+    background: radial-gradient(circle, rgba(9,223,66,0.1) 26%, rgba(30,241,249,0.2) 76%);
+    color:rgb(65, 63, 62);
+    box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.6);
 }
 
 .first-line{
@@ -431,27 +439,12 @@ border-radius:30px;
    padding: 10px;
 }
 
-.button-aurora {
-    font-size: 9px;
-    padding:10px;
-    border-radius: 15px;
-    border:none;
-    background: radial-gradient(circle, rgba(9,223,66,0.1) 26%, rgba(30,241,249,0.2) 76%);
-    color:rgb(65, 63, 62);
-     box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.6) ;
-}
-.aurora-spacing {
-    position: relative;
-    bottom: 35px;
-    left: 40px;
-}
 .back-card {
     background-color:rgba(175, 180, 189, 0.2);
     padding: 20px;
     min-width: 100%;
     min-height: 1500px;
 }
-
 
 .posision-entity{
     display: block;
@@ -504,11 +497,11 @@ color: rgb(65, 63, 62);
     padding-left: 5px;
 }
 .f-c {
-    margin:5px;
+    margin:6px;
     color: gray;
     position: relative;
     bottom:15px;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: lighter;
 }
 .f-c-change {
@@ -518,7 +511,7 @@ color: rgb(65, 63, 62);
 
 #main-icon {
     color:rgb(71, 70, 69);
-    font-size: 40px;
+    font-size: 45px;
     padding-left: 15px;
     position: relative;
     bottom: 10px;
@@ -532,7 +525,7 @@ font-size: 20px;
     font-weight: bold;
 }
 #min {
-    font-weight: lighter;
+    font-weight: normal;
 }
 .extra-description {
     text-align: right;
@@ -560,6 +553,7 @@ font-size: 20px;
     font-size: 15px;
     padding-bottom: none;
     margin: 3px;
+    font-family: 'Poiret One', Verdana;
 }
 
 .scrolling-wrapper {
@@ -597,19 +591,9 @@ white-space: nowrap;
 }
 
 
-#tomorrow {
-    font-size: 18px;
-    color:rgb(65, 63, 62);
-    font-weight: lighter;
-}
-
-#first-icon  {
-    color:rgb(65, 63, 62);
-    font-weight: lighter;
-}
 
 .forecast-boxes{
-    padding-top: 30px;
+    padding-top: 50px;
     width: 720px;
     height: 200px;
     margin: 0 auto;
@@ -633,7 +617,7 @@ white-space: nowrap;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
   width: 700px;
-  height: 90px;
+  height: 80px;
   padding:10px;
   color:rgb(65, 63, 62);
   border-radius: 4px;
@@ -644,33 +628,62 @@ white-space: nowrap;
 .box1:hover {
   border: 1px solid rgba(147, 236, 252, 0.534);
   background-color: rgba(199, 224, 241, 0.466);
-
 }
+
+.box1:hover .child-box{
+    text-align: center;
+    line-height: 40px;
+    font-size: 40px;
+    color: rgb(65, 63, 62);
+    font-weight: lighter;
+    position: relative;
+    bottom: 20px;
+}
+
+.box1:hover #tomorrow {
+    font-size: 0px;
+    color:transparent;
+    padding:0px;
+    margin:0px;
+}
+
+
+#first-icon  {
+    color: rgb(133, 133, 132);
+    font-weight: lighter;
+}
+
+#tomorrow {
+    font-size: 40px;
+    color:rgb(65, 63, 62);
+}
+
 
 .child-box{
     padding-bottom: 10px;
     text-align: center;
-    font-size: 22px;
-
+    font-size: 1px;
+    color: transparent;
 }
 
 
+
 .info-max-min {
-    font-size: 17px;
+    font-size: 25px;
     padding-top: 5px;
     padding-bottom: 10px;
     text-align: center;
 }
 
 .info-percieved, .info-humidity, .info-wind {
-    font-size: 17px;
+    font-size: 20px;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 
 .coded-by {
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     font-weight:lighter;
     padding: 100px 100px 50px;
 }

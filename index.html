@@ -12,11 +12,19 @@
     <link rel="stylesheet" type="text/css" 
     href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
     <title>Weather Application</title>
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+    <div class="aurora-spacing">
+                    <button class="button-aurora" onclick="location.href='aurora.html'">
+                          Aurora Forecast
+                    </button>
+                </div>
     <div class="total-spacing">
         <h1>Weather Forecast</h1>
     <div class="card back-card mx-auto">
@@ -45,11 +53,6 @@
                 <div class="button-spacing">
                     <button id="third-city">Quito</button>
                 </div>
-                <div class="aurora-spacing">
-                    <button class="button-aurora" onclick="location.href='aurora.html'">
-                          Aurora Forecast
-                    </button>
-                </div>
               </div>
         <div class="card-container-today">
             <div class="card inside-card">
@@ -63,8 +66,8 @@
                             <div class="col">
                                 <span id="degrees-city"></span>
                                   <span class="f-c">
-                                    <a href="#" id="celcius"> °C </a>|
-                                    <a href="#"id="fahrenheit">°F</a>
+                                    <a href="#" id="celcius">  °C </a> |
+                                    <a href="#"id="fahrenheit"> °F</a>
                                   </span>      
                            <i id="main-icon"> </i>
                             </div>

@@ -86,7 +86,7 @@ forecast.forEach(function (forecastDaily, index) {
               </li>
               <li class="info-wind">
               Wind: <span id="info1-wind">
-              ${forecastDaily.wind_speed}
+              ${Math.round(forecastDaily.wind_speed)}
               </span> m/h
               </li>
               </ul> 
@@ -136,7 +136,7 @@ if (index < 7 ){
               </li>
               <li class="info-wind">
               Wind: <span id="info1-wind">
-              ${forecastDaily.wind_speed}
+              ${Math.round(forecastDaily.wind_speed)}
               </span> m/h
               </li>
               </ul> 
