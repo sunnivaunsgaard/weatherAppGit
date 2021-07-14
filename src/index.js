@@ -218,6 +218,50 @@ function reportCityWeather(response) {
   findIcon(icon);
 }
 
+function reportCelcius(response) {
+  document.querySelector("#degrees-city").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempMin = Math.round(response.data.main.temp_min);
+  document.querySelector("#max").innerHTML = `${tempMax} `;
+  document.querySelector("#min").innerHTML = ` ${tempMin} `;
+  percievedTemperature = Math.round(response.data.main.feels_like);
+  document.querySelector("#percieved").innerHTML = `${percievedTemperature}`;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  let divElementC = document.querySelector("#celcius");
+  divElementC.classList.add("f-c-change");
+  let divElementF = document.querySelector("#fahrenheit");
+  divElementF.classList.remove("f-c-change");
+
+}
+
+function reportFahrenheit(response) {
+document.querySelector("#degrees-city").innerHTML = 
+Math.round(response.data.main.temp);
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempMin = Math.round(response.data.main.temp_min);
+  document.querySelector("#max").innerHTML = `${tempMax} `;
+  document.querySelector("#min").innerHTML = ` ${tempMin} `;
+  percievedTemperature = Math.round(response.data.main.feels_like);
+  document.querySelector("#percieved").innerHTML = `${percievedTemperature}`;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  let divElementF = document.querySelector("#fahrenheit");
+  divElementF.classList.add("f-c-change");
+  let divElementC = document.querySelector("#celcius");
+  divElementC.classList.remove("f-c-change");
+}
+
 function findIcon(icon0) {
   document.getElementById("main-icon").classList.remove("wi", currentClass);
   currentClass = theIcons[icon0] || "wi-cloud";
@@ -280,6 +324,17 @@ function searchCityWeather(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(reportCityWeather);
 }
+function searchFahrenheit(city) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(reportFahrenheit);
+}
+
+function searchCelcius(city) {
+  let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(reportCelcius);
+}
 
 function showCurrentPositionMultiple(position) {
   let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
@@ -319,68 +374,17 @@ function convertHourlyCelcius(event) {
 
 function convertFahrenheit(event) {
   event.preventDefault();
-  if (!isCelcius) return;
-
-  isCelcius = false;
-  let updateFahrenheit = document.querySelector("#degrees-city");
-  let temperature = updateFahrenheit.innerHTML;
-  temperature = Number(temperature);
-  let fahrenheit = Math.round(temperature * 1.8 + 32);
-  updateFahrenheit.innerHTML = `${fahrenheit}`;
-  changeDegreeFahrenheit.classList.add("f-c-change");
-  changeDegreeCelcius.classList.remove("f-c-change");
-
-  let maximum = document.querySelector("#max");
-  let temperatureMax = maximum.innerHTML;
-  temperatureMax = Number(temperatureMax);
-  let fahrenheitMax = Math.round(temperatureMax * 1.8 + 32);
-  let minimum = document.querySelector("#min");
-  let temperatureMin = minimum.innerHTML;
-  temperatureMin = Number(temperatureMin);
-  let fahrenheitMin = Math.round(temperatureMin * 1.8 + 32);
-  maximum.innerHTML = `${fahrenheitMax} `;
-  minimum.innerHTML = `${fahrenheitMin} `;
-
-  let percievedTemperature = document.querySelector("#percieved");
-  let percievedFahrenheit = percievedTemperature.innerHTML;
-  percievedFahrenheit = Number(percievedFahrenheit);
-  let percieved = Math.round(percievedFahrenheit * 1.8 +32);
-  percievedTemperature.innerHTML = `${percieved}`;
+  let city = document.querySelector("#current-city").innerHTML;
+  searchFahrenheit(city);
 }
 
 function convertCelcius(event) {
   event.preventDefault();
-  if (isCelcius) return;
-
-  isCelcius = true;
-  let updateCelcius = document.querySelector("#degrees-city");
-  let temperature = updateCelcius.innerHTML;
-  temperature = Number(temperature);
-  let celcius = Math.round(((temperature - 32) * 5) / 9);
-  updateCelcius.innerHTML = `${celcius}`;
-  changeDegreeCelcius.classList.add("f-c-change");
-  changeDegreeFahrenheit.classList.remove("f-c-change");
-
-  let maximum = document.querySelector("#max");
-  let temperatureMax = maximum.innerHTML;
-  temperatureMax = Number(temperatureMax);
-  let celciusMax = Math.round(((temperatureMax - 32) * 5) / 9);
-  let minimum = document.querySelector("#min");
-  let temperatureMin = minimum.innerHTML;
-  temperatureMin = Number(temperatureMin);
-  let celciusMin = Math.round(((temperatureMin - 32) * 5) / 9);
-  maximum.innerHTML = `${celciusMax} `;
-  minimum.innerHTML = `${celciusMin} `;
-
-    let percievedTemperature = document.querySelector("#percieved");
-    let percievedCelcius = percievedTemperature.innerHTML;
-    percievedCelcius = Number(percievedCelcius);
-    let percieved = Math.round((percievedCelcius - 32) * 5 /9);
-    percievedTemperature.innerHTML = `${percieved}`;
-
+  let city = document.querySelector("#current-city").innerHTML;
+  searchCelcius(city);
 }
 
-let isCelcius = true;
+
 
 let time = new Date();
 
