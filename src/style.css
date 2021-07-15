@@ -634,7 +634,7 @@ white-space: nowrap;
   color:rgb(65, 63, 62);
   border-radius: 100px;
   margin:8px;
-  box-shadow: 2px 3px 3px rgba(97, 96, 95, 0.4) ;
+  box-shadow: 4px 4px 4px rgba(97, 96, 95, 0.2) ;
 }
 
 .box1:hover {
