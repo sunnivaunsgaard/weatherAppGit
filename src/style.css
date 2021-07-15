@@ -472,7 +472,7 @@ border-radius:30px;
 }
 
 .first-collumn {
-    min-width: 370px;
+    min-width: 450px;
 }
 
 #date-today {
@@ -500,22 +500,29 @@ color: rgb(65, 63, 62);
 }
 
 #degrees-city {
-    font-size: 85px;
+    font-size: 80px;
     color: rgb(32, 32, 32);
     padding-left: 5px;
 }
+#celcius {
+    padding-left: 10px;
+}
+
+#fahrenheit {
+    padding-left: 10px;
+}
 .f-c {
-    margin:6px;
+    margin:8px;
     color: gray;
     position: relative;
     bottom:25px;
-    font-size: 45px;
+    font-size: 50px;
     font-weight: lighter;
-
 }
 .f-c-change {
     color: rgb(10, 10, 10);
     font-weight: bold;
+    font-size: 45px;
 }
 
 .f-c-change:hover {
@@ -524,10 +531,10 @@ color: rgb(65, 63, 62);
 
 #main-icon {
     color:rgb(71, 70, 69);
-    font-size: 50px;
-    padding-left: 10px;
+    font-size: 55px;
+    padding-left: 20px;
     position: relative;
-    bottom: 10px;
+    bottom: 15px;
 }
 
 
@@ -542,6 +549,7 @@ font-size: 25px;
 }
 .extra-description {
     text-align: right;
+    max-width: 170px;
 }
 
 #date-today {
