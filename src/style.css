@@ -605,8 +605,8 @@ white-space: nowrap;
 
 
 .forecast-boxes{
-    padding-top: 50px;
-    width: 100%;
+    padding-top: 60px;
+    width: 600px;
     height: 200px;
     margin: 0 auto;
     display: grid;
@@ -615,7 +615,7 @@ white-space: nowrap;
 }
 
 .scroll-bar {  
-  width: 100%;
+  width: 600px;
   height: 150px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -628,7 +628,7 @@ white-space: nowrap;
   display: block;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
-  width: 100%;
+  width: 590px;
   height: 80px;
   padding:10px;
   color:rgb(65, 63, 62);
