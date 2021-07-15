@@ -472,7 +472,7 @@ border-radius:30px;
 }
 
 .first-collumn {
-    min-width: 450px;
+    min-width: 460px;
 }
 
 #date-today {
@@ -506,6 +506,7 @@ color: rgb(65, 63, 62);
 }
 #celcius {
     padding-left: 10px;
+    padding-right: 5px;
 }
 
 #fahrenheit {
@@ -516,7 +517,7 @@ color: rgb(65, 63, 62);
     color: gray;
     position: relative;
     bottom:25px;
-    font-size: 50px;
+    font-size: 55px;
     font-weight: lighter;
 }
 .f-c-change {
@@ -532,7 +533,7 @@ color: rgb(65, 63, 62);
 #main-icon {
     color:rgb(71, 70, 69);
     font-size: 55px;
-    padding-left: 20px;
+    padding-left: 25px;
     position: relative;
     bottom: 15px;
 }
