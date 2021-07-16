@@ -347,9 +347,10 @@ white-space: nowrap;
 @media (max-width: 470px) {
 
     h1 {
-    padding-top: 150px;
+    padding: 1.5em 0em 0.5em;
     color: rgba(121, 171, 245, 0.8);
-    font-size: 80px;
+    font-size: 4em;
+    text-align: center;
 }
 a {
     text-decoration: none;
@@ -362,60 +363,58 @@ a:hover {
 
 ul {
     list-style: none;
-    padding: 0px;
+    padding: 0em;
     text-align: left;
 }
 li {
     color:gray;
-    font-size: 11px;
-    line-height: 25px;
+    line-height: 1.5em;
 }
 
 .button-aurora {
-    font-size: 35px;
+    font-size: 1.5em;
     font-family: 'Poiret One', Verdana;
-    padding:15px;
+    padding:0.50em;
     border:none;
     background: radial-gradient(circle, rgba(9,223,66,0.1) 26%, rgba(30,241,249,0.2) 76%);
     color:rgb(121, 171, 245);
-    box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.6);
+    box-shadow: 0.20em 0.20em 0.20em rgba(65, 63, 62, 0.2);
     cursor: pointer;
 }
 
 .first-line{
-  margin-top:15px;
-  padding-bottom: 20px;
+  margin-top:0.2em;
+
 }
 #type-city {
-    border-radius: 30px;
-    border: solid 0.5px; 
+    border-radius: 2em;
+    border: solid 0.05em; 
     border-color: gray;
-    min-width: 350px;
-    min-height: 58px;
-    font-size: 25px;
+    min-width: 14em;
+    min-height: 2.5em;
+    font-size: 1.5em;
 }
 .search:focus {
 outline: none;
-border-radius:30px;
+border-radius:2em;
 }
+
 .search-spacing{
-    padding-right: 12px;
-    padding-left: 15px;
+    padding-right: 1.1em;
+    padding-left: 1em;
 }
 .search-button {
     background-color:rgba(170, 213, 241, 0.6);
-    padding:10px 10px;
-    border-radius:15px;
-    box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
+    padding:0.4em 0.4em;
+    border-radius:0.75em;
+    box-shadow: 0.10em 0.10em 0.10em  rgba(65, 63, 62, 0.6) ;
     color:rgb(65, 63, 62);
-    font-size: 25px;
-    border: 1px solid rgba(123, 231, 250, 0.534);
+    font-size: 1.5em;
+    border: 0.05em solid rgba(123, 231, 250, 0.534);
     position: relative;
-    bottom: 4px;
+    bottom: 0.15em;
 }
-.search-button-spacing {
-    padding-right: 40px;
-}
+
 
 #current-location {
     padding:10px 20px 10px 15px;
@@ -446,10 +445,10 @@ border-radius:30px;
 }
 
 .back-card {
-    background-color:rgba(175, 180, 189, 0.2);
-    padding: 20px;
+    background-color:rgba(175, 180, 189, 0.1);
+    padding: 1em;
     min-width: 100%;
-    min-height: 1660px;
+    min-height: 105em;
 }
 
 .posision-entity{
