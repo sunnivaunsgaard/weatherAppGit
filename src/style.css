@@ -347,8 +347,8 @@ white-space: nowrap;
 @media (max-width: 470px) {
 
     h1 {
-    padding: 1.5em 0em 0.5em;
-    color: rgba(121, 171, 245, 0.8);
+    padding: 1.3em 0em 0.3em;
+    color: rgb(121, 171, 245);
     font-size: 4em;
     text-align: center;
 }
@@ -392,7 +392,7 @@ li {
     border-color: gray;
     min-width: 14em;
     min-height: 2.5em;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 .search:focus {
 outline: none;
@@ -400,53 +400,57 @@ border-radius:2em;
 }
 
 .search-spacing{
-    padding-right: 1.1em;
-    padding-left: 1em;
+    padding-right: 0.8em;
+    padding-left: 0.1em;
 }
 .search-button {
     background-color:rgba(170, 213, 241, 0.6);
-    padding:0.4em 0.4em;
+    padding:0.5em 0.4em;
     border-radius:0.75em;
     box-shadow: 0.10em 0.10em 0.10em  rgba(65, 63, 62, 0.6) ;
     color:rgb(65, 63, 62);
-    font-size: 1.5em;
+    font-size: 1.7em;
     border: 0.05em solid rgba(123, 231, 250, 0.534);
     position: relative;
-    bottom: 0.15em;
+    bottom: 0.2em;
+}
+
+.search-button-spacing {
+    padding-right: 1.5em;
 }
 
 
 #current-location {
-    padding:10px 20px 10px 15px;
-    border-radius:10px;
-    border: 1px solid rgba(248, 207, 93, 0.534);
+    padding:0.5em 0.8em 0.5em 0.65em;
+    border-radius: 0.75em;
+    border: 0.05em solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
     color:rgb(65, 63, 62);
-    font-size: 24px;
+    font-size: 1.7em;
     text-align: center;
     position:relative;
-    bottom: 19px;
-    box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
+    bottom: 0.55em;
+    box-shadow: 0.1em 0.1em 0.1em rgba(65, 63, 62, 0.6) ;
 
 }
 #first-city, #second-city, #third-city {
-    padding:10px 10px;
-    border-radius:10px;
-    border: 1px solid rgba(248, 207, 93, 0.534);
+    padding:0.5em 0.4em;
+    border-radius:0.75em;
+    border: 0.05em solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
     color:rgb(65, 63, 62);
-    font-size: 25px;
+    font-size: 1.7em;
     position:relative;
-    bottom: 20px;
-    box-shadow: 3px 3px 3px rgba(65, 63, 62, 0.6) ;
+    bottom: 0.6em;
+    box-shadow: 0.10em 0.10em 0.10em rgba(65, 63, 62, 0.6) ;
 }
 .button-spacing {
-   padding: 14px;
+   padding: 0.7em;
 }
 
 .back-card {
     background-color:rgba(175, 180, 189, 0.1);
-    padding: 1em;
+    padding: 1em 0em ;
     min-width: 100%;
     min-height: 105em;
 }
@@ -456,24 +460,24 @@ border-radius:2em;
     margin: 0 auto;
 }
 .card-container-today {
-    padding-top: 20px;
+    padding-top: 0.75em;
 }
 .inside-card {
     background-color: rgba(247, 213, 119, 0.3);
     box-shadow: 5px 5px 5px rgba(65, 63, 62, 0.4) ;
-    min-width: 850px;
-    min-height: 470px;
+    min-width: 90%;
+    min-height: 28em;
     display:block;
     margin: 0 auto;
 
 }
 .inside-card-body {
     color:rgb(77, 76, 76);
-    padding: 30px 0px 30px 35px;
+    padding: 1.5em 0em 0em 2em;
 }
 
 .first-collumn {
-    min-width: 460px;
+    min-width: 30em;
 }
 
 #date-today {
@@ -572,7 +576,7 @@ font-size: 25px;
 
 
 .hourly-forecast {
-    font-size: 25px;
+    font-size: 1.55em;
     padding-bottom: none;
     margin: 3px;
     font-family: 'Poiret One', Verdana;
@@ -616,8 +620,8 @@ white-space: nowrap;
 
 .forecast-boxes{
     padding-top: 60px;
-    width: 650px;
-    height: 200px;
+    width: 70%;
+    height: 10em;
     margin: 0 auto;
     display: grid;
     place-items: center;
@@ -625,8 +629,8 @@ white-space: nowrap;
 }
 
 .scroll-bar {  
-  width: 650px;
-  height: 150px;
+  width: 100%;
+  height: 9em;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
@@ -638,13 +642,12 @@ white-space: nowrap;
   display: block;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
-  width: 590px;
-  height: 80px;
-  padding:10px;
+  width: 90%;
+  height: 7em;
+  padding:1em;
   color:rgb(65, 63, 62);
-  border-radius: 100px;
-  margin:8px;
-  box-shadow: 4px 4px 4px rgba(97, 96, 95, 0.2) ;
+  border-radius: 10em;
+  box-shadow: 0.2em 0.2em 0.2em rgba(97, 96, 95, 0.3) ;
 }
 
 .box1:hover {
