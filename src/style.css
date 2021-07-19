@@ -347,7 +347,7 @@ white-space: nowrap;
 @media (max-width: 470px) {
 
     h1 {
-    padding: 1.3em 0em 0.3em;
+    padding: 1em 0em 0.3em;
     color: rgb(121, 171, 245);
     font-size: 4em;
     text-align: center;
@@ -452,7 +452,7 @@ border-radius:2em;
     background-color:rgba(175, 180, 189, 0.1);
     padding: 1em 0em ;
     min-width: 100%;
-    min-height: 105em;
+    min-height: 94em;
 }
 
 .posision-entity{
@@ -464,7 +464,7 @@ border-radius:2em;
 }
 .inside-card {
     background-color: rgba(247, 213, 119, 0.3);
-    box-shadow: 5px 5px 5px rgba(65, 63, 62, 0.4) ;
+    box-shadow: 0.3em 0.3em 0.3em rgba(65, 63, 62, 0.4) ;
     min-width: 90%;
     min-height: 28em;
     display:block;
@@ -477,58 +477,48 @@ border-radius:2em;
 }
 
 .first-collumn {
-    min-width: 30em;
-}
-
-#date-today {
-    color: rgb(65, 63, 62);
-    line-height: 15px;
-    font-size: 25px;
+    min-width: 30.8em;
 }
 
 #weather-description {
-    font-size: 20px;
+    font-size: 1.7em;
 }
 #weather-description::first-letter{
     text-transform: capitalize;
 }
 
 .current-city{
-font-size: 40px;
+font-size: 2.4em;
 color: rgb(65, 63, 62); 
 font-weight: bolder;
-padding-bottom: 20px;
-}
-.current-city-waiting{
-font-size: 12px;
-color: rgb(65, 63, 62); 
+padding-bottom: 1.8em;
 }
 
 #degrees-city {
-    font-size: 80px;
+    font-size: 5em;
     color: rgb(32, 32, 32);
-    padding-left: 5px;
+    padding-left: 0.1em;
 }
 #celcius {
-    padding-left: 10px;
-    padding-right: 5px;
+    padding-left: 0.3em;
+    padding-right: 0.2em;
 }
 
 #fahrenheit {
-    padding-left: 10px;
+    padding-left: 0.3em;
 }
 .f-c {
-    margin:8px;
+    margin:0.1em;
     color: gray;
     position: relative;
-    bottom:25px;
-    font-size: 55px;
+    bottom:0.35em;
+    font-size: 3.5em;
     font-weight: lighter;
 }
 .f-c-change {
     color: rgb(10, 10, 10);
     font-weight: bold;
-    font-size: 45px;
+    font-size: 0.9em;
 }
 
 .f-c-change:hover {
@@ -537,15 +527,15 @@ color: rgb(65, 63, 62);
 
 #main-icon {
     color:rgb(71, 70, 69);
-    font-size: 55px;
-    padding-left: 25px;
+    font-size: 3.5em;
+    padding-left: 0.5em;
     position: relative;
-    bottom: 15px;
+    bottom: 0.35em;
 }
 
 
 .time {
-font-size: 25px;
+font-size: 1.7em;
 }
 #max {
     font-weight: bold;
@@ -555,38 +545,43 @@ font-size: 25px;
 }
 .extra-description {
     text-align: right;
-    max-width: 170px;
+    max-width: 9.4em;
 }
 
 #date-today {
-    font-size: 25px;
- 
+    font-size: 1.6em;
+    position: relative;
+    bottom: 0.2em;
 }
 .extra-values {
-    font-size: 25px;
-    min-width: 150px;
-
+    font-size: 1em;
+    min-width: 5em;
+    line-height: 1.6em;
+    position: relative;
+    top: 1em;
 }
 
 .apparent-description {
-    font-size: 25px;
-    margin-top: 10px;
-    line-height: 40px;
+    font-size: 1.7em;
+    margin-top: 0.7em;
+    line-height: 1.5em;
 }
 
 
 .hourly-forecast {
-    font-size: 1.55em;
-    padding-bottom: none;
-    margin: 3px;
+    font-size: 1.6em;
+    padding: 0em;
+    padding-bottom: 0.05em;
+    margin:0em;
     font-family: 'Poiret One', Verdana;
+    font-weight: bolder;
 }
 
 .scrolling-wrapper {
-margin: 4px, 4px;
-padding-left: 5px;
-width: 740px;
-height: 130px;
+margin: 0.5em;
+padding-left: 0.5em;
+width: 47em;
+height: 10em;
 overflow-x: scroll;
 overflow-y: hidden;
 white-space: nowrap;
@@ -594,34 +589,33 @@ white-space: nowrap;
 
  .hourly {
   background-color: rgba(218, 234, 245, 0.366);
-  width: 170px;
-  padding: 15px;
-  border-radius: 20px;
-  font-size: 30px;
-  margin: 7px;
+  width: 5em;
+  padding: 0.5em;
+  border-radius: 1em;
+  font-size: 2em;
+  margin-right: 0.6em;
   float: none;
   display: inline-block;
-  box-shadow: 2px 2px 2px rgba(65, 63, 62, 0.2) ;
+  box-shadow: 0.05em 0.05em 0.05em  rgba(65, 63, 62, 0.2) ;
   }
 
 #hour1-forecast {
-    padding-left:3px;
-    line-height: 30px;
+padding-left: 0.1em;
     
 }
 
 #hour {
-    font-size: 25px;
-    padding-left:3px;
+    font-size: 0.8em;
+    padding-left:0.1em;
     color:rgba(71, 70, 69, 0.9);
 }
 
 
 
 .forecast-boxes{
-    padding-top: 60px;
+    padding-top: 3.5em;
     width: 70%;
-    height: 10em;
+    height: 8em;
     margin: 0 auto;
     display: grid;
     place-items: center;
@@ -630,7 +624,7 @@ white-space: nowrap;
 
 .scroll-bar {  
   width: 100%;
-  height: 9em;
+  height: 8.6em;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
@@ -643,7 +637,7 @@ white-space: nowrap;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
   width: 90%;
-  height: 7em;
+  height: 6em;
   padding:1em;
   color:rgb(65, 63, 62);
   border-radius: 10em;
@@ -651,22 +645,21 @@ white-space: nowrap;
 }
 
 .box1:hover {
-  border: 1px solid rgba(147, 236, 252, 0.534);
+  border: 0.07em solid rgba(147, 236, 252, 0.534);
   background-color: rgba(199, 224, 241, 0.466);
 }
 
 .box1:hover .child-box{
     text-align: center;
-    line-height: 40px;
-    font-size: 40px;
+    font-size: 3.5em;
     color: rgb(65, 63, 62);
     font-weight: lighter;
     position: relative;
-    bottom: 20px;
+    bottom: 0.8em;
 }
 
 .box1:hover #tomorrow {
-    font-size: 0px;
+    font-size: 0em;
     color:transparent;
     padding:0px;
     margin:0px;
@@ -678,38 +671,41 @@ white-space: nowrap;
     font-weight: lighter;
 }
 
-#tomorrow {
-    font-size: 40px;
-    color:rgb(65, 63, 62);
+
+ #tomorrow{
+color:rgb(65, 63, 62);
+font-size: 3.5em;
+position:relative;
+bottom: 0.15em;
 }
+   
 
 
 .child-box{
-    padding-bottom: 10px;
     text-align: center;
-    font-size: 1px;
+    font-size: 0em;
     color: transparent;
 }
 
 
 .info-max-min {
-    font-size: 30px;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    font-size: 2em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
     text-align: center;
 }
 
 .info-percieved, .info-humidity, .info-wind {
-    font-size: 25px;
+    font-size: 1.8em;
     text-align: center;
-    padding: 15px;
+    padding: 0.5em;
 }
 
 .coded-by {
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5em;
     font-weight:lighter;
-    padding: 150px 100px 50px;
+    padding-top: 2em;
 }
 
     
