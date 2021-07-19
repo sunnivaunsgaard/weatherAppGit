@@ -580,7 +580,7 @@ font-size: 1.7em;
 .scrolling-wrapper {
 margin: 0.5em;
 padding-left: 0.5em;
-width: 47em;
+width: 48em;
 height: 10em;
 overflow-x: scroll;
 overflow-y: hidden;
@@ -593,7 +593,7 @@ white-space: nowrap;
   padding: 0.5em;
   border-radius: 1em;
   font-size: 2em;
-  margin-right: 0.6em;
+  margin-right: 0.9em;
   float: none;
   display: inline-block;
   box-shadow: 0.05em 0.05em 0.05em  rgba(65, 63, 62, 0.2) ;
