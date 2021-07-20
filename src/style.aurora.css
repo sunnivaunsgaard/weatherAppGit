@@ -7,6 +7,25 @@ body {
     background-size: cover; 
 }
 
+
+h1 {
+    padding: 2em 0em 1em;
+    color: rgba(144, 186, 248, 0.8);
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+}
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
 .wrapper {
     display:block;
     margin: 0 auto;
@@ -25,24 +44,6 @@ border-radius: 50px;
 
 .weather-forecast:hover {
     cursor: pointer;
-}
-
-h1 {
-    padding: 2em 0em 1em;
-    color: rgba(144, 186, 248, 0.8);
-    text-align: center;
-    font-size: 3em;
-    font-family: 'Pacifico', cursive;
-}
-form {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
-a {
-    text-decoration: none;
-    color:inherit;
 }
 
 .form {
@@ -64,6 +65,18 @@ a {
     height: 25em;
 }
 
+.name-of-place { 
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.description-aurora {
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .div-noaa {
     display:block;
     margin:0 auto;
@@ -74,6 +87,7 @@ a {
 text-align: center;
 color: rgb(144, 186, 248);
 padding:1em;
+font-family: 'Courier New', Courier, monospace;
 }
 
 @media (max-width: 470px) {
@@ -90,16 +104,20 @@ a {
     color:inherit;
 }
 
+form {
+    margin-bottom: 1em;
+}
+
 .wrapper {
     display:block;
     margin: 0 auto;
     min-width: 100%;
     min-height: 100%;
 }
+
 .input-group {
     width: 100%;
 }
-
 
 .weather-forecast {
 padding:20px;
@@ -122,17 +140,25 @@ border-radius: 50px;
     height: 15em;
 }
 
+.name-of-place { 
+    padding: 0.5em;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.description-aurora {
+    padding: 0.5em;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .div-noaa {
-    display:block;
-    margin:0 auto;
-    width:50%;
-    padding-top: 4.3em;
+    padding-top: 3em;
 }
 
 .forecast-link{
-text-align: center;
 color: rgb(144, 186, 248);
-font-size: 0.9em;
+font-size: 0.5em;
 }
 
 }
