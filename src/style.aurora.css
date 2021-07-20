@@ -7,12 +7,11 @@ body {
     background-size: cover; 
 }
 
-.total-spacing {
+.wrapper {
     display:block;
     margin: 0 auto;
-    max-width: 1000px;
-    min-width: 1000px;
-    min-height: 1800px;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .weather-forecast {
@@ -29,31 +28,68 @@ border-radius: 50px;
 }
 
 h1 {
-    padding: 200px 30px 50px;
+    padding: 2em 0em 1em;
     color: rgba(144, 186, 248, 0.8);
     text-align: center;
-    font-size: 50px;
+    font-size: 3em;
     font-family: 'Pacifico', cursive;
-    position: relative;
-    right:150px;
+}
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+a {
+    text-decoration: none;
+    color:inherit;
 }
 
+.form {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.input-group {
+ width: 30em;
+
+}
+.div-noaa {
+    display:block;
+    margin:0 auto;
+    width:20%;
+    padding-top: 10em;
+}
+.forecast-link{
+text-align: center;
+color: rgb(197, 134, 197);
+}
 
 @media (max-width: 470px) {
 
 h1 {
     color: rgba(144, 186, 248, 0.8);
-    font-size: 50px;
+    font-size: 2.5em;
     text-align: center;
     font-family: 'Pacifico', cursive;
 }
 
-.total-spacing {
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.wrapper {
     display:block;
     margin: 0 auto;
-    min-width: 800px;
-    min-height: 1300px;
+    min-width: 100%;
+    min-height: 100%;
 }
+.input-group {
+    width: 100%;
+}
+
 
 .weather-forecast {
 padding:20px;
@@ -67,4 +103,18 @@ border-radius: 50px;
 .weather-forecast:hover {
     cursor: pointer;
 }
+
+.div-noaa {
+    display:block;
+    margin:0 auto;
+    width:40%;
+    padding-top: 15em;
+}
+
+.forecast-link{
+text-align: center;
+color: rgb(199, 105, 199);
+font-size: 0.9em;
+}
+
 }
