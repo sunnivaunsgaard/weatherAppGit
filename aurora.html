@@ -18,11 +18,18 @@
    
    <h1>Aurora Forecast</h1>
     <div class="form">
-       <form action="input-form">
-          <div class="input-group mb-3">
-        <input type="search" class="form-control shadow-sm search" placeholder="Search city/address" 
-        aria-label="Location" aria-describedby="button-addon2">
-       <input class="btn btn-outline-secondary" type="submit" value= "search" id="button-addon2">
+       <form id="input-form" action="input-form">
+           <div class="mb-3">
+           <input type="search" id="type-location" class="form-control" placeholder="Name of city" 
+           aria-describedby="emailHelp">
+           </div>
+           <div class="mb-3">
+           <input type="search" id="type-state-code" class="form-control" placeholder="State Code (only if city is in the USA)" 
+           aria-describedby="emailHelp">
+           </div>
+           <div class="mb-3">
+           <input type="search" class="form-control" id="type-country-code" placeholder="Country Code (two letters ex: GE, US...)">
+           <input class="btn btn-outline-secondary" type="submit" value= "search" id="button-addon2">
          </div>
        </form>
 <div class="card">
