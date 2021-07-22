@@ -201,11 +201,6 @@ border-radius: 2em;
     color: rgb(36, 1, 36);
 }
 
-.aurora-link:hover{
-    text-decoration: none;
-    color: rgb(36, 1, 36);
-}
-
 #description-aurora {
     font-size: 1em;
 }
