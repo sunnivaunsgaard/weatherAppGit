@@ -7,9 +7,8 @@ body {
     background-size: cover; 
 }
 
-
 h1 {
-    padding: 2em 0em 1em;
+    padding: 3em 0em 1.5em;
     color: rgba(144, 186, 248, 0.8);
     text-align: center;
     font-size: 3em;
@@ -20,6 +19,7 @@ form {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    padding-bottom: 2em;
 }
 a {
     text-decoration: none;
@@ -73,26 +73,34 @@ border-radius: 2em;
     margin:0 auto;
     background-color: rgba(248, 206, 248, 0.2);
     width: 30em;
-    height: 25em;
+    height: 30%;
 }
 
-.name-of-place { 
-    padding: 0.5em;
-    font-size: 1.5em;
-    font-family: 'Courier New', Courier, monospace;
+.card-body {
+    padding: 2em;
 }
 
-.description-aurora {
+#name-of-place { 
     padding: 0.5em;
-    font-size: 1.5em;
+    font-size: 1em;
+    line-height: 2em;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
+
+.aurora-possibility{
+    padding: 2.5em;
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
 
 .div-noaa {
     display:block;
     margin:0 auto;
     width:30%;
-    padding-top: 10em;
+    padding: 5em 0em 5em;
 }
 .forecast-link{
 text-align: center;
@@ -169,28 +177,27 @@ border-radius: 2em;
     margin:0 auto;
     background-color: rgba(248, 206, 248, 0.2);
     width: 18em;
-    height: 15em;
+    height: 16em;
 }
 
 #name-of-place { 
-    padding: 0.5em;
-    font-size: 1em;
+    font-size: 0.7em;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 #description-aurora {
-    padding: 0.5em;
     font-size: 1em;
-    font-family: 'Courier New', Courier, monospace;
 }
 
+
 .div-noaa {
-    padding-top: 3em;
+    padding-top: 2em;
 }
 
 .forecast-link{
 color: rgb(144, 186, 248);
-font-size: 0.5em;
+font-size: 0.6em;
 }
 
 }
