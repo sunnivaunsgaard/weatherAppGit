@@ -136,6 +136,8 @@ form {
     display:block;
     margin: 0 auto;
     min-width: 100%;
+    min-height: 70em;
+
 }
 
 .input-group {
