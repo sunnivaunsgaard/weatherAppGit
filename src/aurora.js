@@ -1,23 +1,33 @@
 
 function findLocation(event){
 event.preventDefault();
-let location = document.querySelector("#type-location");
-let countryCode = document.querySelector("#type-country-code");
-let stateCode = document.querySelector("#type-state-code");
+let location = document.querySelector("#type-location").value;
+let countryCode = document.querySelector("#type-country-code").value;
+let stateCode = document.querySelector("#type-state-code").value;
 extractLocation(location, countryCode, stateCode); 
 
 }
 
 function extractLocation(location, countryCode, stateCode) {
 let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
-let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location},${stateCode},${countryCode}&appid=${apiKey}`;
-if (countryCode == null) {
-apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location},${countryCode}&appid=${apiKey}`;
-}
-axios.get(apiUrl).then(searchAurora);
+let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location},${stateCode},${countryCode}&limit=1&appid=${apiKey}`;
+axios.get(apiUrl).then(reportLocation);
+console.log(apiUrl);
 }
 
-function searchAurora () {
+function reportLocation (response) {
+let lat = response.data[0].lat;
+let lon = response.data[0].lon;
+let auroraUrl = `https://api.auroras.live/v1/?type=all&lat=${lat}&long=${lon}&forecast`;
+axios.get(auroraUrl).then(searchAurora);
+console.log(auroraUrl);
+}
+
+function searchAurora(response) {
+
+}
+
+function reportAurora() {
 
 }
 
