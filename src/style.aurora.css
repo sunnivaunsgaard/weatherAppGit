@@ -140,13 +140,13 @@ border-radius: 50px;
     height: 15em;
 }
 
-.name-of-place { 
+#name-of-place { 
     padding: 0.5em;
     font-size: 1em;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.description-aurora {
+#description-aurora {
     padding: 0.5em;
     font-size: 1em;
     font-family: 'Courier New', Courier, monospace;
