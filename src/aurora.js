@@ -16,6 +16,9 @@ axios.get(apiUrl).then(reportLocation);
 }
 
 function reportLocation (response) {
+setTimeout(function () {
+document.querySelector("#description-aurora").innerHTML = `We are calculating...`;
+}, 2500);
 let lat = response.data[0].lat;
 let lon = response.data[0].lon;
 let auroraUrl = `https://api.auroras.live/v1/?type=all&lat=${lat}&long=${lon}&forecast`;
