@@ -90,6 +90,9 @@ border-radius: 2em;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
+.aurora-link{
+    color: rgb(36, 1, 36);
+}
 
 .aurora-possibility{
     padding: 2em;
@@ -191,6 +194,16 @@ border-radius: 2em;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     line-height: 2.4em;
+}
+
+.aurora-link{
+    text-decoration: none;
+    color: rgb(36, 1, 36);
+}
+
+.aurora-link:hover{
+    text-decoration: none;
+    color: rgb(36, 1, 36);
 }
 
 #description-aurora {
