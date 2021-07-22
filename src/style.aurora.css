@@ -30,6 +30,7 @@ a {
     display:block;
     margin: 0 auto;
     min-width: 100%;
+    min-height: 60em;
 }
 
 .home-button-spacing {
@@ -156,10 +157,6 @@ font-family: 'Pacifico', cursive;
 color:rgba(144, 186, 248, 0.8);
 border:none;
 border-radius: 2em;
-}
-
-.home-button:hover {
-    cursor: pointer;
 }
 
 #type-location, #type-state-code {
