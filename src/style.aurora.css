@@ -1,7 +1,6 @@
 body {
   background-image: url("../images/northern-lights.jpg");
   background-position: center;
-  background-size: cover;
 }
 
 h1 {
@@ -114,8 +113,6 @@ a {
     background-image: url("../images/northern-lights.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     min-height: 100%;
   }
 
