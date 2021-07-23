@@ -1,5 +1,5 @@
 body {
-  background: url("../images/northern-lights.jpg") no-repeat center center fixed; 
+  background: url("../images/northern-lights.jpg"); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -114,7 +114,7 @@ a {
 
 @media (max-width: 470px) {
   body {
-  background: url("../images/northern-lights.jpg") no-repeat center center fixed; 
+  background: url("../images/northern-lights.jpg"); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
