@@ -1,5 +1,7 @@
 body {
   background-image: url("../images/northern-lights.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 h1 {
