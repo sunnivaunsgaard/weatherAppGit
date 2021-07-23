@@ -1,226 +1,217 @@
 body {
-    background-image: 
-    url("../images/northern-lights.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; 
-    min-height:100%;
+  background-image: url("../images/northern-lights.jpg");
 }
 
 h1 {
-    padding: 1em 0em 1.5em;
-    color: rgba(144, 186, 248, 0.8);
-    text-align: center;
-    font-size: 4em;
-    font-family: 'Pacifico', cursive;
+  padding: 1em 0em 1.5em;
+  color: rgba(144, 186, 248, 0.8);
+  text-align: center;
+  font-size: 4em;
+  font-family: "Pacifico", cursive;
 }
 form {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    padding-bottom: 2em;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding-bottom: 2em;
 }
 a {
-    text-decoration: none;
-    color:inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .wrapper {
-    display:block;
-    margin: 0 auto;
-    min-width: 100%;
-    min-height: 100%;
+  display: block;
+  margin: 0 auto;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .home-button-spacing {
-padding: 1em;
+  padding: 1em;
 }
 
 .home-button {
-padding:1.5em;
-background-color:rgba(156, 123, 248, 0.2);
-font-family: 'Pacifico', cursive;
-color:rgba(144, 186, 248, 0.8);
-border:none;
-border-radius: 2em;
+  padding: 1.5em;
+  background-color: rgba(156, 123, 248, 0.2);
+  font-family: "Pacifico", cursive;
+  color: rgba(144, 186, 248, 0.8);
+  border: none;
+  border-radius: 2em;
 }
 
 .home-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form {
-    display: block;
-    text-align: center;
-    width: 100%;
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
-#type-location, #type-state-code {
- width: 30em;
+#type-location,
+#type-state-code {
+  width: 30em;
 }
 
 #type-country-code {
-    width: 25em;
-    display:inline-block;
+  width: 25em;
+  display: inline-block;
 }
 
 .btn-outline-secondary {
-    display:inline-block;
-    position: relative;
-    bottom: 0.1em;
+  display: inline-block;
+  position: relative;
+  bottom: 0.1em;
 }
 .card {
-    display:block;
-    margin:0 auto;
-    background-color: rgba(248, 206, 248, 0.2);
-    width: 30em;
-    height: 25em;
+  display: block;
+  margin: 0 auto;
+  background-color: rgba(248, 206, 248, 0.2);
+  width: 30em;
+  height: 25em;
 }
 
 .card-body {
-    padding: 4em 3em;
+  padding: 4em 3em;
 }
 
-#name-of-place { 
-    font-size: 1em;
-    line-height: 2em;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+#name-of-place {
+  font-size: 1em;
+  line-height: 2em;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
-.aurora-link{
-    color: rgb(36, 1, 36);
+.aurora-link {
+  color: rgb(36, 1, 36);
 }
 
-.aurora-possibility{
-    padding: 2em;
-    font-size: 2em;
-    font-family: 'Courier New', Courier, monospace;
-
+.aurora-possibility {
+  padding: 2em;
+  font-size: 2em;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .div-noaa {
-    display: block;
-    margin: 0 auto;
-    width: 13em;
-    padding: 7em 0em 10em;
+  display: block;
+  margin: 0 auto;
+  width: 13em;
+  padding: 7em 0em 10em;
 }
-.forecast-link{
-text-align: center;
-color: rgb(144, 186, 248);
-padding:1em;
-font-family: 'Courier New', Courier, monospace;
+.forecast-link {
+  text-align: center;
+  color: rgb(144, 186, 248);
+  padding: 1em;
+  font-family: "Courier New", Courier, monospace;
 }
 
 @media (max-width: 470px) {
+  body {
+    background-image: url("../images/northern-lights.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100%;
+  }
 
-body {
-background-image: 
-url("../images/northern-lights.jpg");
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover; 
-min-height: 100%;
-}
-
-h1 {
+  h1 {
     color: rgba(144, 186, 248, 0.8);
     font-size: 2.5em;
     text-align: center;
-    font-family: 'Pacifico', cursive;
-    padding:1em 0em 0.2em;
-}
+    font-family: "Pacifico", cursive;
+    padding: 1em 0em 0.2em;
+  }
 
-a {
+  a {
     text-decoration: none;
-    color:inherit;
-}
+    color: inherit;
+  }
 
-form {
+  form {
     margin-bottom: 1em;
-}
+  }
 
-.wrapper {
-    display:block;
+  .wrapper {
+    display: block;
     margin: 0 auto;
     min-width: 100%;
     min-height: 100%;
+  }
 
-}
-
-.input-group {
+  .input-group {
     width: 100%;
-}
+  }
 
-.home-button-spacing {
-padding: 1em;
-}
+  .home-button-spacing {
+    padding: 1em;
+  }
 
-.home-button {
-padding:1em;
-font-size: 0.7em;
-background-color:rgba(156, 123, 248, 0.2);
-font-family: 'Pacifico', cursive;
-color:rgba(144, 186, 248, 0.8);
-border:none;
-border-radius: 2em;
-}
+  .home-button {
+    padding: 1em;
+    font-size: 0.7em;
+    background-color: rgba(156, 123, 248, 0.2);
+    font-family: "Pacifico", cursive;
+    color: rgba(144, 186, 248, 0.8);
+    border: none;
+    border-radius: 2em;
+  }
 
-#type-location, #type-state-code {
- width: 19em;
-}
+  #type-location,
+  #type-state-code {
+    width: 19em;
+  }
 
-#type-country-code {
+  #type-country-code {
     width: 14.1em;
-    display:inline-block;
-}
+    display: inline-block;
+  }
 
-.btn-outline-secondary {
-    display:inline-block;
-    position:relative;
-    bottom: 0.15em
-}
+  .btn-outline-secondary {
+    display: inline-block;
+    position: relative;
+    bottom: 0.15em;
+  }
 
-.card {
-    display:block;
-    margin:0 auto;
+  .card {
+    display: block;
+    margin: 0 auto;
     background-color: rgba(248, 206, 248, 0.2);
     width: 18em;
     height: 16em;
-}
+  }
 
-.card-body {
+  .card-body {
     padding: 2em 1em;
-}
+  }
 
-#name-of-place { 
+  #name-of-place {
     font-size: 0.7em;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-weight: bold;
     line-height: 2.4em;
-}
+  }
 
-.aurora-link{
+  .aurora-link {
     text-decoration: none;
     color: rgb(36, 1, 36);
-}
+  }
 
-#description-aurora {
+  #description-aurora {
     font-size: 1em;
-}
+  }
 
-.div-noaa {
+  .div-noaa {
     display: block;
-    margin:0 auto;
+    margin: 0 auto;
     width: 8em;
     padding-top: 3em;
-}
+  }
 
-.forecast-link{
-color: rgb(144, 186, 248);
-font-size: 0.7em;
-}
-
+  .forecast-link {
+    color: rgb(144, 186, 248);
+    font-size: 0.7em;
+  }
 }
