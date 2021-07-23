@@ -404,8 +404,8 @@ border-radius:2em;
 }
 
 .search-spacing{
-    padding-right: 0.8em;
-    padding-left: 0.1em;
+    padding-right: 0.7em;
+    padding-left: 0.5em;
 }
 .search-button {
     background-color:rgba(170, 213, 241, 0.6);
@@ -425,7 +425,7 @@ border-radius:2em;
 
 
 #current-location {
-    padding:0.5em 0.8em 0.5em 0.65em;
+    padding:0.5em 0.8em 0.5em 0.6em;
     border-radius: 0.75em;
     border: 0.05em solid rgba(248, 207, 93, 0.534);
     background-color: rgba(247, 213, 119, 0.3);
