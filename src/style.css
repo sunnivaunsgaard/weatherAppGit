@@ -149,6 +149,9 @@ border-radius:30px;
     padding: 20px 0px 10px 30px;
 }
 
+.first-collumn{
+    min-width: 290px;
+}
 #date-today {
     color: rgb(65, 63, 62);
     line-height: 15px;
@@ -210,6 +213,7 @@ font-size: 12px;
 }
 .extra-description {
     text-align: right;
+    max-width: 100px;
 }
 
 #date-today {
@@ -315,7 +319,7 @@ white-space: nowrap;
 }
 
 .child-box{
-    padding:10px;
+    padding-top: 15px;
     text-align: center;
     font-size: 14px;
 
