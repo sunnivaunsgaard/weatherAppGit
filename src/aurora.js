@@ -10,7 +10,7 @@ extractLocation(location, countryCode, stateCode);
 function extractLocation(location, countryCode, stateCode) {
 let apiKey = `81bf8dd320f01a5acdd432f8343859e1`;
 let apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${location},${stateCode},${countryCode}&limit=1&appid=${apiKey}`;
-document.querySelector("#name-of-place").innerHTML = `The probability of seeing the Aurora in ${location.toUpperCase()}: `; 
+document.querySelector("#name-of-place").innerHTML = `The probability of seeing the Aurora in ${location.toUpperCase()} tonight: `; 
 findProbability.innerHTML = `We are calculating`;
 
 axios.get(apiUrl).then(reportLocation);

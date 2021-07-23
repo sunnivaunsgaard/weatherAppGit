@@ -39,7 +39,7 @@ background-size: cover;
   padding: 1.5em;
   background-color: rgba(248, 242, 250, 0.3);
   font-family: "Pacifico", cursive;
-  color: rgba(200, 130, 202, 0.792);
+  color: rgb(200, 130, 202);
   border: none;
   border-radius: 2em;
 }
