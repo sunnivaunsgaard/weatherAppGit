@@ -154,7 +154,7 @@ background-size: cover;
 
   .home-button {
     padding: 1em;
-    font-size: 0.7em;
+    font-size: 0.9em;
     background-color: rgba(156, 123, 248, 0.2);
     font-family: "Pacifico", cursive;
     color: rgba(144, 186, 248, 0.8);
@@ -209,12 +209,12 @@ background-size: cover;
   .div-noaa {
     display: block;
     margin: 0 auto;
-    width: 8em;
+    width: 12em;
     padding-top: 3em;
   }
 
   .forecast-link {
-    color: rgb(144, 186, 248);
-    font-size: 0.7em;
+    color: rgb(88, 149, 241);
+    font-size: 1em;
   }
 }
