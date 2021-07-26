@@ -280,7 +280,7 @@ function findCurrentPositionMultiple(event) {
   removeText.innerHTML = " ";
   let newText = document.querySelector("#weather-description");
   newText.innerHTML =
-    "Wait while we find 📍 If asked, press 'allow'. If not, change settings";
+    "Wait while we find 📍 If asked, press 'allow' or change settings";
 }
 
 function findDateToday(date) {
