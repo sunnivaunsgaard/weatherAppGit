@@ -117,7 +117,7 @@ border-radius:30px;
 }
 
 .back-card {
-    background-color:rgba(175, 180, 189, 0.2);
+    background-color:rgba(231, 231, 233, 0.2);
     padding: 10px;
     padding-top: 20px;
     min-width: 720px;
@@ -454,7 +454,7 @@ border-radius:2em;
 }
 
 .back-card {
-    background-color:rgba(175, 180, 189, 0.1);
+    background-color:rgba(231, 231, 233, 0.2);
     padding: 1em 0em ;
     min-width: 100%;
     min-height: 103em;
