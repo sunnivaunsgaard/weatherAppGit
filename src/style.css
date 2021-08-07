@@ -457,7 +457,7 @@ border-radius:2em;
     background-color:rgba(231, 231, 233, 0.2);
     padding: 1em 0em ;
     min-width: 100%;
-    min-height: 103em;
+    min-height: 140em;
 }
 
 .posision-entity{
@@ -561,7 +561,7 @@ font-size: 1.7em;
 .extra-values {
     font-size: 1em;
     min-width: 5em;
-    line-height: 1.6em;
+    line-height: ;
     position: relative;
     top: 1em;
 }
@@ -618,9 +618,9 @@ padding-left: 0.1em;
 
 
 .forecast-boxes{
-    padding-top: 3.5em;
-    width: 60%;
-    height: 8em;
+    padding-top: 6em;
+    width: 80%;
+    height: 20em;
     margin: 0 auto;
     display: grid;
     place-items: center;
@@ -629,7 +629,7 @@ padding-left: 0.1em;
 
 .scroll-bar {  
   width: 100%;
-  height: 10em;
+  height: 14em;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
@@ -642,10 +642,10 @@ padding-left: 0.1em;
   margin:0 auto;
   background-color: rgba(170, 213, 241, 0.466);
   width: 90%;
-  height: 6em;
-  padding:1em;
+  height: 9em;
+  padding:2em;
   color:rgb(65, 63, 62);
-  border-radius: 10em;
+  border-radius: 1em;
   box-shadow: 0.2em 0.2em 0.2em rgba(97, 96, 95, 0.3) ;
 }
 
@@ -656,11 +656,13 @@ padding-left: 0.1em;
 
 .box1:hover .child-box{
     text-align: center;
-    font-size: 3.5em;
+    font-size: 4em;
     color: rgb(65, 63, 62);
     font-weight: lighter;
     position: relative;
-    bottom: 0.8em;
+    bottom: 0.5em;
+    position: relative;
+    bottom:0.8em;
 }
 
 .box1:hover #tomorrow {
@@ -679,9 +681,9 @@ padding-left: 0.1em;
 
  #tomorrow{
 color:rgb(65, 63, 62);
-font-size: 3.5em;
-position:relative;
-bottom: 0.15em;
+font-size: 4em;
+position: relative;
+bottom:0.1em;
 }
    
 
@@ -694,14 +696,14 @@ bottom: 0.15em;
 
 
 .info-max-min {
-    font-size: 2em;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
+    font-size: 2.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     text-align: center;
 }
 
 .info-percieved, .info-humidity, .info-wind {
-    font-size: 1.8em;
+    font-size: 2.2em;
     text-align: center;
     padding: 0.5em;
 }
